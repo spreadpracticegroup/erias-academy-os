@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="cyber">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back-Office Administration | PCE ICN & PCE IC-ACADÉMIE DES MÉTIERS</title>
+  <meta name="description" content="Tableau de bord de pilotage des dossiers, des filières et des paramètres financiers de la facilité de paiement.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/theme-pce.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="african-pattern-bg">
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/logo-pce-icn.jpg" alt="Logo PCE ICN" class="official-logo-img">
+        <div class="brand-text">
+          <h2>BACK-OFFICE CENTRAL</h2>
+          <span>PCE ICN & PCE IC-ACADÉMIE DES MÉTIERS</span>
+        </div>
+      </a>
+
+      <div>
+        <a href="index.html" class="btn btn-outline btn-sm">← Revenir au Portail Public</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 3rem 1.5rem 6rem;">
+    
+    <!-- Top Titre et Export -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <span class="badge badge-primary">PANNEAU DE CONTRÔLE ADMINISTRATEUR</span>
+        <h1 style="font-size: 2rem; font-weight: 800; margin-top: 0.25rem;">Supervision Panafricaine des Candidatures</h1>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btnExportCsv" class="btn btn-primary btn-sm">
+          📥 Exporter le Registre (CSV)
+        </button>
+      </div>
+    </div>
+
+    <!-- 1. KPIs Grid -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div class="card-theme">
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Total Dossiers Déposés</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: white; margin: 0.25rem 0;" id="boKpiTotal">0</div>
+        <div style="font-size: 0.8rem; color: var(--primary-light);">Toutes filières confondues</div>
+      </div>
+
+      <div class="card-theme">
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Filières Cybersécurité</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary-light); margin: 0.25rem 0;" id="boKpiCyber">0</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">PCE ICN (Contrat à cinq)</div>
+      </div>
+
+      <div class="card-theme">
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Académie des Métiers & VAE</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #f7e08d; margin: 0.25rem 0;" id="boKpiMetiers">0</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">6 Pôles d'alternance</div>
+      </div>
+
+      <div class="card-theme">
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Frais d'Inscription Encaissés</div>
+        <div style="font-size: 1.8rem; font-weight: 800; color: white; margin: 0.25rem 0;" id="boKpiEncaisse">0 FCFA</div>
+        <div style="font-size: 0.8rem; color: #34d399;">Base 80 000 FCFA / dossier</div>
+      </div>
+    </div>
+
+    <!-- 2. Filtres et Recherche -->
+    <div class="card-theme" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+      <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+        
+        <div style="flex: 1; min-width: 260px;">
+          <input type="text" id="boSearchInput" class="form-input" placeholder="🔍 Rechercher par n° dossier, nom, email, téléphone, filière...">
+        </div>
+
+        <select id="boFilterUnivers" class="form-select" style="width: auto;">
+          <option value="all">Tous les univers</option>
+          <option value="cyber">Cybersécurité PCE ICN</option>
+          <option value="metiers">Académie des Métiers & VAE</option>
+        </select>
+
+        <select id="boFilterStatut" class="form-select" style="width: auto;">
+          <option value="all">Tous les statuts</option>
+          <option value="Soumis">Soumis</option>
+          <option value="En vérification">En vérification</option>
+          <option value="Éligibilité validée">Éligibilité validée</option>
+          <option value="Contrat à signer">Contrat à signer</option>
+          <option value="Contrat légalisé">Contrat légalisé</option>
+          <option value="Inscrit">Inscrit (Confirmé)</option>
+          <option value="Refusé">Refusé</option>
+        </select>
+
+      </div>
+    </div>
+
+    <!-- 3. Table des Dossiers -->
+    <div class="card-theme" style="padding: 0; overflow: hidden; margin-bottom: 3.5rem;">
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
+          <thead>
+            <tr style="background: rgba(4, 9, 20, 0.85); border-bottom: 1px solid var(--border-subtle); color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">
+              <th style="padding: 1rem 1.25rem;">Candidat & Réf</th>
+              <th style="padding: 1rem 1.25rem;">Univers & Filière</th>
+              <th style="padding: 1rem 1.25rem;">Contact</th>
+              <th style="padding: 1rem 1.25rem;">Territoire & Centre</th>
+              <th style="padding: 1rem 1.25rem;">Financement</th>
+              <th style="padding: 1rem 1.25rem;">Statut Dossier</th>
+              <th style="padding: 1rem 1.25rem;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="boTableBody">
+            <!-- Rendu dynamique via backoffice.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <div style="padding: 1rem 1.5rem; background: rgba(4, 9, 20, 0.5); border-top: 1px solid var(--border-subtle); font-size: 0.82rem; color: var(--text-muted);" id="boTableCount">
+        Chargement...
+      </div>
+    </div>
+
+    <!-- 4. Paramétrage Financier de la Facilité de Paiement -->
+    <div class="card-theme" style="border-color: var(--border-color);">
+      <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">
+        ⚙️ Paramétrage Stratégique de la Facilité de Paiement
+      </h2>
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+        Modifiez les paramètres globaux appliqués aux simulateurs et aux contrats de formation :
+      </p>
+
+      <form id="boParametresForm">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem;">
+          <div>
+            <label class="form-label">Frais d'Inscription Globaux (FCFA)</label>
+            <input type="number" id="paramFraisInscription" class="form-input" value="80000" step="5000">
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Payables à l'inscription</div>
+          </div>
+
+          <div>
+            <label class="form-label">Rémunération par Participant Sensibilisé (FCFA)</label>
+            <input type="number" id="paramRemunerationMission" class="form-input" value="25000" step="1000">
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Base de calcul en stage (95% amortissement)</div>
+          </div>
+
+          <div>
+            <label class="form-label">Tarif Module Socle PCE-000 (FCFA)</label>
+            <input type="number" id="paramTarifPce000" class="form-input" value="25000" step="5000">
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Entrée universelle obligatoire</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-sm">
+          Enregistrer les Nouveaux Paramètres Financiers
+        </button>
+      </form>
+    </div>
+
+  </main>
+
+  <footer class="main-footer">
+    <div class="container" style="text-align: center; color: var(--text-muted); font-size: 0.82rem;">
+      © 2026 PCE ICN International Certification & EERLS TRUST GROUP · Back-Office Sécurisé.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/referentiel.js"></script>
+  <script src="js/backoffice.js"></script>
+</body>
+</html>

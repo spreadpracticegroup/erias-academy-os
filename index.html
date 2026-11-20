@@ -1,686 +1,591 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="cyber">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ERIAS ACADEMY OS | Devenez Expert Cybersécurité Certifié PCE IC</title>
-  <meta name="description" content="Formation certifiante de 7 mois en Cyber-Résilience & Éthique Numérique par ERIAS SECURITY GABON et PCE ICN Central. Profils Moniteur, Formateur, Auditeur. Inscription : 25 000 FCFA.">
+  <title>PCE ICN & PCE IC-ACADÉMIE DES MÉTIERS — La Confiance Numérique & l'Excellence Professionnelle</title>
+  <meta name="description" content="30 formations certifiantes, 7 filières cybersécurité, 6 pôles métiers en alternance et VAE. Parcours verrouillé par prérequis et certificats vérifiables par QR code.">
   
   <!-- CSS -->
+  <link rel="stylesheet" href="css/theme-pce.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/landing.css">
 </head>
-<body>
+<body class="african-pattern-bg">
 
-  <!-- Navigation Bar -->
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <a href="index.html" class="brand-logo">
-        <div class="brand-badge">E</div>
+  <!-- En-tête Institutionnel avec Switcher d'Univers -->
+  <header class="main-header">
+    <div class="container header-inner">
+      
+      <!-- Brand Logo Dynamique -->
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/logo-pce-icn.jpg" alt="Logo PCE ICN" id="headerLogoImg" class="official-logo-img">
         <div class="brand-text">
-          <span class="brand-title">ERIAS ACADEMY OS</span>
-          <span class="brand-subtitle">PCE ICN CENTRAL · GABON</span>
+          <h2 id="headerBrandTitle">PCE-ICN CENTRAL</h2>
+          <span id="headerBrandSub">CYBERSÉCURITÉ & CONFIANCE NUMÉRIQUE</span>
         </div>
       </a>
 
+      <!-- Sélecteur d'Univers Dynamique (Cyber vs Métiers) -->
+      <div class="universe-switch-bar">
+        <button class="universe-btn active" data-universe="cyber" title="Accéder à l'Univers Cybersécurité">
+          <span>🛡️ Cybersécurité PCE ICN</span>
+        </button>
+        <button class="universe-btn" data-universe="metiers" title="Accéder à l'Académie des Métiers & VAE">
+          <span>⚙️ Académie des Métiers</span>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
       <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#mission" class="nav-link">Piliers</a></li>
-          <li><a href="#profils" class="nav-link">Les 3 Profils</a></li>
-          <li><a href="#certifications" class="nav-link">Niveaux PCE ICN</a></li>
-          <li><a href="#tarifs" class="nav-link">Tarifs & Durée</a></li>
-          <li><a href="#territoires" class="nav-link">Territoires</a></li>
-          <li><a href="#faq" class="nav-link">FAQ</a></li>
-          <li><a href="admin.html" class="btn btn-sm btn-admin">⚙️ Admin OS</a></li>
+        <ul class="nav-menu" id="mainNavMenu">
+          <li class="nav-item"><a href="#univers">Les 2 Univers</a></li>
+          <li class="nav-item"><a href="#prerequis">Socle PCE-000</a></li>
+          <li class="nav-item"><a href="#simulateur">Facilité de Paiement</a></li>
+          <li class="nav-item"><a href="masterclass.html">Masterclass</a></li>
+          <li class="nav-item"><a href="espace-candidat.html">Espace Candidat</a></li>
+          <li class="nav-item"><a href="backoffice.html" class="badge badge-silver">Back-Office</a></li>
         </ul>
       </nav>
 
-      <div class="nav-actions">
-        <a href="inscription.html" class="btn btn-gold btn-sm">JE RÉSERVE MA PLACE</a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu mobile">☰</button>
+      <!-- Action Button -->
+      <div>
+        <a href="candidature.html" class="btn btn-primary btn-sm">
+          Déposer ma Demande →
+        </a>
       </div>
+
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-glow-1"></div>
-    <div class="hero-glow-2"></div>
-    <div class="container hero-content">
-      
-      <div class="hero-badge-wrap">
-        <span class="badge badge-gold">
-          🛡️ FORMATION NATIONALE & INTERNATIONALE · ERIAS SECURITY GABON
-        </span>
+  <!-- Hero Section d'Accueil -->
+  <section class="hero-section" style="padding: 4.5rem 0 3.5rem; position: relative;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center;">
+        
+        <!-- Texte Hero -->
+        <div>
+          <div class="badge badge-primary" style="margin-bottom: 1.25rem;">
+            CERTIFICATION INTERNATIONALE · RÉFÉRENTIEL AFRICAIN D'EXCELLENCE
+          </div>
+          
+          <h1 style="font-size: clamp(2.3rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem;">
+            LA CYBER-RÉSILIENCE & <br>
+            <span class="gold-text" style="color: var(--primary);">LES MÉTIERS D'AVENIR</span> <br>
+            SE CERTIFIENT ICI
+          </h1>
+
+          <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin-bottom: 2.25rem;">
+            <strong>30 formations, 7 filières cybersécurité, 6 pôles métiers en alternance et programme de VAE</strong>. Parcours sécurisés par prérequis stricts, Facilité de Paiement solidaire sans prêt bancaire et certificats vérifiables par QR code.
+          </p>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+            <a href="candidature.html" class="btn btn-primary btn-lg">
+              <span>Demande d'Inscription</span>
+              <span>→</span>
+            </a>
+            <a href="#simulateur" class="btn btn-outline btn-lg">
+              <span>Simulateur Facilité de Paiement</span>
+            </a>
+            <a href="espace-candidat.html" class="btn btn-silver btn-lg">
+              <span>Vérifier un QR Code</span>
+            </a>
+          </div>
+
+          <!-- Entrée Socle PCE-000 Banner -->
+          <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(0, 168, 107, 0.1); border: 1px solid var(--primary); padding: 0.75rem 1.25rem; border-radius: var(--radius-full); font-size: 0.9rem; flex-wrap: wrap;">
+            <span class="badge badge-primary">ENTRÉE SOCLE</span>
+            <span><strong>PCE-000</strong> Module Basique — Sensibilisation</span>
+            <span style="color: var(--primary-light); font-weight: 800;">25 000 FCFA</span>
+            <span style="text-decoration: line-through; color: var(--text-muted); font-size: 0.8rem;">50 000 FCFA</span>
+            <a href="candidature.html?type=pce-000" style="color: var(--text-white); font-weight: 700; text-decoration: underline; margin-left: 0.5rem;">S'inscrire d'abord →</a>
+          </div>
+        </div>
+
+        <!-- Sceau & Logos Officiels Flottants -->
+        <div style="text-align: center; position: relative;">
+          <div style="position: relative; display: inline-block;">
+            <div style="position: absolute; inset: -15px; border-radius: 50%; border: 2px dashed var(--primary); animation: rotate 35s linear infinite; opacity: 0.4;"></div>
+            <img src="assets/logo-pce-icn.jpg" alt="Médaille PCE-ICN" style="width: 280px; height: 280px; border-radius: 50%; box-shadow: 0 0 50px var(--primary-glow); border: 4px solid var(--primary);">
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <div style="font-family: var(--font-serif); font-size: 0.9rem; letter-spacing: 0.2em; color: var(--secondary); text-transform: uppercase;">
+              LA CONFIANCE NUMÉRIQUE, MADE IN AFRICA
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem;">
+              Protection, Conformité et Excellence sous l'égide de <strong>EERLS TRUST GROUP</strong>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </div>
 
-      <h1 class="hero-title">
-        DEVENEZ EXPERT CYBERSÉCURITÉ <br>
-        <span class="gold-text">CERTIFIÉ PCE IC</span>
-      </h1>
+    <!-- Bandeau Stats en 4 Blocs -->
+    <div style="margin-top: 4rem; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); background: rgba(7, 14, 28, 0.75);">
+      <div class="container" style="display: grid; grid-template-columns: repeat(4, 1fr); padding: 2rem 0;">
+        <div style="text-align: center; border-right: 1px solid var(--border-subtle);">
+          <div style="font-size: 2.8rem; font-weight: 800; color: var(--primary); font-family: var(--font-mono);">30</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Formations Certifiantes</div>
+        </div>
+        <div style="text-align: center; border-right: 1px solid var(--border-subtle);">
+          <div style="font-size: 2.8rem; font-weight: 800; color: var(--secondary-silver); font-family: var(--font-mono);">7</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Filières Cybersécurité</div>
+        </div>
+        <div style="text-align: center; border-right: 1px solid var(--border-subtle);">
+          <div style="font-size: 2.8rem; font-weight: 800; color: #f59e0b; font-family: var(--font-mono);">6</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Pôles Métiers en Alternance</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2.8rem; font-weight: 800; color: var(--primary); font-family: var(--font-mono);">10+</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Territoires Connectés</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <p class="hero-subtitle">
-        La certification qui fait de la <strong>confiance numérique un standard</strong>. Une formation d'élite de <strong>7 mois</strong> pour acquérir les compétences indispensables en hygiène numérique, cyber-résilience opérationnelle et éthique numérique adaptées aux réalités des entreprises et administrations de nos territoires.
+  <!-- SECTION : CHOIX DES DEUX UNIVERS -->
+  <section class="container" id="univers" style="padding: 5rem 1.5rem;">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 3.5rem;">
+      <span class="badge badge-primary">DEUX UNIVERS D'EXCELLENCE</span>
+      <h2 style="font-size: 2.4rem; font-weight: 800; margin: 0.75rem 0;">Choisissez Votre Voie de Qualification</h2>
+      <p style="color: var(--text-secondary);">
+        Deux institutions partenaires, une même rigueur de labellisation et l'intégration directe au réseau panafricain <strong>ERA NETWORK PARTNERS</strong> dès votre inscription.
       </p>
-
-      <div class="hero-cta-group">
-        <a href="inscription.html" class="btn btn-gold btn-lg">
-          <span>JE RÉSERVE MA PLACE</span>
-          <span style="font-size: 1.2rem;">→</span>
-        </a>
-        <a href="#profils" class="btn btn-outline-gold btn-lg">
-          <span>Découvrir les 3 Profils</span>
-        </a>
-      </div>
-
-      <!-- Live metrics strip -->
-      <div class="hero-metrics-strip">
-        <div class="metric-item">
-          <span class="metric-value">7 MOIS</span>
-          <span class="metric-label">Durée Intensive</span>
-          <span class="metric-sub">15 Oct 2026 - 15 Mai 2027</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-value">25 000 F</span>
-          <span class="metric-label">Frais d'inscription</span>
-          <span class="metric-sub">+ 37 000 FCFA x 7 mois</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-value">700</span>
-          <span class="metric-label">Places Disponibles</span>
-          <span class="metric-sub">14 Groupes de 50 apprenants</span>
-        </div>
-        <div class="metric-item">
-          <span class="metric-value">3 PROFILS</span>
-          <span class="metric-label">Parcours Spécialisés</span>
-          <span class="metric-sub">Moniteur · Formateur · Auditeur</span>
-        </div>
-      </div>
-
-      <!-- Live Seat Notification Banner -->
-      <div style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(212, 175, 55, 0.08); border: 1px solid var(--border-gold); padding: 0.5rem 1.25rem; border-radius: var(--radius-full); font-size: 0.85rem;">
-        <span style="color: var(--success);">● En cours</span>
-        <span id="seatsRemainingBadge" style="color: var(--gold-light); font-weight: 600;">Places restantes en direct</span>
-        <span style="color: var(--text-muted);">· Cohortes limitées à 50 par groupe</span>
-      </div>
-
     </div>
-  </section>
 
-  <!-- Section 1 : Notre Mission & Les 3 Piliers -->
-  <section class="section-pad" id="mission">
-    <div class="container">
-      <div class="section-head">
-        <span class="badge badge-cyan section-tag">RÉFÉRENTIEL UNIQUE DE CONFIANCE</span>
-        <h2 class="section-title">Trois piliers, un même standard de confiance</h2>
-        <p class="section-desc">
-          Protection, Conformité et Excellence : un socle méthodologique complet adapté aux réalités des entreprises, administrations et citoyens de nos territoires.
-        </p>
-      </div>
-
-      <div class="pillars-grid">
-        <!-- Pilier 1 -->
-        <div class="pillar-card">
-          <div class="pillar-icon">🧼</div>
-          <h3 class="pillar-title">Hygiène numérique</h3>
-          <p class="pillar-desc">
-            Les gestes essentiels qui protègent les données, les postes de travail, les équipes et les usagers au quotidien face aux ransomwares et à l'ingénierie sociale.
-          </p>
-        </div>
-
-        <!-- Pilier 2 -->
-        <div class="pillar-card">
-          <div class="pillar-icon">🛡️</div>
-          <h3 class="pillar-title">Cyber-résilience</h3>
-          <p class="pillar-desc">
-            Prévenir, détecter et absorber les incidents critiques pour continuer à délivrer les services opérationnels essentiels, même sous cyberattaque avancée.
-          </p>
-        </div>
-
-        <!-- Pilier 3 -->
-        <div class="pillar-card">
-          <div class="pillar-icon">⚖️</div>
-          <h3 class="pillar-title">Éthique numérique</h3>
-          <p class="pillar-desc">
-            Des usages responsables, conformes aux cadres réglementaires de protection des données personnelles et respectueux des personnes et de la souveraineté territoriale.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 2 : Les 3 Profils Métiers (Point Central) -->
-  <section class="section-pad" id="profils" style="background: rgba(8, 14, 28, 0.5);">
-    <div class="container">
-      <div class="section-head">
-        <span class="badge badge-gold section-tag">PARCOURS SUR-MESURE</span>
-        <h2 class="section-title">Les 3 profils de formation</h2>
-        <p class="section-desc">
-          Choisissez votre trajectoire selon vos objectifs : devenez le relais opérationnel de votre structure, le formateur référent ou l'auditeur accrédité.
-        </p>
-      </div>
-
-      <div class="profiles-grid">
-        <!-- Profil 1 : Moniteur -->
-        <div class="profile-card">
-          <div class="profile-header">
-            <span class="profile-badge badge-cyan">PROFIL 01</span>
-            <h3 class="profile-title">Moniteur</h3>
-            <p class="profile-role">Sensibilisateur opérationnel & Hygiène numérique</p>
-            <p class="profile-desc">
-              Le premier rempart de l'organisation. Vous insufflez les bonnes pratiques d'hygiène numérique auprès de tous les collaborateurs.
-            </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+      
+      <!-- CARTE UNIVERS A : CYBERSÉCURITÉ PCE ICN -->
+      <div class="card-theme card-highlight" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+            <img src="assets/logo-pce-icn.jpg" alt="PCE ICN" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--primary);">
+            <span class="badge badge-primary">PARCOURS 18 MOIS</span>
           </div>
 
-          <ul class="profile-features">
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Sensibilisation active des équipes et usagers</span>
+          <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem;">
+            Formation en Cybersécurité PCE ICN
+          </h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Parcours d'élite en Cyber-Résilience, SOC, Audit de conformité, Éthique et Sécurité des Systèmes Industriels.
+          </p>
+
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; font-size: 0.9rem;">
+            <li style="display: flex; gap: 0.5rem; align-items: center;">
+              <span style="color: var(--primary);">✓</span>
+              <span><strong>Prérequis obligatoire :</strong> Validation du socle PCE-000</span>
             </li>
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Déploiement des 10 règles d'hygiène informatique</span>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">
+              <span style="color: var(--primary);">✓</span>
+              <span><strong>Méthode Facilité de Paiement :</strong> Pas de prêt, ni intérêts</span>
             </li>
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Détection et escalade des premiers signaux faibles</span>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">
+              <span style="color: var(--primary);">✓</span>
+              <span><strong>Stage Freelance Stagiaire :</strong> Solde réglé par missions</span>
             </li>
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Badge officiel <strong>PCE ICN Start</strong> inclus</span>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">
+              <span style="color: var(--primary);">✓</span>
+              <span><strong>Contrat signé à cinq :</strong> Légalisation obligatoire en mairie</span>
             </li>
           </ul>
+        </div>
 
-          <div class="profile-footer">
-            <div style="margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Inscription : </span>
-              <strong style="color: var(--gold-light); font-size: 1.1rem;">25 000 FCFA</strong>
-              <div style="font-size: 0.75rem; color: var(--text-secondary);">+ 37 000 FCFA / mois pendant 7 mois</div>
-            </div>
-            <a href="inscription.html?profil=Moniteur" class="btn btn-outline-gold" style="width: 100%;">
-              Choisir Profil Moniteur
+        <div>
+          <div style="margin-bottom: 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+            Établissement support : <strong>EERLS TRUST ACADEMY</strong>
+          </div>
+          <div style="display: flex; gap: 1rem;">
+            <a href="candidature.html?univers=cyber" class="btn btn-primary" style="flex: 1;">
+              Candidater en Cybersécurité →
             </a>
-          </div>
-        </div>
-
-        <!-- Profil 2 : Formateur (Featured) -->
-        <div class="profile-card featured">
-          <div class="profile-header">
-            <span class="profile-badge badge-gold">PROFIL 02 · RECOMMANDÉ</span>
-            <h3 class="profile-title">Formateur</h3>
-            <p class="profile-role">Pédagogue expert & Entraîneur cyber-résilience</p>
-            <p class="profile-desc">
-              Le transmetteur d'excellence. Vous concevez et animez des ateliers, exercices de crise et modules pour qualifier durablement les organisations.
-            </p>
-          </div>
-
-          <ul class="profile-features">
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Ingénierie pédagogique appliquée à la cybersécurité</span>
-            </li>
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Animation d'exercices de crise et simulations de phishing</span>
-            </li>
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Accompagnement méthodologique des plans d'action 90j</span>
-            </li>
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Éligibilité aux missions du réseau <strong>ERA Network</strong></span>
-            </li>
-          </ul>
-
-          <div class="profile-footer">
-            <div style="margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Inscription : </span>
-              <strong style="color: var(--gold-light); font-size: 1.1rem;">25 000 FCFA</strong>
-              <div style="font-size: 0.75rem; color: var(--text-secondary);">+ 37 000 FCFA / mois pendant 7 mois</div>
-            </div>
-            <a href="inscription.html?profil=Formateur" class="btn btn-gold" style="width: 100%;">
-              Choisir Profil Formateur
-            </a>
-          </div>
-        </div>
-
-        <!-- Profil 3 : Auditeur -->
-        <div class="profile-card">
-          <div class="profile-header">
-            <span class="profile-badge badge-warning">PROFIL 03 · EXCELLENCE</span>
-            <h3 class="profile-title">Auditeur</h3>
-            <p class="profile-role">Évaluateur certifié & Garant de conformité</p>
-            <p class="profile-desc">
-              L'expert en gouvernance. Vous réalisez les audits de maturité complets et préparez les organisations à la certification officielle PCE ICN.
-            </p>
-          </div>
-
-          <ul class="profile-features">
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Audit de conformité sur site selon le référentiel PCE</span>
-            </li>
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Évaluation de la souveraineté et gouvernance des données</span>
-            </li>
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Rédaction de rapports officiels pour le comité central</span>
-            </li>
-            <li class="profile-feature-item">
-              <span class="profile-feature-icon">✦</span>
-              <span>Accréditation internationale <strong>PCE ICN Sovereign</strong></span>
-            </li>
-          </ul>
-
-          <div class="profile-footer">
-            <div style="margin-bottom: 1.25rem;">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Inscription : </span>
-              <strong style="color: var(--gold-light); font-size: 1.1rem;">25 000 FCFA</strong>
-              <div style="font-size: 0.75rem; color: var(--text-secondary);">+ 37 000 FCFA / mois pendant 7 mois</div>
-            </div>
-            <a href="inscription.html?profil=Auditeur" class="btn btn-outline-gold" style="width: 100%;">
-              Choisir Profil Auditeur
-            </a>
+            <button class="btn btn-outline universe-btn" data-universe="cyber">
+              Activer Thème Cyber
+            </button>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Section 3 : Les 3 Niveaux de Certification PCE ICN -->
-  <section class="section-pad" id="certifications">
-    <div class="container">
-      <div class="section-head">
-        <span class="badge badge-cyan section-tag">RECONNAISSANCE INTERNATIONALE</span>
-        <h2 class="section-title">Trois niveaux de certification PCE ICN</h2>
-        <p class="section-desc">
-          Un parcours progressif, évalué par des auditeurs accrédités et validé par le comité international.
-        </p>
-      </div>
-
-      <div class="certif-grid">
-        <!-- Badge 1 -->
-        <div class="certif-card">
-          <div class="certif-badge-pill">01</div>
-          <span class="badge badge-gold" style="width: fit-content; margin-bottom: 0.75rem;">Certification</span>
-          <h3 class="certif-name">PCE ICN Start</h3>
-          <p class="certif-headline">Le socle : hygiène numérique et bonnes pratiques pour toutes les équipes.</p>
-          <ul class="certif-list">
-            <li>Auto-évaluation de maturité</li>
-            <li>Plan d'action 90 jours</li>
-            <li>Sensibilisation active des équipes</li>
-          </ul>
-        </div>
-
-        <!-- Badge 2 -->
-        <div class="certif-card" style="border-color: var(--border-gold);">
-          <div class="certif-badge-pill" style="border-color: var(--gold-light);">02</div>
-          <span class="badge badge-gold" style="width: fit-content; margin-bottom: 0.75rem;">Certification</span>
-          <h3 class="certif-name">PCE ICN Resilience</h3>
-          <p class="certif-headline">La robustesse opérationnelle face aux incidents et aux crises cyber.</p>
-          <ul class="certif-list">
-            <li>Audit complet sur site</li>
-            <li>Scénarios de crise et exercices immersifs</li>
-            <li>Revue par le comité de certification</li>
-          </ul>
-        </div>
-
-        <!-- Badge 3 -->
-        <div class="certif-card">
-          <div class="certif-badge-pill">03</div>
-          <span class="badge badge-gold" style="width: fit-content; margin-bottom: 0.75rem;">Certification</span>
-          <h3 class="certif-name">PCE ICN Sovereign</h3>
-          <p class="certif-headline">L'excellence : souveraineté des données et éthique numérique.</p>
-          <ul class="certif-list">
-            <li>Gouvernance et conformité réglementaire</li>
-            <li>Éthique et usages responsables</li>
-            <li>Accompagnement continu & réseau d'élite</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4 : Organisation Promotion 2026-2027 (700 places, 14 groupes de 50) -->
-  <section class="section-pad" style="background: rgba(11, 20, 42, 0.4);">
-    <div class="container">
-      <div class="section-head">
-        <span class="badge badge-gold section-tag">PROMOTION LIMITÉE</span>
-        <h2 class="section-title">700 apprenants répartis en 14 groupes de 50</h2>
-        <p class="section-desc">
-          Pour garantir un niveau d'excellence pédagogique et un suivi individualisé, les cohortes sont plafonnées à 50 participants maximum par groupe.
-        </p>
-      </div>
-
-      <div class="groups-overview-card">
-        <div class="progress-info">
-          <span><strong>Remplissage de la Promotion</strong></span>
-          <span id="globalProgressText" style="color: var(--gold-light); font-weight: 700;">Calcul en direct...</span>
-        </div>
-        <div class="progress-track">
-          <div class="progress-fill" id="globalProgressFill" style="width: 15%;"></div>
-        </div>
-
-        <div style="margin-top: 2rem;">
-          <h4 style="font-size: 1rem; color: var(--text-white); margin-bottom: 1rem;">
-            Répartition en temps réel des 14 Cohortes (50 places / groupe) :
-          </h4>
-          <div class="groups-mini-grid" id="groupsMiniGrid">
-            <!-- Rendu dynamique par landing.js -->
+      <!-- CARTE UNIVERS B : PCE IC-ACADÉMIE DES MÉTIERS -->
+      <div class="card-theme" style="border-color: rgba(212, 175, 55, 0.4); display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+            <img src="assets/logo-pce-ic-metiers.jpg" alt="PCE IC Métiers" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid #d4af37;">
+            <span class="badge" style="background: rgba(212, 175, 55, 0.15); border: 1px solid #d4af37; color: #f7e08d;">
+              6 À 24 MOIS · ALTERNANCE & VAE
+            </span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Section 5 : Investissement & Modalités Financières -->
-  <section class="section-pad" id="tarifs">
-    <div class="container">
-      <div class="pricing-box">
-        <div class="pricing-header">
-          <span class="badge badge-gold" style="margin-bottom: 0.75rem;">TARIF OFFICIEL HOMOLOGUÉ</span>
-          <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Investissez dans votre avenir professionnel</h2>
-          <p style="color: var(--text-secondary);">
-            Une tarification transparente, accessible et échelonnée sur les 7 mois du cursus d'excellence.
+          <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem;">
+            PCE IC-Académie des Métiers
+          </h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Formation Professionnelle et Programme de VAE certifiée dans les technologies d'avenir et métiers de terrain.
           </p>
+
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; font-size: 0.9rem;">
+            <li style="display: flex; gap: 0.5rem; align-items: center;">
+              <span style="color: #d4af37;">✓</span>
+              <span><strong>6 Pôles d'excellence :</strong> Solaire, Drones, Télécoms, IA, Auto, Info</span>
+            </li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">
+              <span style="color: #d4af37;">✓</span>
+              <span><strong>Alternance en 3 volets :</strong> E-learning, Masterclass, Entreprise</span>
+            </li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">
+              <span style="color: #d4af37;">✓</span>
+              <span><strong>Programme VAE :</strong> Valorisation des acquis (≥ 3 ans d'expérience)</span>
+            </li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">
+              <span style="color: #d4af37;">✓</span>
+              <span><strong>Facilité de paiement adaptée :</strong> Mensualités alignées</span>
+            </li>
+          </ul>
         </div>
 
-        <div class="pricing-amounts">
-          <div class="price-card">
-            <div class="price-tag-sub">À L'INSCRIPTION</div>
-            <div class="price-number">25 000 <span class="price-unit">FCFA</span></div>
-            <div class="price-desc">Sécurise votre place dans la cohorte & valide votre kit d'intégration</div>
+        <div>
+          <div style="margin-bottom: 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+            Titre officiel : <strong>Certification des Compétences Professionnelles</strong>
           </div>
-
-          <div style="font-size: 1.75rem; color: var(--gold-primary); font-weight: 800;">+</div>
-
-          <div class="price-card">
-            <div class="price-tag-sub">MENSUALITÉS DE FORMATION</div>
-            <div class="price-number">37 000 <span class="price-unit">FCFA</span></div>
-            <div class="price-desc">Par mois pendant 7 mois (du 15 Oct 2026 au 15 Mai 2027)</div>
+          <div style="display: flex; gap: 1rem;">
+            <a href="candidature.html?univers=metiers" class="btn btn-primary" style="flex: 1; background: linear-gradient(135deg, #f7e08d 0%, #d4af37 100%); color: #070e1c;">
+              Candidater aux Métiers / VAE →
+            </a>
+            <button class="btn btn-outline universe-btn" data-universe="metiers">
+              Activer Thème Métiers
+            </button>
           </div>
         </div>
+      </div>
 
-        <div class="pricing-features-grid">
-          <div class="p-feature-item">
-            <span class="p-check">✓</span>
-            <span>Accès complet à la plateforme pédagogique ERIAS ACADEMY OS</span>
-          </div>
-          <div class="p-feature-item">
-            <span class="p-check">✓</span>
-            <span>Supervision et mentorat par des auditeurs accrédités PCE ICN</span>
-          </div>
-          <div class="p-feature-item">
-            <span class="p-check">✓</span>
-            <span>Examens officiels et passage des certifications reconnues</span>
-          </div>
-          <div class="p-feature-item">
-            <span class="p-check">✓</span>
-            <span>Adhésion au réseau d'affaires international ERA NETWORK PARTNERS</span>
-          </div>
-          <div class="p-feature-item">
-            <span class="p-check">✓</span>
-            <span>Livraison sécurisée des attestations officielles via Elds Relay Africa</span>
-          </div>
-          <div class="p-feature-item">
-            <span class="p-check">✓</span>
-            <span>Accompagnement à l'insertion et missions d'audit post-formation</span>
-          </div>
-        </div>
+    </div>
+  </section>
 
-        <div class="pricing-cta-wrap">
-          <a href="inscription.html" class="btn btn-gold btn-lg">
-            <span>JE RÉSERVE MA PLACE (25 000 FCFA)</span>
-            <span>→</span>
+  <!-- SECTION : VÉRIFICATEUR SOCLE PCE-000 (PRÉREQUIS NON NÉGOCIABLE) -->
+  <section class="container" id="prerequis" style="padding: 3rem 1.5rem 5rem;">
+    <div style="background: linear-gradient(180deg, #0c1833 0%, #060c1c 100%); border: 1.5px solid var(--border-color); border-radius: var(--radius-xl); padding: 3rem; position: relative;">
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        <div>
+          <span class="badge badge-primary">PRÉREQUIS OBLIGATOIRE EN CYBERSÉCURITÉ</span>
+          <h2 style="font-size: 2.1rem; font-weight: 800; margin: 0.75rem 0 1rem;">
+            Module Basique PCE-000 : Le Sésame d'Entrée
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
+            « Poser le socle non négociable de tout parcours PCE ICN : comprendre les menaces, adopter une hygiène numérique irréprochable et agir avec éthique. <strong>Sans ce module validé, aucune autre formation en cybersécurité n'est débloquée.</strong> »
+          </p>
+
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+            <div style="background: rgba(255,255,255,0.05); padding: 0.75rem 1.25rem; border-radius: var(--radius-md);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Format</div>
+              <strong style="color: var(--text-white);">30h en ligne + Examen</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 0.75rem 1.25rem; border-radius: var(--radius-md);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Certificat Délivré</div>
+              <strong style="color: var(--primary-light);">Niveaux 1 & 2</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 0.75rem 1.25rem; border-radius: var(--radius-md);">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Tarif d'Accès</div>
+              <strong style="color: #f7e08d;">25 000 FCFA</strong>
+            </div>
+          </div>
+
+          <a href="candidature.html?type=pce-000" class="btn btn-primary">
+            S'inscrire directement au Socle PCE-000 (25 000 FCFA) →
           </a>
-          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">
-            Paiement mobile disponible : Airtel Money, Moov Money, Virement ou Relais agréés.
+        </div>
+
+        <!-- Boîte de Vérification en direct -->
+        <div style="background: rgba(4, 9, 20, 0.75); border: 1px solid var(--border-subtle); padding: 2rem; border-radius: var(--radius-lg);">
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Avez-vous déjà votre attestation PCE-000 ?</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            Entrez votre numéro de certificat ou de participation pour débloquer votre inscription aux filières de spécialisation :
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Section 6 : Territoires & Déploiement International -->
-  <section class="section-pad" id="territoires" style="background: rgba(8, 14, 28, 0.4);">
-    <div class="container">
-      <div class="section-head">
-        <span class="badge badge-cyan section-tag">RAYONNEMENT INTERNATIONAL</span>
-        <h2 class="section-title">Une représentation PCE ICN par territoire</h2>
-        <p class="section-desc">
-          Chaque pays dispose de sa représentation « PCE ICN », portée par un opérateur national et adossée à la holding internationale.
-        </p>
-      </div>
-
-      <div class="territories-grid">
-        <!-- Afrique -->
-        <div class="territory-card">
-          <div class="territory-title">
-            <span>Afrique</span>
-            <span class="badge badge-gold">6 Territoires</span>
-          </div>
-          <ul class="territory-list">
-            <li>🇬🇦 <strong>PCE ICN Gabon SA</strong> (ERIAS SECURITY GABON)</li>
-            <li>🇨🇮 <strong>PCE ICN Côte d'Ivoire</strong></li>
-            <li>🇸🇳 <strong>PCE ICN Sénégal</strong></li>
-            <li>🇲🇬 <strong>PCE ICN Madagascar</strong></li>
-            <li>🇷🇼 <strong>PCE ICN Rwanda Ltd</strong> (Spread Practice Tech)</li>
-            <li>🇧🇯 <strong>PCE ICN Bénin SARL</strong></li>
-          </ul>
-        </div>
-
-        <!-- Caraïbes -->
-        <div class="territory-card">
-          <div class="territory-title">
-            <span>Caraïbes</span>
-            <span class="badge badge-cyan">2 Territoires</span>
-          </div>
-          <ul class="territory-list">
-            <li>🇩🇴 <strong>PCE ICN République Dominicaine</strong></li>
-            <li>🇭🇹 <strong>PCE ICN Caraïbes</strong> (Haïti)</li>
-          </ul>
-        </div>
-
-        <!-- Diaspora -->
-        <div class="territory-card">
-          <div class="territory-title">
-            <span>Diaspora</span>
-            <span class="badge badge-gold">2 Territoires</span>
-          </div>
-          <ul class="territory-list">
-            <li>🇨🇦 <strong>PCE ICN Canada (Diaspora)</strong></li>
-            <li>🇫🇷 <strong>PCE ICN Diaspora Europe (France)</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Après la certification -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: var(--radius-xl); padding: 2.5rem; margin-top: 1.5rem;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; text-align: center;">
-          Après la certification : Deux réseaux pour prolonger votre rayonnement
-        </h3>
-        <p style="text-align: center; color: var(--text-secondary); max-width: 760px; margin: 0 auto 2rem;">
-          Rejoignez le réseau des certifiés et faites livrer vos documents officiels dans un point relais Elds Relay Africa, en Afrique comme dans la diaspora.
-        </p>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: var(--radius-md);">
-            <h4 style="color: var(--gold-light); margin-bottom: 0.5rem;">ERA NETWORK PARTNERS</h4>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
-              L'adhésion réservée aux certifiés PCE ICN : annuaire international, opportunités de missions d'audit et de formation, badge officiel et supports à votre nom.
-            </p>
-            <span class="badge badge-gold">Annuaire International</span>
+          <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
+            <input type="text" id="inputCertificatPce000" class="form-control" placeholder="ex: PCE-000-2026-9842" style="flex: 1; padding: 0.85rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); color: white;">
+            <button id="btnVerifierPrerequis" class="btn btn-silver" style="white-space: nowrap;">
+              Vérifier
+            </button>
           </div>
 
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: var(--radius-md);">
-            <h4 style="color: var(--cyber-cyan); margin-bottom: 0.5rem;">Elds Relay Africa</h4>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
-              Créez votre compte de livraison B2B ou B2C, enregistrez vos points relais et générez l'adresse de livraison au format attendu, prête à transmettre.
-            </p>
-            <span class="badge badge-cyan">Points Relais & Logistique</span>
+          <div id="resultPrerequisBox">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">
+              🔒 Statut actuel : Accès verrouillé sans certificat validé.
+            </span>
           </div>
-        </div>
-      </div>
-
-      <!-- Partenaires Officiels -->
-      <div style="margin-top: 3.5rem; text-align: center;">
-        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">
-          Opérateurs, certificateurs et relais technologiques accrédités
-        </span>
-        <div class="partners-logos-wrap">
-          <div class="partner-pill">ERIAS SECURITY GABON</div>
-          <div class="partner-pill">PCE INTERNATIONAL CERTIFICATION</div>
-          <div class="partner-pill">SPREAD PRACTICE TECHNOLOGY RWANDA</div>
-          <div class="partner-pill">ERA NETWORK PARTNERS</div>
-          <div class="partner-pill">ELDS RELAY AFRICA</div>
-          <div class="partner-pill">EERLSZONE MARKET</div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Section 7 : FAQ -->
-  <section class="section-pad" id="faq">
-    <div class="container">
-      <div class="section-head">
-        <span class="badge badge-gold section-tag">QUESTIONS FRÉQUENTES</span>
-        <h2 class="section-title">Tout ce que vous devez savoir</h2>
-        <p class="section-desc">
-          Consultez les réponses aux questions les plus posées sur la formation et les conditions d'admission.
-        </p>
+  <!-- SECTION : SIMULATEUR DE FACILITÉ DE PAIEMENT (PARAMÉTRABLE) -->
+  <section class="container" id="simulateur" style="padding: 2rem 1.5rem 5rem;">
+    <div style="text-align: center; max-width: 820px; margin: 0 auto 3rem;">
+      <span class="badge badge-primary">INNOVATION SOLIDAIRE PCE ICN</span>
+      <h2 style="font-size: 2.3rem; font-weight: 800; margin: 0.5rem 0;">
+        Simulateur de la Facilité de Paiement
+      </h2>
+      <p style="color: var(--text-secondary); font-size: 1.05rem;">
+        « Votre enfant paie une partie pendant la formation, et le reste est réglé plus tard par des missions professionnelles organisées. <strong>PCE ICN n'est pas une banque : aucun prêt, aucun intérêt, aucun frais bancaire.</strong> »
+      </p>
+    </div>
+
+    <div style="background: var(--bg-card); border: 2px solid var(--border-color); border-radius: var(--radius-xl); padding: 3rem; box-shadow: var(--shadow-lg);">
+      <div style="display: grid; grid-template-columns: 1.1fr 1.3fr; gap: 3rem;">
+        
+        <!-- Contrôles du simulateur -->
+        <div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--text-white);">
+            1. Choisissez la Filière ou le Métier
+          </h3>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">
+              Filière Cybersécurité ou Pôle Métier
+            </label>
+            <select id="simFiliereSelect" style="width: 100%; padding: 0.9rem; background: #070e1c; border: 1.5px solid var(--border-color); border-radius: var(--radius-md); color: white; font-family: inherit; font-size: 0.95rem;">
+              <optgroup label="── UNIVERS A : CYBERSÉCURITÉ PCE ICN ──">
+                <option value="FIL-C" selected>Filière C : Cyber-Défense Opérationnelle & SOC (2 500 000 FCFA)</option>
+                <option value="FIL-G">Filière G : Gouvernance, Risques & Conformité GRC (2 400 000 FCFA)</option>
+                <option value="FIL-F">Filière F : Forensic & Cyber-Renseignement (2 600 000 FCFA)</option>
+                <option value="FIL-A">Filière A : Audit Technique & Tests d'Intrusion (2 700 000 FCFA)</option>
+                <option value="FIL-I">Filière I : Sécurité des Systèmes Industriels SCADA (2 800 000 FCFA)</option>
+                <option value="FIL-E">Filière E : Éthique Numérique & Souveraineté (2 200 000 FCFA)</option>
+              </optgroup>
+              <optgroup label="── UNIVERS B : ACADÉMIE DES MÉTIERS ──">
+                <option value="MET-DRO-01">Pilotage de Drones Civils - 6 mois (1 200 000 FCFA)</option>
+                <option value="MET-SOL-01">Installation Panneaux Photovoltaïques - 9 mois (1 350 000 FCFA)</option>
+                <option value="MET-AUT-02">Diagnostic Électronique Auto & Valise - 12 mois (1 750 000 FCFA)</option>
+                <option value="MET-TEL-01">Technicien Fibre & Télécoms - 12 mois (1 600 000 FCFA)</option>
+                <option value="MET-DIG-02">Community Management & IA - 9 mois (1 100 000 FCFA)</option>
+                <option value="MET-INF-03">Maintenance PC & Support IT - 12 mois (1 200 000 FCFA)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- Rappel Contrat à Cinq -->
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem;">
+            <div style="font-weight: 700; color: var(--primary-light); font-size: 0.95rem; margin-bottom: 0.5rem;">
+              📜 Les 4 Piliers du Contrat :
+            </div>
+            <ul style="font-size: 0.82rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem; list-style: none;">
+              <li>1. PCE ICN n'est pas une banque (zéro prêt, zéro intérêt).</li>
+              <li>2. Le stagiaire ne cherche pas de clients : tout est organisé.</li>
+              <li>3. Solde réglé + thèse validée → le gain passe de 5% à 10%.</li>
+              <li>4. <strong>Contrat signé à cinq</strong> et légalisé en mairie.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Rendu dynamique des chiffres -->
+        <div style="background: #060b17; border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--secondary-silver); display: flex; justify-content: space-between;">
+            <span>Plan Financier Détaillé</span>
+            <span class="badge badge-primary" id="simPartPendantPct">29.8%</span>
+          </h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: var(--radius-sm);">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Coût Total Formation</div>
+              <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-white); font-family: var(--font-mono);" id="simCoutTotal">2 500 000 FCFA</div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: var(--radius-sm);">
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Frais d'Inscription Globaux</div>
+              <div style="font-size: 1.5rem; font-weight: 800; color: #f7e08d; font-family: var(--font-mono);" id="simFraisInscription">80 000 FCFA</div>
+            </div>
+          </div>
+
+          <!-- Jauge de répartition visuelle -->
+          <div style="margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.4rem;">
+              <span>Payé pendant formation (<span id="simPayePendant">744 000 FCFA</span>)</span>
+              <span>Solde en stage (<span id="simSoldeRestant">1 756 000 FCFA</span>)</span>
+            </div>
+            <div style="height: 12px; background: rgba(255,255,255,0.08); border-radius: var(--radius-full); overflow: hidden; display: flex;">
+              <div id="simBarPendant" style="width: 29.8%; background: var(--primary); transition: width 0.4s ease;"></div>
+              <div id="simBarSolde" style="width: 70.2%; background: var(--secondary); transition: width 0.4s ease;"></div>
+            </div>
+          </div>
+
+          <!-- Chiffres clés opérationnels -->
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-secondary);">Mensualité pendant les cours (<span id="simNbMensualites">12 mois</span>) :</span>
+              <strong style="color: var(--primary-light); font-size: 1.1rem;" id="simMensualite">62 000 FCFA / mois</strong>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-secondary);">Missions de sensibilisation estimées en stage :</span>
+              <strong style="color: var(--secondary-silver);" id="simNbParticipants">≈ 74 participants</strong>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-secondary);">Gain immédiat stagiaire (5% par participant) :</span>
+              <strong style="color: #34d399;" id="simGainStagiaireImmediat">1 250 FCFA</strong>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <span style="color: var(--text-secondary);">Gain après soutenance thèse (10% par participant) :</span>
+              <strong style="color: #f7e08d;" id="simGainApresThese">2 500 FCFA</strong>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.75rem;">
+            <a href="candidature.html" class="btn btn-primary" style="width: 100%; text-align: center;">
+              Déposer mon dossier avec cette simulation →
+            </a>
+          </div>
+        </div>
+
       </div>
-
-      <div class="faq-grid">
-        <div class="faq-item active">
-          <button class="faq-question">
-            <span>À qui s'adresse cette formation de 7 mois ?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            La formation est ouverte à toute personne souhaitant développer des compétences certifiées en cybersécurité : responsables informatiques, coordinateurs administratifs, formateurs, futurs auditeurs et professionnels en reconversion. Les 3 profils (Moniteur, Formateur, Auditeur) permettent d'ajuster le niveau d'expertise selon votre profil initial.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Comment s'effectue le paiement des 25 000 FCFA d'inscription ?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Les frais d'inscription de 25 000 FCFA sont réglables via Airtel Money, Moov Money, virement bancaire ou directement auprès de nos points relais partenaires Elds Relay Africa. Dès validation, votre place est sécurisée dans votre groupe (1 à 14).
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Quelle est la reconnaissance du certificat délivré ?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Le label et le certificat PCE ICN sont validés par le comité de certification international PCE ICN Central. Il répond à un standard de conformité et de cyber-résilience déployé dans 10 territoires en Afrique, dans les Caraïbes et la diaspora.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Puis-je suivre la formation à distance ou en présentiel ?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Le parcours est hybride : modules théoriques et simulations en ligne sur la plateforme ERIAS ACADEMY OS, complétés par des ateliers pratiques et des sessions d'audit adaptées aux territoires respectifs.
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom CTA Banner -->
-      <div style="text-align: center; margin-top: 4rem;">
-        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Prêt à intégrer l'élite de la cybersécurité ?</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-          Les places sont limitées à 50 apprenants par groupe pour garantir la qualité de l'apprentissage.
-        </p>
-        <a href="inscription.html" class="btn btn-gold btn-lg">
-          <span>JE RÉSERVE MA PLACE MAINTENANT</span>
-          <span>→</span>
-        </a>
-      </div>
-
     </div>
   </section>
 
-  <!-- Site Footer -->
-  <footer class="site-footer">
+  <!-- SECTION : LES 6 PÔLES DE L'ACADÉMIE DES MÉTIERS -->
+  <section class="container" style="padding: 2rem 1.5rem 5rem;">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+      <span class="badge" style="background: rgba(212, 175, 55, 0.15); border: 1px solid #d4af37; color: #f7e08d;">
+        CATALOGUE PCE IC-ACADÉMIE DES MÉTIERS
+      </span>
+      <h2 style="font-size: 2.2rem; font-weight: 800; margin: 0.5rem 0;">
+        6 Pôles d'Excellence Métiers & Programme de VAE
+      </h2>
+      <p style="color: var(--text-secondary);">
+        Chaque pôle propose des parcours en alternance de 6 à 24 mois, ainsi que l'accès à la Validation des Acquis de l'Expérience (VAE) pour les professionnels de terrain.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+      <!-- Pôle 1 -->
+      <div class="card-theme">
+        <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">💻</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Informatique & Bureautique</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Word, Excel Expert, Maintenance PC, Câblage et Réseaux locaux d'entreprises.
+        </p>
+        <span class="badge badge-primary">4 Métiers Certifiants</span>
+      </div>
+
+      <!-- Pôle 2 -->
+      <div class="card-theme">
+        <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🤖</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Digital & Intelligence Artificielle</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          IA Générative en entreprise, Community Management et Cybersécurité PME.
+        </p>
+        <span class="badge badge-primary">3 Métiers Certifiants</span>
+      </div>
+
+      <!-- Pôle 3 -->
+      <div class="card-theme">
+        <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">📡</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Télécoms, SCADA & Industrie</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Réseaux Fibre/4G/5G, automatismes SCADA industriels et IoT embarqué.
+        </p>
+        <span class="badge badge-primary">4 Métiers Certifiants</span>
+      </div>
+
+      <!-- Pôle 4 -->
+      <div class="card-theme">
+        <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🚁</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Drones & Technologies Aériennes</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Télépilote civil certifié, photogrammétrie, cartographie et maintenance d'aéronefs.
+        </p>
+        <span class="badge badge-primary">4 Métiers Certifiants</span>
+      </div>
+
+      <!-- Pôle 5 -->
+      <div class="card-theme">
+        <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">☀️</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Énergie Solaire & Transition</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Pose photovoltaïque, dimensionnement, diagnostic PV et pompage solaire off-grid.
+        </p>
+        <span class="badge badge-primary">4 Métiers Certifiants</span>
+      </div>
+
+      <!-- Pôle 6 -->
+      <div class="card-theme">
+        <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🚗</div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Automobile & Électronique Embarquée</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Diagnostic sur valise multimarque, calculateurs multiplexés et hybride/électrique.
+        </p>
+        <span class="badge badge-primary">4 Métiers Certifiants</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIED DE PAGE AVEC SCEAU EERLS TRUST ACADEMY ET ERA NETWORK PARTNERS -->
+  <footer class="main-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="brand-logo" style="margin-bottom: 1rem;">
-            <div class="brand-badge">E</div>
-            <div class="brand-text">
-              <span class="brand-title">ERIAS ACADEMY OS</span>
-              <span class="brand-subtitle">PCE ICN CENTRAL · GABON</span>
+      <div style="display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 3.5rem;">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+            <img src="assets/logo-eerls-trust-academy.jpg" alt="EERLS TRUST ACADEMY" style="width: 58px; height: 58px; border-radius: 50%; border: 2px solid #d4af37;">
+            <div>
+              <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-white);">EERLS TRUST ACADEMY</div>
+              <div style="font-size: 0.72rem; color: #f7e08d; letter-spacing: 0.1em; text-transform: uppercase;">
+                ÉCOLE SUPÉRIEURE D'ÉLITE EN TECHNOLOGIE NUMÉRIQUE
+              </div>
             </div>
           </div>
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-            Protection, Conformité et Excellence — la certification en hygiène numérique, cyber-résilience et éthique numérique pour l'Afrique, les Caraïbes et la diaspora.
+            Organisme support officiel assurant la validation académique, la gestion des thèses de fin d'études et la délivrance des certificats avec sceau international.
           </p>
-          <div style="margin-top: 1rem;">
-            <a href="admin.html" class="btn btn-sm btn-admin">Accès Administration</a>
+        </div>
+
+        <div>
+          <h4 style="color: var(--text-white); margin-bottom: 1rem;">Univers & Accès</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem;">
+            <li><a href="candidature.html?univers=cyber" style="color: var(--text-secondary);">Cybersécurité PCE ICN</a></li>
+            <li><a href="candidature.html?univers=metiers" style="color: var(--text-secondary);">Académie des Métiers</a></li>
+            <li><a href="candidature.html?type=pce-000" style="color: var(--text-secondary);">Module Socle PCE-000</a></li>
+            <li><a href="candidature.html?parcours=vae" style="color: var(--text-secondary);">Programme VAE</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: var(--text-white); margin-bottom: 1rem;">Ressources</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem;">
+            <li><a href="masterclass.html" style="color: var(--text-secondary);">Catalogue Masterclass</a></li>
+            <li><a href="masterclass.html#formateurs" style="color: var(--text-secondary);">Formateurs Certifiés</a></li>
+            <li><a href="espace-candidat.html" style="color: var(--text-secondary);">Suivi de Dossier</a></li>
+            <li><a href="backoffice.html" style="color: var(--text-secondary);">Espace Administration</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="badge badge-era" style="margin-bottom: 0.75rem;">ERA NETWORK PARTNERS</div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            Réseau panafricain de professionnels de la cybersécurité, de l'informatique, de l'IA et des métiers technologiques.
+          </p>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">
+            Intégration directe dès la validation de votre dossier d'inscription.
           </div>
         </div>
 
-        <div class="footer-col">
-          <h4>La Formation</h4>
-          <ul class="footer-links">
-            <li><a href="inscription.html?profil=Moniteur">Profil Moniteur</a></li>
-            <li><a href="inscription.html?profil=Formateur">Profil Formateur</a></li>
-            <li><a href="inscription.html?profil=Auditeur">Profil Auditeur</a></li>
-            <li><a href="#tarifs">Tarifs (25 000 FCFA)</a></li>
-            <li><a href="#certifications">Certifications PCE ICN</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Écosystème</h4>
-          <ul class="footer-links">
-            <li><a href="https://pce-icn-international.base44.app/partenaires" target="_blank" rel="noopener">Réseau Partenaires</a></li>
-            <li><a href="https://pce-icn-international.base44.app/era-network" target="_blank" rel="noopener">ERA Network Partners</a></li>
-            <li><a href="https://pce-icn-international.base44.app/livraison" target="_blank" rel="noopener">Livraison Elds Relay</a></li>
-            <li><a href="https://pce-icn-international.base44.app/verifier" target="_blank" rel="noopener">Vérifier un certificat</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Organisation</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
-            <strong>ERIAS SECURITY GABON</strong><br>
-            Opérateur accrédité PCE ICN Central
-          </p>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
-            Formation : 15 Oct 2026 - 15 Mai 2027<br>
-            Capacité : 700 apprenants (14 groupes)
-          </p>
-          <p style="font-size: 0.85rem; color: var(--gold-light);">
-            Contact WhatsApp disponible sur le portail
-          </p>
-        </div>
       </div>
 
-      <div class="footer-bottom">
-        <div>© 2026 PCE ICN International Certification & ERIAS SECURITY GABON · Tous droits réservés.</div>
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: var(--text-muted); flex-wrap: wrap; gap: 1rem;">
+        <div>© 2026 PCE ICN Central, EERLS TRUST GROUP & ERIAS SECURITY GABON. Tous droits réservés.</div>
         <div style="display: flex; gap: 1.5rem;">
-          <a href="#tarifs">Modalités</a>
-          <a href="inscription.html">Inscription</a>
-          <a href="admin.html">Dashboard Admin</a>
+          <a href="#simulateur" style="color: var(--text-muted);">Facilité de Paiement</a>
+          <a href="espace-candidat.html" style="color: var(--text-muted);">Vérifier un Certificat</a>
+          <a href="backoffice.html" style="color: var(--text-muted);">Back-Office</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="js/store.js"></script>
-  <script src="js/landing.js"></script>
+  <script src="js/referentiel.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

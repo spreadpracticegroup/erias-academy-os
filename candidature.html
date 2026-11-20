@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="cyber">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dossier de Demande d'Inscription | PCE ICN & PCE IC-ACADÉMIE DES MÉTIERS</title>
+  <meta name="description" content="Formulaire officiel d'inscription et de simulation de la Facilité de Paiement solidaire PCE ICN.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/theme-pce.css">
+  <link rel="stylesheet" href="css/form.css">
+</head>
+<body class="african-pattern-bg">
+
+  <!-- Header Simplifié -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/logo-pce-icn.jpg" alt="Logo PCE ICN" id="headerLogoImg" class="official-logo-img">
+        <div class="brand-text">
+          <h2 id="headerBrandTitle">PCE-ICN & PCE IC MÉTIERS</h2>
+          <span id="headerBrandSub">DOSSIER OFFICIEL DE CANDIDATURE</span>
+        </div>
+      </a>
+
+      <div>
+        <a href="index.html" class="btn btn-outline btn-sm">← Revenir à l'accueil</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- WIZARD CONTAINER -->
+  <main class="wizard-container">
+    
+    <!-- Barre de Progression 9 Étapes -->
+    <div class="wizard-progress-bar">
+      <div class="wizard-step-indicator active" data-step="1">
+        <div class="step-circle">1</div>
+        <div class="step-label">Univers</div>
+      </div>
+      <div class="wizard-step-indicator" data-step="2">
+        <div class="step-circle">2</div>
+        <div class="step-label">Éligibilité</div>
+      </div>
+      <div class="wizard-step-indicator" data-step="3">
+        <div class="step-circle">3</div>
+        <div class="step-label">Identité</div>
+      </div>
+      <div class="wizard-step-indicator" data-step="4">
+        <div class="step-circle">4</div>
+        <div class="step-label">Garants</div>
+      </div>
+      <div class="wizard-step-indicator" data-step="5">
+        <div class="step-circle">5</div>
+        <div class="step-label">Centre</div>
+      </div>
+      <div class="wizard-step-indicator" data-step="6">
+        <div class="step-circle">6</div>
+        <div class="step-label">Simulation</div>
+      </div>
+      <div class="wizard-step-indicator" data-step="7">
+        <div class="step-circle">7</div>
+        <div class="step-label">Financement</div>
+      </div>
+      <div class="wizard-step-indicator" data-step="8">
+        <div class="step-circle">8</div>
+        <div class="step-label">Signature</div>
+      </div>
+      <div class="wizard-step-indicator" data-step="9">
+        <div class="step-circle">9</div>
+        <div class="step-label">Confirmation</div>
+      </div>
+    </div>
+
+    <!-- BOÎTE WIZARD -->
+    <div class="wizard-card">
+      
+      <!-- ÉTAPE 1 : CHOIX DE L'UNIVERS ET DE LA FILIÈRE -->
+      <div class="wizard-step-panel active" id="stepPanel1">
+        <div class="step-header">
+          <span class="badge badge-primary">ÉTAPE 1 / 9</span>
+          <h2>Sélectionnez Votre Univers & Votre Filière</h2>
+          <p>Choisissez l'orientation académique qui correspond à votre projet professionnel.</p>
+        </div>
+
+        <div class="selection-grid-2">
+          <!-- Choix Cyber -->
+          <div class="choice-box choice-box-univers selected" data-val="cyber">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <img src="assets/logo-pce-icn.jpg" alt="PCE ICN" style="width: 44px; height: 44px; border-radius: 50%;">
+              <h3 style="font-size: 1.15rem; color: var(--text-white);">Cybersécurité PCE ICN</h3>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Parcours d'élite 18 mois, socle obligatoire PCE-000, facilité de paiement et stage freelance.
+            </p>
+          </div>
+
+          <!-- Choix Métiers -->
+          <div class="choice-box choice-box-univers" data-val="metiers">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <img src="assets/logo-pce-ic-metiers.jpg" alt="Académie des Métiers" style="width: 44px; height: 44px; border-radius: 50%;">
+              <h3 style="font-size: 1.15rem; color: var(--text-white);">PCE IC-Académie des Métiers</h3>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Formation professionnelle en alternance (6 à 24 mois) ou VAE certifiée dans les 6 pôles technologiques.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Filière d'Excellence ou Spécialité Métier Visée <span class="req">*</span></label>
+          <select id="wizardFiliereSelect" class="form-select">
+            <!-- Rempli dynamiquement -->
+          </select>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 2 : ÉLIGIBILITÉ ET PRÉREQUIS (PCE-000 OU VAE) -->
+      <div class="wizard-step-panel" id="stepPanel2">
+        <div class="step-header">
+          <span class="badge badge-primary">ÉTAPE 2 / 9</span>
+          <h2>Contrôle des Prérequis d'Admission</h2>
+          <p>Le standard PCE ICN repose sur des compétences de base vérifiées.</p>
+        </div>
+
+        <div style="background: rgba(4, 9, 20, 0.75); border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 1.75rem; margin-bottom: 1.5rem;">
+          <h4 style="color: var(--primary-light); margin-bottom: 0.5rem;">🔒 Prérequis Cybersécurité : Socle PCE-000</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            Avez-vous validé le <strong>Module Basique — Sensibilisation, Hygiène Numérique & Éthique (PCE-000)</strong> ?
+          </p>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Numéro de Certificat ou Attestation PCE-000</label>
+              <input type="text" id="inputCertifPrereqStep2" class="form-input" placeholder="ex: PCE-000-2026-XXXX">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Date d'Obtention de l'Examen en ligne</label>
+              <input type="date" class="form-input">
+            </div>
+          </div>
+
+          <div style="font-size: 0.82rem; color: var(--text-muted);">
+            Vous n'avez pas de niveau en cybersécurité ? <a href="candidature.html?type=pce-000" style="color: var(--primary-light); text-decoration: underline;">Inscrivez-vous directement au Module Basique PCE-000 (25 000 FCFA)</a> pour débloquer votre accès.
+          </div>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+          <h4 style="color: #f7e08d; margin-bottom: 0.5rem;">⚙️ Candidats VAE (Académie des Métiers)</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            Réservé aux praticiens terrain justifiant d'au moins 3 ans d'activité dans le métier choisi :
+          </p>
+          <div class="form-group">
+            <label class="form-label">Nombre d'Années d'Expérience dans le Métier</label>
+            <input type="number" class="form-input" min="0" max="40" placeholder="ex: 5 années">
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 3 : IDENTITÉ DU CANDIDAT -->
+      <div class="wizard-step-panel" id="stepPanel3">
+        <div class="step-header">
+          <span class="badge badge-primary">ÉTAPE 3 / 9</span>
+          <h2>État Civil & Coordonnées du Candidat</h2>
+          <p>Ces informations figureront sur vos documents officiels et attestations internationales.</p>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Nom de Famille <span class="req">*</span></label>
+            <input type="text" id="candidatNom" class="form-input wizard-input" data-field="nom" placeholder="ex: Ondo Mba" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Prénom(s) <span class="req">*</span></label>
+            <input type="text" id="candidatPrenom" class="form-input wizard-input" data-field="prenom" placeholder="ex: Jean-Christophe" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Date de Naissance <span class="req">*</span></label>
+            <input type="date" class="form-input wizard-input" data-field="dateNaissance" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Lieu de Naissance <span class="req">*</span></label>
+            <input type="text" class="form-input wizard-input" data-field="lieuNaissance" placeholder="ex: Libreville" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Téléphone WhatsApp <span class="req">*</span></label>
+            <input type="tel" id="candidatWhatsapp" class="form-input wizard-input" data-field="whatsapp" placeholder="+241 77 00 11 22" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Adresse Email <span class="req">*</span></label>
+            <input type="email" id="candidatEmail" class="form-input wizard-input" data-field="email" placeholder="candidat@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Ville de Résidence <span class="req">*</span></label>
+            <input type="text" class="form-input wizard-input" data-field="ville" placeholder="ex: Libreville, Port-Gentil, Abidjan..." required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Pays <span class="req">*</span></label>
+            <select class="form-select wizard-input" data-field="pays">
+              <option value="Gabon" selected>Gabon</option>
+              <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+              <option value="Sénégal">Sénégal</option>
+              <option value="Rwanda">Rwanda</option>
+              <option value="Bénin">Bénin</option>
+              <option value="Madagascar">Madagascar</option>
+              <option value="France">France (Diaspora)</option>
+              <option value="Canada">Canada (Diaspora)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 4 : GARANTS & CONTRAT À CINQ -->
+      <div class="wizard-step-panel" id="stepPanel4">
+        <div class="step-header">
+          <span class="badge badge-primary">ÉTAPE 4 / 9</span>
+          <h2>Garants & Cadre du Contrat à Cinq</h2>
+          <p id="garantsObligatoireNote">
+            Obligatoire pour le Contrat à Cinq (candidat, 2 parents, chef de quartier, représentant local PCE ICN).
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+          <h4 style="color: var(--primary-light); margin-bottom: 1rem;">1. Coordonnées du Père ou Premier Tuteur</h4>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Nom & Prénom</label>
+              <input type="text" class="form-input wizard-input" data-field="pereNom" placeholder="Nom complet">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Téléphone</label>
+              <input type="tel" class="form-input wizard-input" data-field="pereTel" placeholder="+241 ...">
+            </div>
+          </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+          <h4 style="color: var(--primary-light); margin-bottom: 1rem;">2. Coordonnées de la Mère ou Second Tuteur</h4>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Nom & Prénom</label>
+              <input type="text" class="form-input wizard-input" data-field="mereNom" placeholder="Nom complet">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Téléphone</label>
+              <input type="tel" class="form-input wizard-input" data-field="mereTel" placeholder="+241 ...">
+            </div>
+          </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: var(--radius-md);">
+          <h4 style="color: var(--primary-light); margin-bottom: 1rem;">3. Garant Institutionnel : Chef de Quartier</h4>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Nom du Chef de Quartier</label>
+              <input type="text" class="form-input wizard-input" data-field="chefQuartierNom" placeholder="Nom officiel">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Téléphone & Quartier</label>
+              <input type="text" class="form-input wizard-input" data-field="chefQuartierTel" placeholder="Quartier & contact">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 5 : PARTENAIRE LOCAL & CENTRE D'ACCUEIL -->
+      <div class="wizard-step-panel" id="stepPanel5">
+        <div class="step-header">
+          <span class="badge badge-primary">ÉTAPE 5 / 9</span>
+          <h2>Rattachement Territorial & Partenaire Local</h2>
+          <p>Sélectionnez le centre agréé assurant le suivi logistique, les ateliers et les épreuves sur site.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Partenaire Local Référent <span class="req">*</span></label>
+          <select class="form-select wizard-input" data-field="partenaireLocal">
+            <option value="ERIAS SECURITY GABON (Siège Libreville)" selected>ERIAS SECURITY GABON (Siège Libreville - Gabon)</option>
+            <option value="ERIAS Hub Maritime & Pétrole (Port-Gentil)">ERIAS Hub Maritime & Pétrole (Port-Gentil - Gabon)</option>
+            <option value="PCE ICN Côte d'Ivoire (Abidjan)">PCE ICN Côte d'Ivoire (Plateau - Abidjan)</option>
+            <option value="PCE ICN Sénégal (Dakar)">PCE ICN Sénégal (Almadies - Dakar)</option>
+            <option value="Spread Practice Technology Ltd (Kigali)">Spread Practice Technology Ltd (Kigali - Rwanda)</option>
+            <option value="PCE ICN Bénin SARL (Cotonou)">PCE ICN Bénin SARL (Cotonou)</option>
+            <option value="PCE ICN Madagascar (Antananarivo)">PCE ICN Madagascar (Antananarivo)</option>
+            <option value="PCE ICN Diaspora Europe (Paris)">PCE ICN Diaspora Europe (Paris - France)</option>
+            <option value="PCE ICN Diaspora Amériques (Montréal)">PCE ICN Diaspora Amériques (Montréal - Canada)</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-top: 1.5rem;">
+          <label class="form-label">Entreprise Souhaitée pour l'Alternance / Stage (Optionnel)</label>
+          <input type="text" class="form-input wizard-input" data-field="entrepriseAlternance" placeholder="ex: Banque, Opérateur Télécom, Société Pétrolière, PME partenaire...">
+        </div>
+      </div>
+
+      <!-- ÉTAPE 6 : SIMULATION FACILITÉ DE PAIEMENT EN DIRECT -->
+      <div class="wizard-step-panel" id="stepPanel6">
+        <div class="step-header">
+          <span class="badge badge-primary">ÉTAPE 6 / 9</span>
+          <h2>Simulation Contractuelle de la Facilité de Paiement</h2>
+          <p>Voici la décomposition exacte de votre plan de formation sans intermédiaire bancaire.</p>
+        </div>
+
+        <div style="background: rgba(4, 9, 20, 0.85); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Coût Total de la Filière</div>
+              <div style="font-size: 1.6rem; font-weight: 800; color: white;" id="wizSimCout">2 500 000 FCFA</div>
+            </div>
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Frais d'Inscription Globaux</div>
+              <div style="font-size: 1.6rem; font-weight: 800; color: #f7e08d;" id="wizSimFrais">80 000 FCFA</div>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.25rem; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.92rem;">
+            <div style="display: flex; justify-content: space-between;">
+              <span>Mensualité pendant les cours :</span>
+              <strong style="color: var(--primary-light);" id="wizSimMensualite">62 000 FCFA / mois</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span>Solde restant pris en charge par le stage :</span>
+              <strong style="color: var(--secondary-silver);" id="wizSimSolde">1 756 000 FCFA</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span>Objectif de missions de sensibilisation en stage :</span>
+              <strong style="color: white;" id="wizSimMissions">≈ 74 participants</strong>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; background: rgba(0, 168, 107, 0.1); border: 1px solid var(--primary); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.85rem;">
+            <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer;">
+              <input type="checkbox" required checked>
+              <span><strong>J'ai bien compris que PCE ICN n'est pas une banque :</strong> aucun prêt, aucun intérêt, aucun frais bancaire. Le solde est amorti par mon engagement en stage.</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 7 : MODE DE FINANCEMENT (CANDIDAT VS SPONSOR) -->
+      <div class="wizard-step-panel" id="stepPanel7">
+        <div class="step-header">
+          <span class="badge badge-primary">ÉTAPE 7 / 9</span>
+          <h2>Qui Finance Cette Formation ?</h2>
+          <p>Indiquez si le candidat autofinance sa part ou bénéficie d'un sponsor institutionnel.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem;">
+          <label class="choice-box" style="display: block; cursor: pointer;">
+            <input type="radio" name="financeurType" value="candidat" checked style="margin-bottom: 0.5rem;">
+            <div style="font-weight: 700;">Candidat / Parents</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">Financement familial standard</div>
+          </label>
+
+          <label class="choice-box" style="display: block; cursor: pointer;">
+            <input type="radio" name="financeurType" value="entreprise" style="margin-bottom: 0.5rem;">
+            <div style="font-weight: 700;">Entreprise / Employeur</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">Prise en charge professionnelle</div>
+          </label>
+
+          <label class="choice-box" style="display: block; cursor: pointer;">
+            <input type="radio" name="financeurType" value="ong" style="margin-bottom: 0.5rem;">
+            <div style="font-weight: 700;">ONG / Institution Publique</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">Bourse ou programme d'insertion</div>
+          </label>
+        </div>
+
+        <!-- Champs conditionnels Sponsor -->
+        <div id="sponsorFieldsBox" style="display: none; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+          <h4 style="color: var(--primary-light); margin-bottom: 1rem;">Informations du Sponsor / Organisation</h4>
+          
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Raison Sociale de l'Organisation</label>
+              <input type="text" class="form-input wizard-input" data-field="sponsorNom" placeholder="Nom de l'entreprise ou ONG">
+            </div>
+            <div class="form-group">
+              <label class="form-label">N° RCCM / Immatriculation</label>
+              <input type="text" class="form-input wizard-input" data-field="sponsorRccm" placeholder="N° d'enregistrement">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Pourcentage de Prise en Charge (%)</label>
+              <input type="number" id="inputSponsorPct" class="form-input" min="10" max="100" value="100">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contact / Signataire Autorisé</label>
+              <input type="text" class="form-input wizard-input" data-field="sponsorContact" placeholder="Nom & fonction">
+            </div>
+          </div>
+
+          <div id="wizSponsorRecap" style="font-size: 0.85rem; color: #f7e08d; font-weight: 600;"></div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 8 : DOCUMENTS ET SIGNATURE ÉLECTRONIQUE -->
+      <div class="wizard-step-panel" id="stepPanel8">
+        <div class="step-header">
+          <span class="badge badge-primary">ÉTAPE 8 / 9</span>
+          <h2>Justificatifs & Signature Électronique</h2>
+          <p>Validez votre identité et apposez votre signature pour générer le contrat officiel.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Téléversement de la Pièce d'Identité ou Passeport</label>
+          <div class="file-upload-zone">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📄</div>
+            <div style="font-weight: 600; color: white;">Cliquez ou glissez votre pièce d'identité (PDF, JPG, PNG)</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Taille maximale : 10 Mo</div>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <label class="form-label" style="margin: 0;">Signature Électronique du Demandeur <span class="req">*</span></label>
+            <button type="button" id="btnClearSignature" style="background: none; border: none; color: var(--text-muted); font-size: 0.75rem; cursor: pointer; text-decoration: underline;">
+              Effacer la signature
+            </button>
+          </div>
+          <canvas id="signaturePad" class="signature-canvas"></canvas>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.35rem;">
+            Signez à la souris ou au doigt sur smartphone dans l'encadré ci-dessus.
+          </div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 1.25rem; border-radius: var(--radius-md); margin-top: 1.5rem; font-size: 0.85rem;">
+          <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;">
+            <input type="checkbox" required checked style="margin-top: 3px;">
+            <span>Je certifie l'exactitude des informations fournies et reconnais que le contrat devra être signé à cinq et légalisé à la mairie avant le démarrage effectif des cours.</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 9 : RÉCAPITULATIF ET ENVOI -->
+      <div class="wizard-step-panel" id="stepPanel9">
+        <div class="step-header">
+          <span class="badge badge-primary">ÉTAPE 9 / 9</span>
+          <h2>Dernière Vérification Avant Envoi</h2>
+          <p>Votre dossier est prêt à être transmis au comité de validation.</p>
+        </div>
+
+        <div style="background: #040914; border: 1.5px solid var(--primary); padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 1.5rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1rem;">
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Statut initial</div>
+              <span class="badge badge-primary">PRÊT POUR TRANSMISSION</span>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Intégration directe</div>
+              <span class="badge badge-era">ERA NETWORK PARTNERS</span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+            En cliquant sur <strong>« Confirmer & Transmettre le Dossier »</strong>, votre numéro de dossier unique sera émis. Vous accéderez instantanément à votre <strong>Espace Candidat</strong> pour télécharger votre contrat type et suivre chaque étape de validation.
+          </p>
+        </div>
+      </div>
+
+      <!-- FOOTER WIZARD -->
+      <div class="wizard-footer">
+        <button type="button" id="btnPrevStep" class="btn btn-outline" style="display: none;">
+          ← Étape Précédente
+        </button>
+        <button type="button" id="btnNextStep" class="btn btn-primary" style="margin-left: auto;">
+          Étape Suivante →
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/referentiel.js"></script>
+  <script src="js/form-wizard.js"></script>
+</body>
+</html>

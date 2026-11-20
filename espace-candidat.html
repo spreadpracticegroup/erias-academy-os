@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="cyber">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Candidat | Suivi de Dossier & Contrat PCE ICN</title>
+  <meta name="description" content="Suivez l'avancement de votre candidature, téléchargez votre contrat à cinq et suivez vos échéances de formation.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/theme-pce.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="african-pattern-bg">
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/logo-pce-icn.jpg" alt="Logo PCE ICN" class="official-logo-img">
+        <div class="brand-text">
+          <h2>ESPACE CANDIDAT</h2>
+          <span>SUIVI DU DOSSIER & CONTRAT À CINQ</span>
+        </div>
+      </a>
+
+      <div>
+        <a href="index.html" class="btn btn-outline btn-sm">← Revenir au portail</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 3rem 1.5rem 6rem;">
+    
+    <!-- Bannière Statut du Dossier -->
+    <div style="background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-xl); padding: 2.5rem; margin-bottom: 2.5rem; box-shadow: var(--shadow-lg);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.5rem; margin-bottom: 2rem;">
+        <div>
+          <span class="badge badge-primary" id="dossierStatutBadge">DOSSIER SOUMIS · EN ATTENTE DE CONTRÔLE</span>
+          <h1 style="font-size: 2rem; margin: 0.5rem 0 0.25rem;" id="dossierNumero">PCE-ICN-2026-000142</h1>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Candidat : <strong id="dossierNomCandidat" style="color: white;">Jean-Christophe ONDO MBA</strong> · 
+            Filière : <strong id="dossierFiliereNom" style="color: var(--primary-light);">Cyber-Défense Opérationnelle & SOC</strong>
+          </p>
+        </div>
+
+        <div style="text-align: right;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Centre de rattachement</div>
+          <div style="font-weight: 700; color: white;" id="dossierPartenaire">ERIAS SECURITY GABON (Libreville)</div>
+          <div style="margin-top: 0.5rem;">
+            <span class="badge badge-era">ERA NETWORK PARTNERS #2026-GA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frise Chronologique des Statuts (7 Niveaux) -->
+      <div>
+        <h3 style="font-size: 1rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.05em;">
+          Cycle de Validation Officielle du Dossier :
+        </h3>
+
+        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; text-align: center; font-size: 0.78rem;">
+          <div style="background: rgba(0, 168, 107, 0.2); border: 1px solid var(--primary); padding: 0.75rem 0.25rem; border-radius: var(--radius-sm); color: var(--primary-light); font-weight: 700;">
+            1. Soumis ✓
+          </div>
+          <div style="background: rgba(0, 168, 107, 0.1); border: 1px dashed var(--primary); padding: 0.75rem 0.25rem; border-radius: var(--radius-sm); color: white;">
+            2. Vérification
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 0.75rem 0.25rem; border-radius: var(--radius-sm); color: var(--text-muted);">
+            3. Éligibilité
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 0.75rem 0.25rem; border-radius: var(--radius-sm); color: var(--text-muted);">
+            4. Contrat à 5
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 0.75rem 0.25rem; border-radius: var(--radius-sm); color: var(--text-muted);">
+            5. Légalisation
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 0.75rem 0.25rem; border-radius: var(--radius-sm); color: var(--text-muted);">
+            6. Inscrit
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 0.75rem 0.25rem; border-radius: var(--radius-sm); color: var(--text-muted);">
+            7. Certifié
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deux Colonnes : Contrat à Cinq et Paiements -->
+    <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem;">
+      
+      <!-- Colonne 1 : Checklist Contrat à Cinq & Téléversement Légalisation Mairie -->
+      <div class="card-theme">
+        <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">
+          📜 Le Contrat à Cinq & Légalisation en Mairie
+        </h2>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          « Sans légalisation à la mairie, le contrat n'est pas valable et la formation ne commence pas. »
+        </p>
+
+        <div style="background: rgba(4, 9, 20, 0.8); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem;">
+          <h4 style="color: var(--primary-light); font-size: 0.95rem; margin-bottom: 0.75rem;">
+            Qui doit signer ce contrat ? (5 signataires obligatoires) :
+          </h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">
+            <li>1. 👤 <strong>Le Candidat</strong></li>
+            <li>2. 👨 <strong>Le Père ou Premier Tuteur</strong></li>
+            <li>3. 👩 <strong>La Mère ou Second Tuteur</strong></li>
+            <li>4. 🏛️ <strong>Le Chef de Quartier</strong> (Garant territorial)</li>
+            <li>5. 🛡️ <strong>Le Représentant Local PCE ICN</strong> (Opérateur certifié)</li>
+          </ul>
+        </div>
+
+        <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+          <button class="btn btn-primary" onclick="window.print()" style="flex: 1;">
+            📥 Télécharger le Contrat PDF Pré-rempli
+          </button>
+        </div>
+
+        <!-- Téléversement du Scan Légalisé -->
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.5rem;">
+          <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem;">Déposer le scan du contrat légalisé à la mairie :</h4>
+          <div class="file-upload-zone" style="padding: 1.5rem;">
+            <div style="font-size: 1.5rem;">📑</div>
+            <div style="font-size: 0.88rem; font-weight: 600; color: white;">Glissez le scan ou la photo du contrat avec le tampon de la mairie</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">PDF ou image nette</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colonne 2 : Suivi Financier & Échéances -->
+      <div class="card-theme">
+        <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">
+          💳 Suivi des Règlements
+        </h2>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          Facilité de Paiement PCE ICN : Zéro intérêt, zéro frais bancaire.
+        </p>
+
+        <!-- Frais d'inscription -->
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Frais d'inscription globaux</div>
+              <strong style="font-size: 1.2rem; color: #f7e08d;">80 000 FCFA</strong>
+            </div>
+            <span class="badge badge-primary">Payé ✓</span>
+          </div>
+        </div>
+
+        <!-- Mensualités cours -->
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.25rem;">Mensualités pendant la formation (12 mois)</div>
+          <div style="font-size: 1.1rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">62 000 FCFA / mois</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary);">
+            Prochaine échéance : <strong>15 Novembre 2026</strong> (Mobile Money ou Virement)
+          </div>
+        </div>
+
+        <!-- Solde restant amorti par missions -->
+        <div style="background: rgba(0, 168, 107, 0.1); border: 1px solid var(--primary); border-radius: var(--radius-md); padding: 1.25rem;">
+          <div style="font-size: 0.75rem; color: var(--primary-light); text-transform: uppercase; font-weight: 700;">Amortissement en Stage Freelance</div>
+          <div style="font-size: 1.3rem; font-weight: 800; color: white; margin: 0.25rem 0;">1 756 000 FCFA (70.24%)</div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+            Rémunéré à chaque participant sensibilisé : 95% servent à régler le solde, 5% de gain immédiat pour le stagiaire.
+          </p>
+        </div>
+
+        <!-- QR Code de vérification -->
+        <div style="margin-top: 2rem; text-align: center; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem;">
+          <div style="display: inline-block; background: white; padding: 10px; border-radius: 8px; margin-bottom: 0.5rem;">
+            <!-- Simulation QR Code SVG -->
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <rect width="100" height="100" fill="white" />
+              <rect x="10" y="10" width="30" height="30" fill="black" />
+              <rect x="60" y="10" width="30" height="30" fill="black" />
+              <rect x="10" y="60" width="30" height="30" fill="black" />
+              <rect x="18" y="18" width="14" height="14" fill="white" />
+              <rect x="68" y="18" width="14" height="14" fill="white" />
+              <rect x="18" y="68" width="14" height="14" fill="white" />
+              <rect x="45" y="45" width="10" height="10" fill="black" />
+              <rect x="45" y="10" width="10" height="20" fill="black" />
+              <rect x="70" y="60" width="20" height="20" fill="black" />
+            </svg>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">
+            Vérification internationale : PCE-ICN-2026-000142
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/referentiel.js"></script>
+  <script>
+    // Injection des paramètres si présents dans l'URL ou draft
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const dossier = params.get('dossier');
+      if (dossier) {
+        document.getElementById('dossierNumero').textContent = dossier;
+      }
+
+      // Lecture depuis local storage
+      const dossiers = JSON.parse(localStorage.getItem('pce_dossiers_candidats') || '[]');
+      if (dossiers.length > 0) {
+        const d = dossiers[0];
+        if (d.nom && d.prenom) {
+          document.getElementById('dossierNomCandidat').textContent = `${d.prenom} ${d.nom.toUpperCase()}`;
+        }
+        if (d.filiereNom) {
+          document.getElementById('dossierFiliereNom').textContent = d.filiereNom;
+        }
+        if (d.partenaireLocal) {
+          document.getElementById('dossierPartenaire').textContent = d.partenaireLocal;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
