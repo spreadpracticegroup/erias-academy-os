@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription Officielle | ERIAS ACADEMY OS - Promotion 2026-2027</title>
+  <meta name="description" content="Formulaire officiel d'inscription à la formation Cyber-Résilience & Éthique Numérique certifiée PCE ICN par ERIAS SECURITY GABON. Frais d'inscription : 25 000 FCFA.">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inscription.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-badge">E</div>
+        <div class="brand-text">
+          <span class="brand-title">ERIAS ACADEMY OS</span>
+          <span class="brand-subtitle">PCE ICN CENTRAL · GABON</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">← Retour à la présentation</a></li>
+          <li><a href="index.html#profils" class="nav-link">Les 3 Profils</a></li>
+          <li><a href="index.html#tarifs" class="nav-link">Modalités</a></li>
+          <li><a href="admin.html" class="btn btn-sm btn-admin">⚙️ Espace Admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="admin.html" class="btn btn-outline-gold btn-sm">Dashboard Admin</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu mobile">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero Banner -->
+  <section style="padding: 2.5rem 0 1.5rem; background: rgba(9, 15, 31, 0.6); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge badge-gold" style="margin-bottom: 0.5rem;">PROMOTION OFFICIELLE 2026-2027</span>
+          <h1 style="font-size: 2rem; color: var(--text-white);">Dossier d'Inscription & Réservation</h1>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Formation certifiante "Cyber-Résilience & Éthique Numérique" · ERIAS SECURITY GABON
+          </p>
+        </div>
+        <div style="background: rgba(212, 175, 55, 0.1); border: 1px solid var(--border-gold); padding: 0.75rem 1.25rem; border-radius: var(--radius-md); text-align: right;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Frais d'inscription</div>
+          <div style="font-size: 1.4rem; font-weight: 800; color: var(--gold-light); font-family: 'Space Grotesk', monospace;">25 000 FCFA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Inscription Section -->
+  <section class="inscription-section">
+    <div class="container">
+      <div class="inscription-layout">
+        
+        <!-- Colonne Gauche : Formulaire -->
+        <div class="form-card">
+          <div class="form-header">
+            <h2 class="form-title">Vos Informations d'Admissibilité</h2>
+            <p class="form-subtitle">
+              Remplissez ce formulaire pour valider votre enregistrement dans l'un des 14 groupes de la cohorte.
+            </p>
+          </div>
+
+          <form id="inscriptionForm">
+            
+            <!-- Choix du Profil (Moniteur, Formateur, Auditeur) -->
+            <div class="profile-selection-group">
+              <label class="input-label">
+                Profil Métier Choisi <span class="required">*</span>
+              </label>
+
+              <div class="profile-options-grid">
+                <!-- Option 1 : Moniteur -->
+                <div class="profile-option-card" id="cardMoniteur">
+                  <input type="radio" name="profil" value="Moniteur" id="profilMoniteur">
+                  <span class="p-opt-icon">🛡️</span>
+                  <div class="p-opt-title">Moniteur</div>
+                  <div class="p-opt-desc">Hygiène numérique & premier rempart en entreprise</div>
+                </div>
+
+                <!-- Option 2 : Formateur -->
+                <div class="profile-option-card selected" id="cardFormateur">
+                  <input type="radio" name="profil" value="Formateur" id="profilFormateur" checked>
+                  <span class="p-opt-icon">🎓</span>
+                  <div class="p-opt-title">Formateur</div>
+                  <div class="p-opt-desc">Pédagogie & animation de simulations de crise</div>
+                </div>
+
+                <!-- Option 3 : Auditeur -->
+                <div class="profile-option-card" id="cardAuditeur">
+                  <input type="radio" name="profil" value="Auditeur" id="profilAuditeur">
+                  <span class="p-opt-icon">⚖️</span>
+                  <div class="p-opt-title">Auditeur</div>
+                  <div class="p-opt-desc">Gouvernance, audits & conformité PCE ICN</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Identité : Nom & Prénom -->
+            <div class="fields-row">
+              <div class="field-group">
+                <label for="nom" class="input-label">Nom de famille <span class="required">*</span></label>
+                <input type="text" id="nom" class="form-control" placeholder="ex: Ondo Mba" required autocomplete="family-name">
+              </div>
+
+              <div class="field-group">
+                <label for="prenom" class="input-label">Prénom(s) <span class="required">*</span></label>
+                <input type="text" id="prenom" class="form-control" placeholder="ex: Jean-Christophe" required autocomplete="given-name">
+              </div>
+            </div>
+
+            <!-- Coordonnées : WhatsApp & Email -->
+            <div class="fields-row">
+              <div class="field-group">
+                <label for="whatsapp" class="input-label">Téléphone WhatsApp <span class="required">*</span></label>
+                <input type="tel" id="whatsapp" class="form-control" placeholder="+241 77 00 00 00 ou +225..." required autocomplete="tel">
+                <div class="field-hint">📱 Utilisé pour les alertes de cours et la communication du groupe</div>
+              </div>
+
+              <div class="field-group">
+                <label for="email" class="input-label">Adresse Email <span class="required">*</span></label>
+                <input type="email" id="email" class="form-control" placeholder="ex: candidat@organisation.ga" required autocomplete="email">
+                <div class="field-hint">✉️ Utilisé pour l'accès plateforme et la convocation officielle</div>
+              </div>
+            </div>
+
+            <!-- Localisation : Ville -->
+            <div class="field-group">
+              <label for="ville" class="input-label">Ville & Pays de résidence <span class="required">*</span></label>
+              <input type="text" id="ville" class="form-control" placeholder="ex: Libreville (Gabon), Port-Gentil, Abidjan, Dakar, Paris..." required>
+              <div class="field-hint">📍 Permet de rattacher votre dossier à la représentation PCE ICN locale</div>
+            </div>
+
+            <!-- Notice Conditions & Soumission -->
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 1rem 1.25rem; border-radius: var(--radius-md); margin: 1.5rem 0; font-size: 0.85rem; color: var(--text-secondary);">
+              En validant cette inscription, vous confirmez votre engagement pour le cycle certifiant de 7 mois (15 Oct 2026 - 15 Mai 2027) au tarif de 25 000 FCFA d'inscription + 37 000 FCFA / mois.
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-lg" style="width: 100%; font-size: 1.1rem; padding: 1.1rem;">
+              <span>JE VALIDE MON INSCRIPTION (25 000 FCFA)</span>
+              <span>→</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Colonne Droite : Récapitulatif Sticky -->
+        <div class="summary-sticky">
+          <div class="summary-card">
+            <div class="summary-header">
+              <span class="badge badge-gold" style="margin-bottom: 0.5rem;">RÉCAPITULATIF DU DOSSIER</span>
+              <h3 class="summary-title">Formation Certifiante</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">
+                Cyber-Résilience & Éthique Numérique · 7 Mois
+              </p>
+            </div>
+
+            <div class="summary-lines">
+              <div class="summary-line">
+                <span>Profil sélectionné :</span>
+                <strong id="summaryProfile" style="color: var(--gold-light);">Formateur</strong>
+              </div>
+
+              <div class="summary-line">
+                <span>Attribution cohorte :</span>
+                <strong id="summaryGroup" style="font-family: 'Space Grotesk', monospace;">Groupe auto / 14</strong>
+              </div>
+
+              <div class="summary-line">
+                <span>Durée du cycle :</span>
+                <strong>7 Mois</strong>
+              </div>
+
+              <div class="summary-line">
+                <span>Dates officielles :</span>
+                <span>15 Oct 2026 – 15 Mai 2027</span>
+              </div>
+
+              <div class="summary-line">
+                <span>Mensualités de formation :</span>
+                <strong>37 000 FCFA x 7 mois</strong>
+              </div>
+
+              <div class="summary-line highlight">
+                <span>Frais d'inscription dus :</span>
+                <span>25 000 FCFA</span>
+              </div>
+            </div>
+
+            <ul class="summary-guarantees">
+              <li>Place garantie dans la limite des 50 par groupe</li>
+              <li>Encadrement par des auditeurs accrédités PCE ICN</li>
+              <li>Reconnaissance internationale du certificat</li>
+              <li>Livraison sécurisée des documents via Elds Relay</li>
+            </ul>
+
+            <div style="margin-top: 1.5rem; text-align: center;">
+              <a href="admin.html" style="font-size: 0.82rem; color: var(--text-muted); text-decoration: underline;">
+                Accès espace administration ERIAS OS →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Confirmation & Récépissé Officiel -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeModalBtn" aria-label="Fermer">✕</button>
+      
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); border: 2px solid var(--success); display: inline-flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--success); margin-bottom: 1rem;">
+          ✓
+        </div>
+        <h2 style="font-size: 1.6rem; color: var(--text-white); margin-bottom: 0.25rem;">
+          Félicitations ! Inscription Validée
+        </h2>
+        <p style="font-size: 0.9rem; color: var(--text-secondary);">
+          Votre place pour la promotion 2026-2027 est confirmée.
+        </p>
+      </div>
+
+      <!-- Ticket / Récépissé officiel -->
+      <div class="ticket-wrapper">
+        <div class="ticket-header">
+          <span class="badge badge-gold">RÉCÉPISSÉ OFFICIEL D'INSCRIPTION</span>
+          <div class="ticket-number" id="receiptId">ERIAS-2026-000</div>
+          <h3 id="receiptNom" style="color: var(--text-white); margin-top: 0.25rem;">NOM DU CANDIDAT</h3>
+        </div>
+
+        <div class="ticket-grid">
+          <div class="ticket-item">
+            <div class="ticket-label">Profil Spécialisé</div>
+            <div class="ticket-val" id="receiptProfil" style="color: var(--gold-light);">Formateur</div>
+          </div>
+
+          <div class="ticket-item">
+            <div class="ticket-label">Cohorte Pédagogique</div>
+            <div class="ticket-val" id="receiptGroupe">Groupe 01</div>
+          </div>
+
+          <div class="ticket-item">
+            <div class="ticket-label">Territoire / Ville</div>
+            <div class="ticket-val" id="receiptVille">Libreville (Gabon)</div>
+          </div>
+
+          <div class="ticket-item">
+            <div class="ticket-label">Coordonnées</div>
+            <div class="ticket-val" id="receiptContact" style="font-size: 0.8rem; word-break: break-all;">+241 ...</div>
+          </div>
+
+          <div class="ticket-item">
+            <div class="ticket-label">Frais d'inscription</div>
+            <div class="ticket-val" id="receiptMontant" style="color: #34d399;">25 000 FCFA (Validé)</div>
+          </div>
+
+          <div class="ticket-item">
+            <div class="ticket-label">Date d'enregistrement</div>
+            <div class="ticket-val" id="receiptDate" style="font-size: 0.8rem;">20 Nov 2026</div>
+          </div>
+        </div>
+
+        <div class="ticket-footer-note">
+          <strong>Programme :</strong> 7 mois (15 Octobre 2026 au 15 Mai 2027)<br>
+          <strong>Opérateurs :</strong> ERIAS SECURITY GABON & PCE ICN Central<br>
+          Conservez ce numéro de dossier pour vos convocations et retraits auprès des points relais <em>Elds Relay Africa</em>.
+        </div>
+      </div>
+
+      <!-- Actions Modal -->
+      <div style="display: flex; gap: 1rem; margin-top: 1.75rem; flex-wrap: wrap;">
+        <button id="printReceiptBtn" class="btn btn-gold" style="flex: 1;">
+          🖨️ Imprimer mon récépissé
+        </button>
+        <a href="admin.html" class="btn btn-outline-gold" style="flex: 1;">
+          Voir dans le Dashboard Admin
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <div>© 2026 PCE ICN International Certification & ERIAS SECURITY GABON.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="index.html">Présentation</a>
+          <a href="index.html#tarifs">Tarifs</a>
+          <a href="admin.html">Dashboard Admin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script src="js/inscription.js"></script>
+</body>
+</html>

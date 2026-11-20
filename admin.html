@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin | ERIAS ACADEMY OS - Gestion de Formation</title>
+  <meta name="description" content="Tableau de bord de pilotage des inscriptions et encaissements pour la formation Cyber-Résilience & Éthique Numérique (ERIAS SECURITY GABON / PCE ICN Central).">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-badge">E</div>
+        <div class="brand-text">
+          <span class="brand-title">ERIAS ACADEMY OS</span>
+          <span class="brand-subtitle">ESPACE ADMINISTRATION · V1</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">← Voir la Landing Page</a></li>
+          <li><a href="inscription.html" class="nav-link">Formulaire Inscription</a></li>
+          <li><span class="badge badge-gold">Session Sécurisée</span></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="inscription.html" class="btn btn-gold btn-sm">+ Inscrire un apprenant</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu mobile">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Top Administration Bar -->
+  <section class="admin-header-bar">
+    <div class="container admin-top-content">
+      <div class="admin-title-area">
+        <div class="admin-badge-indicator">SYSTÈME OPÉRATIONNEL EN DIRECT</div>
+        <h1>Pilotage de la Promotion 2026-2027</h1>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Formation "Cyber-Résilience & Éthique Numérique" · ERIAS SECURITY GABON · 7 Mois · 700 Places (14 Groupes de 50)
+        </p>
+      </div>
+
+      <div class="admin-actions-bar">
+        <button class="btn btn-gold btn-sm" id="openAddStudentModal">
+          <span>+ Ajouter un apprenant</span>
+        </button>
+        <button class="btn btn-outline-gold btn-sm" id="exportCsvBtn" title="Télécharger la liste au format CSV">
+          <span>📥 Exporter CSV</span>
+        </button>
+        <button class="btn btn-outline btn-sm" id="resetDemoBtn" title="Restaurer les données d'exemple">
+          <span>🔄 Réinitialiser Démo</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+    
+    <!-- 1. KPIs Cards Grid (Exigences du prompt : Nombre total d'inscrits, Montant total encaissé) -->
+    <div class="kpis-grid">
+      
+      <!-- KPI 1 : Total Inscrits -->
+      <div class="kpi-card highlight">
+        <div class="kpi-top">
+          <span class="kpi-label">Total des Inscrits</span>
+          <div class="kpi-icon">👥</div>
+        </div>
+        <div class="kpi-value" id="kpiTotalInscrits">0</div>
+        <div class="kpi-subtext">
+          <span style="color: var(--gold-light);" id="kpiTauxRemplissage">0% sur 700 places</span>
+        </div>
+      </div>
+
+      <!-- KPI 2 : Montant Total Encaissé -->
+      <div class="kpi-card highlight">
+        <div class="kpi-top">
+          <span class="kpi-label">Montant Total Encaissé</span>
+          <div class="kpi-icon">💰</div>
+        </div>
+        <div class="kpi-value" id="kpiTotalEncaisse">0 FCFA</div>
+        <div class="kpi-subtext">
+          <span style="color: var(--success);" id="kpiInscriptionsPayees">0 payées</span>
+        </div>
+      </div>
+
+      <!-- KPI 3 : Places Disponibles -->
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Capacité Restante</span>
+          <div class="kpi-icon">🎯</div>
+        </div>
+        <div class="kpi-value" style="color: var(--cyber-cyan);" id="kpiPlacesRestantes">700</div>
+        <div class="kpi-subtext">
+          <span>Plafond : 14 groupes de 50</span>
+        </div>
+      </div>
+
+      <!-- KPI 4 : Potentiel Inscriptions -->
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Volume Engagé Inscriptions</span>
+          <div class="kpi-icon">📊</div>
+        </div>
+        <div class="kpi-value" id="kpiTotalPotentiel">0 FCFA</div>
+        <div class="kpi-subtext">
+          <span>25 000 FCFA x total inscrits</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2. Breakdown Section : Profils & 14 Groupes -->
+    <div class="breakdown-row">
+      
+      <!-- Les 14 Groupes de 50 -->
+      <div class="breakdown-card">
+        <div class="breakdown-head">
+          <div class="breakdown-title">
+            Cohortes & Groupes Pédagogiques (14 Groupes de 50 apprenants)
+          </div>
+          <span class="badge badge-gold">700 max</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Attribution automatique lors de l'inscription pour garantir un effectif optimal de 50 participants par promotion :
+        </p>
+        <div class="cohort-strip-grid" id="adminCohortGrid">
+          <!-- Dynamique via admin.js -->
+        </div>
+      </div>
+
+      <!-- Répartition des Profils -->
+      <div class="breakdown-card">
+        <div class="breakdown-head">
+          <div class="breakdown-title">Répartition par Profil</div>
+          <span class="badge badge-cyan">3 Parcours</span>
+        </div>
+
+        <div class="profiles-mini-pills">
+          <!-- Moniteur -->
+          <div class="profile-stat-bar">
+            <div class="profile-stat-meta">
+              <span><strong>🛡️ Moniteurs</strong> (Hygiène numérique)</span>
+              <span id="statMoniteurText">0 (0%)</span>
+            </div>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill stat-fill-moniteur" id="barMoniteurFill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- Formateur -->
+          <div class="profile-stat-bar">
+            <div class="profile-stat-meta">
+              <span><strong>🎓 Formateurs</strong> (Cyber-résilience)</span>
+              <span id="statFormateurText">0 (0%)</span>
+            </div>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill stat-fill-formateur" id="barFormateurFill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- Auditeur -->
+          <div class="profile-stat-bar">
+            <div class="profile-stat-meta">
+              <span><strong>⚖️ Auditeurs</strong> (Gouvernance & PCE ICN)</span>
+              <span id="statAuditeurText">0 (0%)</span>
+            </div>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill stat-fill-auditeur" id="barAuditeurFill" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 3. Table des Inscrits (Recherche, Filtres, Liste, Actions) -->
+    <div class="students-table-card">
+      <div class="table-toolbar">
+        <!-- Barre de recherche instantanée -->
+        <div class="search-box-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="adminSearchInput" class="search-input" placeholder="Rechercher par nom, prénom, email, téléphone, ville, groupe...">
+        </div>
+
+        <!-- Filtres Profil & Statut -->
+        <div class="filters-group">
+          <select id="filterProfile" class="filter-select" aria-label="Filtrer par profil">
+            <option value="all">Tous les profils</option>
+            <option value="Moniteur">Moniteurs</option>
+            <option value="Formateur">Formateurs</option>
+            <option value="Auditeur">Auditeurs</option>
+          </select>
+
+          <select id="filterStatus" class="filter-select" aria-label="Filtrer par statut de paiement">
+            <option value="all">Tous les statuts</option>
+            <option value="Payé">Payé (25 000 FCFA)</option>
+            <option value="En attente">En attente de règlement</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Table HTML Responsive -->
+      <div class="table-responsive">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Candidat / Réf</th>
+              <th>Profil</th>
+              <th>WhatsApp & Email</th>
+              <th>Ville / Pays</th>
+              <th>Groupe</th>
+              <th>Statut Paiement</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody">
+            <!-- Rendu dynamique via admin.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-footer">
+        <div id="filteredCount">0 apprenant(s) affiché(s)</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">
+          Cliquez sur le badge de paiement pour basculer instantanément son état.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Modal 1 : Ajout Manuel Rapide d'un Apprenant -->
+  <div class="modal-overlay" id="addStudentModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeAddStudentBtn" aria-label="Fermer">✕</button>
+      
+      <div style="margin-bottom: 1.5rem;">
+        <span class="badge badge-gold">ADMINISTRATION</span>
+        <h2 style="font-size: 1.5rem; color: var(--text-white); margin-top: 0.4rem;">
+          Inscrire un Apprenant
+        </h2>
+        <p style="font-size: 0.88rem; color: var(--text-secondary);">
+          Ajoutez directement un apprenant dans le système ERIAS ACADEMY OS.
+        </p>
+      </div>
+
+      <form id="quickAddForm">
+        <div class="fields-row">
+          <div class="field-group">
+            <label for="addNom" class="input-label">Nom <span class="required">*</span></label>
+            <input type="text" id="addNom" class="form-control" placeholder="ex: Ondo Mba" required>
+          </div>
+          <div class="field-group">
+            <label for="addPrenom" class="input-label">Prénom <span class="required">*</span></label>
+            <input type="text" id="addPrenom" class="form-control" placeholder="ex: Patrick" required>
+          </div>
+        </div>
+
+        <div class="fields-row">
+          <div class="field-group">
+            <label for="addWhatsapp" class="input-label">Téléphone WhatsApp <span class="required">*</span></label>
+            <input type="tel" id="addWhatsapp" class="form-control" placeholder="+241 77 00 00 00" required>
+          </div>
+          <div class="field-group">
+            <label for="addEmail" class="input-label">Email <span class="required">*</span></label>
+            <input type="email" id="addEmail" class="form-control" placeholder="candidat@email.com" required>
+          </div>
+        </div>
+
+        <div class="fields-row">
+          <div class="field-group">
+            <label for="addProfil" class="input-label">Profil de formation <span class="required">*</span></label>
+            <select id="addProfil" class="form-control" style="background: rgba(8, 14, 28, 0.9);">
+              <option value="Moniteur">Moniteur (Hygiène Numérique)</option>
+              <option value="Formateur" selected>Formateur (Cyber-Résilience)</option>
+              <option value="Auditeur">Auditeur (Conformité PCE ICN)</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="addStatut" class="input-label">Statut Paiement Inscription</label>
+            <select id="addStatut" class="form-control" style="background: rgba(8, 14, 28, 0.9);">
+              <option value="Payé" selected>Payé (25 000 FCFA)</option>
+              <option value="En attente">En attente de règlement</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="addVille" class="input-label">Ville / Territoire <span class="required">*</span></label>
+          <input type="text" id="addVille" class="form-control" placeholder="ex: Libreville (Gabon), Port-Gentil, Abidjan..." required>
+        </div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-gold" style="flex: 1;">
+            Enregistrer l'inscription
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 2 : Détails / Récépissé d'un Apprenant -->
+  <div class="modal-overlay" id="studentDetailModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeDetailBtn" aria-label="Fermer">✕</button>
+      <div id="studentDetailContent">
+        <!-- Rempli par admin.js -->
+      </div>
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <button class="btn btn-gold btn-sm" onclick="window.print()">
+          🖨️ Imprimer cette fiche
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" style="margin-top: 4rem;">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <div>© 2026 ERIAS ACADEMY OS · ERIAS SECURITY GABON & PCE ICN Central.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="index.html">Accueil Landing</a>
+          <a href="inscription.html">Formulaire Inscription</a>
+          <a href="#top">Haut de page</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
