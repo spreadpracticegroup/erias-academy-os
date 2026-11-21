@@ -45,10 +45,23 @@
           </ul>
         </nav>
 
-        <div class="eh-actions">
-          <a href="candidature.html" class="eh-btn-depot">Déposer mon dossier</a>
-          <a href="backoffice.html" class="eh-btn-backoffice">BACK-OFFICE</a>
-        </div>
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="mainNavMenu">
+          <li class="nav-item"><a href="#univers">Les 2 Univers</a></li>
+          <li class="nav-item"><a href="#prerequis">Socle PCEICN-0001</a></li>
+          <li class="nav-item"><a href="#simulateur">Facilité de Paiement</a></li>
+          <li class="nav-item"><a href="masterclass.html">Masterclass</a></li>
+          <li class="nav-item"><a href="espace-candidat.html">Espace Candidat</a></li>
+          <li class="nav-item"><a href="backoffice.html" class="badge badge-silver">Back-Office</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Button -->
+      <div>
+        <a href="candidature.html" class="btn btn-primary btn-sm">
+          Déposer ma Demande →
+        </a>
       </div>
 
     </div>
@@ -88,13 +101,13 @@
             </a>
           </div>
 
-          <!-- Entrée Socle PCE-000 Banner -->
+          <!-- Entrée Socle PCEICN-0001 Banner -->
           <div style="display: inline-flex; align-items: center; gap: 1rem; background: rgba(0, 168, 107, 0.1); border: 1px solid var(--primary); padding: 0.75rem 1.25rem; border-radius: var(--radius-full); font-size: 0.9rem; flex-wrap: wrap;">
             <span class="badge badge-primary">ENTRÉE SOCLE</span>
-            <span><strong>PCE-000</strong> Module Basique — Sensibilisation</span>
+            <span><strong>PCEICN-0001</strong> Module Basique — Sensibilisation</span>
             <span style="color: var(--primary-light); font-weight: 800;">25 000 FCFA</span>
             <span style="text-decoration: line-through; color: var(--text-muted); font-size: 0.8rem;">50 000 FCFA</span>
-            <a href="candidature.html?type=pce-000" style="color: var(--text-white); font-weight: 700; text-decoration: underline; margin-left: 0.5rem;">S'inscrire d'abord →</a>
+            <a href="candidature.html?type=pceicn-0001" style="color: var(--text-white); font-weight: 700; text-decoration: underline; margin-left: 0.5rem;">S'inscrire d'abord →</a>
           </div>
         </div>
 
@@ -171,7 +184,7 @@
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; font-size: 0.9rem;">
             <li style="display: flex; gap: 0.5rem; align-items: center;">
               <span style="color: var(--primary);">✓</span>
-              <span><strong>Prérequis obligatoire :</strong> Validation du socle PCE-000</span>
+              <span><strong>Prérequis obligatoire :</strong> Validation du socle PCEICN-0001</span>
             </li>
             <li style="display: flex; gap: 0.5rem; align-items: center;">
               <span style="color: var(--primary);">✓</span>
@@ -258,7 +271,7 @@
     </div>
   </section>
 
-  <!-- SECTION : VÉRIFICATEUR SOCLE PCE-000 (PRÉREQUIS NON NÉGOCIABLE) -->
+  <!-- SECTION : VÉRIFICATEUR SOCLE PCEICN-0001 (PRÉREQUIS NON NÉGOCIABLE) -->
   <section class="container" id="prerequis" style="padding: 3rem 1.5rem 5rem;">
     <div style="background: linear-gradient(180deg, #0c1833 0%, #060c1c 100%); border: 1.5px solid var(--border-color); border-radius: var(--radius-xl); padding: 3rem; position: relative;">
       
@@ -266,7 +279,7 @@
         <div>
           <span class="badge badge-primary">PRÉREQUIS OBLIGATOIRE EN CYBERSÉCURITÉ</span>
           <h2 style="font-size: 2.1rem; font-weight: 800; margin: 0.75rem 0 1rem;">
-            Module Basique PCE-000 : Le Sésame d'Entrée
+            Module Basique PCEICN-0001 : Le Sésame d'Entrée
           </h2>
           <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
             « Poser le socle non négociable de tout parcours PCE ICN : comprendre les menaces, adopter une hygiène numérique irréprochable et agir avec éthique. <strong>Sans ce module validé, aucune autre formation en cybersécurité n'est débloquée.</strong> »
@@ -287,20 +300,20 @@
             </div>
           </div>
 
-          <a href="candidature.html?type=pce-000" class="btn btn-primary">
-            S'inscrire directement au Socle PCE-000 (25 000 FCFA) →
+          <a href="candidature.html?type=pceicn-0001" class="btn btn-primary">
+            S'inscrire directement au Socle PCEICN-0001 (25 000 FCFA) →
           </a>
         </div>
 
         <!-- Boîte de Vérification en direct -->
         <div style="background: rgba(4, 9, 20, 0.75); border: 1px solid var(--border-subtle); padding: 2rem; border-radius: var(--radius-lg);">
-          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Avez-vous déjà votre attestation PCE-000 ?</h3>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Avez-vous déjà votre attestation PCEICN-0001 ?</h3>
           <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">
             Entrez votre numéro de certificat ou de participation pour débloquer votre inscription aux filières de spécialisation :
           </p>
 
           <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
-            <input type="text" id="inputCertificatPce000" class="form-control" placeholder="ex: PCE-000-2026-9842" style="flex: 1; padding: 0.85rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); color: white;">
+            <input type="text" id="inputCertificatPce000" class="form-control" placeholder="ex: PCEICN-0001-2026-9842" style="flex: 1; padding: 0.85rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); color: white;">
             <button id="btnVerifierPrerequis" class="btn btn-silver" style="white-space: nowrap;">
               Vérifier
             </button>
@@ -543,7 +556,7 @@
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem;">
             <li><a href="candidature.html?univers=cyber" style="color: var(--text-secondary);">Cybersécurité PCE ICN</a></li>
             <li><a href="candidature.html?univers=metiers" style="color: var(--text-secondary);">Académie des Métiers</a></li>
-            <li><a href="candidature.html?type=pce-000" style="color: var(--text-secondary);">Module Socle PCE-000</a></li>
+            <li><a href="candidature.html?type=pceicn-0001" style="color: var(--text-secondary);">Module Socle PCEICN-0001</a></li>
             <li><a href="candidature.html?parcours=vae" style="color: var(--text-secondary);">Programme VAE</a></li>
           </ul>
         </div>
