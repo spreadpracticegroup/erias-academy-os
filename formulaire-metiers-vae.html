@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="metiers">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription PCE IC-Académie des Métiers — Formations Métiers & Programme VAE</title>
+  <meta name="description" content="Formulaire officiel de l'Académie des Métiers PCE IC : formations professionnelles en alternance dans 6 pôles et programme de Validation des Acquis de l'Expérience (VAE).">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/theme-pce.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/formulaires.css">
+</head>
+<body class="african-pattern-bg">
+
+  <!-- Header Simplifié -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/logo-pce-ic-metiers.jpg" alt="Logo PCE IC-Académie des Métiers" class="official-logo-img">
+        <div class="brand-text">
+          <h2>PCE IC-ACADÉMIE DES MÉTIERS</h2>
+          <span>FORMATIONS MÉTIERS &amp; VAE</span>
+        </div>
+      </a>
+
+      <div>
+        <a href="index.html" class="btn btn-outline btn-sm">← Accueil</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="fx-container">
+
+    <div class="fx-intro">
+      <span class="badge badge-primary">ACADÉMIE DES MÉTIERS · ALTERNANCE &amp; VAE</span>
+      <h1>Formations Métiers &amp; Programme VAE</h1>
+      <p>Choisissez une formation professionnelle en alternance dans l'un de nos 6 pôles, ou faites reconnaître votre expérience terrain par la Validation des Acquis de l'Expérience.</p>
+    </div>
+
+    <div class="fx-card">
+      <form
+        name="inscription-metiers-vae"
+        id="formMetiersVae"
+        class="fx-form"
+        method="POST"
+        action="/merci"
+        enctype="multipart/form-data"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        data-ref-prefix="METIERS">
+
+        <input type="hidden" name="form-name" value="inscription-metiers-vae">
+        <input type="hidden" name="subject" value="Nouvelle demande Académie des Métiers / VAE (%{submissionId})">
+        <input type="hidden" name="reference_dossier" value="">
+        <input type="hidden" name="cout_estime_fcfa" value="">
+        <p class="fx-hidden-field" aria-hidden="true">
+          <label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+
+        <!-- 1. PARCOURS -->
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">1</span> Votre parcours</h2>
+
+          <div class="fx-choices">
+            <label class="fx-choice">
+              <input type="radio" name="parcours" value="Formation métier en alternance" data-show="blocAlternance" data-ref-prefix="METIERS" checked>
+              <span class="fx-choice-body">
+                <span class="fx-choice-tag">Formation métier</span>
+                <span class="fx-choice-title">Formation professionnelle en alternance</span>
+                <span class="fx-choice-desc">
+                  6 à 18 mois dans l'un des 6 pôles technologiques, avec stage ou alternance en entreprise et facilité de paiement.
+                </span>
+              </span>
+            </label>
+
+            <label class="fx-choice">
+              <input type="radio" name="parcours" value="Programme VAE" data-show="blocVae" data-ref-prefix="VAE">
+              <span class="fx-choice-body">
+                <span class="fx-choice-tag">Programme VAE</span>
+                <span class="fx-choice-title">Validation des Acquis de l'Expérience</span>
+                <span class="fx-choice-desc">
+                  Pour les praticiens justifiant d'au moins 3 ans d'expérience dans le métier visé : obtenez votre certificat sans refaire tout le parcours.
+                </span>
+              </span>
+            </label>
+          </div>
+
+          <div class="form-grid-2" style="margin-top: 1.5rem; margin-bottom: 0;">
+            <div class="form-group">
+              <label class="form-label" for="mvPole">Pôle métier <span class="req">*</span></label>
+              <select id="mvPole" name="pole" class="form-select" required>
+                <option value="">— Sélectionnez un pôle —</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mvMetier">Métier visé <span class="req">*</span></label>
+              <select id="mvMetier" name="metier" class="form-select" required disabled>
+                <option value="">— Choisissez d'abord un pôle —</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fx-recap" aria-live="polite">
+            <div>
+              <div class="fx-recap-label" data-recap="label">Coût de la formation</div>
+              <div class="fx-recap-value" data-recap="formule">Sélectionnez un métier</div>
+            </div>
+            <div style="text-align: right;">
+              <div class="fx-recap-label">Total estimé</div>
+              <div class="fx-recap-amount" data-recap="montant">—</div>
+            </div>
+            <div class="fx-recap-lines" data-recap="lines"></div>
+          </div>
+        </section>
+
+        <!-- 2. IDENTITÉ -->
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">2</span> Vos coordonnées</h2>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="mvNom">Nom de famille <span class="req">*</span></label>
+              <input type="text" id="mvNom" name="nom" class="form-input" placeholder="ex: Ondo Mba" autocomplete="family-name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mvPrenom">Prénom(s) <span class="req">*</span></label>
+              <input type="text" id="mvPrenom" name="prenom" class="form-input" placeholder="ex: Marie-Laure" autocomplete="given-name" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="mvNaissance">Date de naissance <span class="req">*</span></label>
+              <input type="date" id="mvNaissance" name="date_naissance" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mvWhatsapp">Téléphone WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="mvWhatsapp" name="whatsapp" class="form-input" placeholder="+241 77 00 11 22" autocomplete="tel" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="mvEmail">Adresse email <span class="req">*</span></label>
+              <input type="email" id="mvEmail" name="email" class="form-input" placeholder="candidat@email.com" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mvVille">Ville de résidence <span class="req">*</span></label>
+              <input type="text" id="mvVille" name="ville" class="form-input" placeholder="ex: Libreville, Franceville, Dakar…" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2" style="margin-bottom: 0;">
+            <div class="form-group">
+              <label class="form-label" for="mvPays">Pays <span class="req">*</span></label>
+              <select id="mvPays" name="pays" class="form-select" required>
+                <option value="Gabon" selected>Gabon</option>
+                <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                <option value="Sénégal">Sénégal</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Bénin">Bénin</option>
+                <option value="Madagascar">Madagascar</option>
+                <option value="France">France (Diaspora)</option>
+                <option value="Canada">Canada (Diaspora)</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mvCentre">Centre / partenaire local <span class="req">*</span></label>
+              <select id="mvCentre" name="centre" class="form-select" required>
+                <option value="ERIAS SECURITY GABON (Siège Libreville)" selected>ERIAS SECURITY GABON (Libreville)</option>
+                <option value="ERIAS Hub Maritime & Pétrole (Port-Gentil)">ERIAS Hub Maritime &amp; Pétrole (Port-Gentil)</option>
+                <option value="PCE ICN Côte d'Ivoire (Abidjan)">PCE ICN Côte d'Ivoire (Abidjan)</option>
+                <option value="PCE ICN Sénégal (Dakar)">PCE ICN Sénégal (Dakar)</option>
+                <option value="Spread Practice Technology Ltd (Kigali)">Spread Practice Technology (Kigali)</option>
+                <option value="PCE ICN Bénin SARL (Cotonou)">PCE ICN Bénin SARL (Cotonou)</option>
+                <option value="PCE ICN Madagascar (Antananarivo)">PCE ICN Madagascar (Antananarivo)</option>
+                <option value="PCE ICN Diaspora Europe (Paris)">PCE ICN Diaspora Europe (Paris)</option>
+                <option value="PCE ICN Diaspora Amériques (Montréal)">PCE ICN Diaspora Amériques (Montréal)</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. DÉTAILS DU PARCOURS -->
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">3</span> <span data-parcours-title>Votre projet de formation</span></h2>
+
+          <!-- Formation métier en alternance -->
+          <div class="fx-conditional" id="blocAlternance" style="margin-top: 0;">
+            <h3>Formation professionnelle en alternance</h3>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="mvEtudes">Niveau d'études <span class="req">*</span></label>
+                <select id="mvEtudes" name="niveau_etudes" class="form-select" data-required-when-shown required>
+                  <option value="">— Sélectionnez —</option>
+                  <option>Sans diplôme</option>
+                  <option>CEP / BEPC</option>
+                  <option>CAP / BEP</option>
+                  <option>Baccalauréat</option>
+                  <option>Bac +2 / BTS</option>
+                  <option>Licence (Bac +3)</option>
+                  <option>Master et plus</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="mvDebut">Date de démarrage souhaitée</label>
+                <input type="month" id="mvDebut" name="demarrage_souhaite" class="form-input">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mvEntreprise">Entreprise d'accueil souhaitée pour l'alternance (facultatif)</label>
+              <input type="text" id="mvEntreprise" name="entreprise_alternance" class="form-input" placeholder="ex: opérateur télécom, garage partenaire, société solaire…">
+            </div>
+          </div>
+
+          <!-- Programme VAE -->
+          <div class="fx-conditional" id="blocVae" style="margin-top: 0;" hidden>
+            <h3>Programme VAE — votre expérience</h3>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="mvAnnees">Années d'expérience dans le métier <span class="req">*</span></label>
+                <input type="number" id="mvAnnees" name="annees_experience" class="form-input" min="3" max="50" placeholder="3 ans minimum" data-required-when-shown>
+                <div class="fx-hint">La VAE est ouverte à partir de 3 ans d'expérience pratique.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="mvPoste">Poste ou activité exercée <span class="req">*</span></label>
+                <input type="text" id="mvPoste" name="poste_occupe" class="form-input" placeholder="ex: Électricien automobile" data-required-when-shown>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mvEmployeur">Employeur(s) ou clients principaux</label>
+              <input type="text" id="mvEmployeur" name="employeurs" class="form-input" placeholder="ex: Garage Central Libreville (2018-2024), indépendant depuis 2024">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mvAcquis">Décrivez vos compétences et réalisations <span class="req">*</span></label>
+              <textarea id="mvAcquis" name="description_experience" class="form-textarea" rows="5" placeholder="Missions réalisées, équipements maîtrisés, chantiers ou projets significatifs…" data-required-when-shown></textarea>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="mvCv">CV (PDF, JPG, PNG)</label>
+                <input type="file" id="mvCv" name="cv" class="form-input" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="mvAttestations">Attestations de travail (facultatif)</label>
+                <input type="file" id="mvAttestations" name="attestations" class="form-input" accept=".pdf,.jpg,.jpeg,.png">
+              </div>
+            </div>
+            <div class="fx-hint" style="margin-top: -0.5rem; margin-bottom: 1.25rem;">Taille totale des fichiers : 8 Mo maximum. Les autres preuves pourront être déposées lors de l'étape « Dossier de preuves ».</div>
+          </div>
+
+          <div class="form-group" style="margin-top: 1.5rem;">
+            <span class="form-label">Qui finance la formation ? <span class="req">*</span></span>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem;">
+              <label class="fx-check" style="margin: 0;"><input type="radio" name="financeur" value="Candidat / Parents" checked> Candidat / Parents</label>
+              <label class="fx-check" style="margin: 0;"><input type="radio" name="financeur" value="Entreprise / Employeur"> Entreprise / Employeur</label>
+              <label class="fx-check" style="margin: 0;"><input type="radio" name="financeur" value="ONG / Institution publique"> ONG / Institution publique</label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" for="mvMessage">Message ou question (facultatif)</label>
+            <textarea id="mvMessage" name="message" class="form-textarea" rows="3" placeholder="Disponibilités, contraintes, questions…"></textarea>
+          </div>
+        </section>
+
+        <!-- 4. VALIDATION -->
+        <section class="fx-section">
+          <label class="fx-check">
+            <input type="checkbox" name="consentement" value="Oui" required>
+            <span>Je certifie l'exactitude des informations fournies et j'accepte d'être recontacté(e) par PCE IC-Académie des Métiers au sujet de ma demande. <span style="color: var(--primary-light);">*</span></span>
+          </label>
+
+          <div class="fx-error" data-form-error hidden></div>
+
+          <div class="fx-actions">
+            <span class="fx-hint">Les champs marqués <span style="color: var(--primary-light);">*</span> sont obligatoires.</span>
+            <button type="submit" class="btn btn-primary">Envoyer ma demande →</button>
+          </div>
+        </section>
+      </form>
+
+      <!-- Confirmation (affichée après envoi) -->
+      <div class="fx-success" data-form-success hidden>
+        <div class="fx-success-icon">✓</div>
+        <h2>Demande bien reçue !</h2>
+        <p>Votre dossier a été transmis à l'Académie des Métiers. Conservez votre numéro de dossier :</p>
+        <div class="fx-ref" data-success-ref></div>
+        <p>Un conseiller vous contacte sur WhatsApp sous 48 h ouvrées pour la suite : entretien d'orientation (formation métier) ou étude de recevabilité (VAE).</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+          <a href="index.html" class="btn btn-outline">← Retour à l'accueil</a>
+          <a href="espace-candidat.html" class="btn btn-primary">Espace Candidat →</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="fx-cross-link">
+      Vous souhaitez d'abord suivre la sensibilisation cybersécurité ?
+      <a href="formulaire-pce-icn.html">Formulaire PCE ICN — Module PCEICN-0001 →</a>
+    </p>
+  </main>
+
+  <script src="js/referentiel.js"></script>
+  <script src="js/formulaires.js"></script>
+</body>
+</html>
