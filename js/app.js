@@ -47,9 +47,9 @@ function setUniverse(universe, save = true) {
   const headerBrandSub = document.getElementById('headerBrandSub');
 
   if (universe === 'cyber') {
-    if (headerLogo) headerLogo.src = 'assets/logo-pce-icn.jpg';
-    if (headerBrandTitle) headerBrandTitle.textContent = 'PCE-ICN CENTRAL';
-    if (headerBrandSub) headerBrandSub.textContent = 'CYBERSÉCURITÉ & CONFIANCE NUMÉRIQUE';
+    if (headerLogo) headerLogo.src = 'assets/logo-pce-icn-medaillon.svg';
+    if (headerBrandTitle) headerBrandTitle.textContent = 'PCE ICN';
+    if (headerBrandSub) headerBrandSub.textContent = 'CENTRAL';
   } else {
     if (headerLogo) headerLogo.src = 'assets/logo-pce-ic-metiers.jpg';
     if (headerBrandTitle) headerBrandTitle.textContent = 'PCE IC-ACADÉMIE DES MÉTIERS';
@@ -183,13 +183,51 @@ function initPrerequisChecker() {
   });
 }
 
-// 4. MENU MOBILE
+// 4. MENU MOBILE (en-tête ERIAS : burger quand le menu ne tient pas sur une ligne)
 function initMobileMenu() {
+  const header = document.getElementById('eriasHeader');
   const toggle = document.getElementById('mobileMenuBtn');
   const menu = document.getElementById('mainNavMenu');
-  if (toggle && menu) {
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  }
+  if (!toggle || !menu) return;
+
+  const setOpen = (open) => {
+    menu.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    toggle.firstElementChild.textContent = open ? '✕' : '☰';
+  };
+
+  toggle.addEventListener('click', () => setOpen(!menu.classList.contains('active')));
+
+  // Fermeture après clic sur un lien ou sur Échap
+  menu.addEventListener('click', (e) => {
+    if (e.target.closest('a, button') && header && header.classList.contains('eh-compact')) setOpen(false);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('active')) setOpen(false);
+  });
+
+  if (!header) return;
+  const inner = header.querySelector('.eh-inner');
+
+  // Passe en mode burger sur mobile ou dès que le contenu ne tient plus sur une ligne
+  const updateLayout = () => {
+    const wasCompact = header.classList.contains('eh-compact');
+    header.classList.remove('eh-compact');
+    const overflowing = inner.scrollWidth > inner.clientWidth + 1;
+    const compact = window.innerWidth <= 768 || overflowing;
+    header.classList.toggle('eh-compact', compact);
+    if (wasCompact && !compact) setOpen(false);
+  };
+
+  let frame = null;
+  const scheduleUpdate = () => {
+    if (frame) cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(updateLayout);
+  };
+
+  updateLayout();
+  window.addEventListener('resize', scheduleUpdate);
+  window.addEventListener('universe_changed', scheduleUpdate);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleUpdate);
 }
