@@ -1,0 +1,318 @@
+/* ==========================================================================
+   EN-TÊTE ERIAS ACADEMY OS
+   3 zones : logo (gauche) · menu (centre) · actions (droite)
+   Le mode compact (burger) est activé par js/app.js dès que le contenu ne
+   tient plus sur une seule ligne, ou sur petit écran.
+   ========================================================================== */
+
+/* Les ancres (#univers, #simulateur…) ne passent pas sous l'en-tête fixe */
+html {
+  scroll-padding-top: 96px;
+}
+
+.erias-header {
+  --eh-navy: #0a1a33;
+  --eh-navy-deep: #06112a;
+  --eh-gold: #d4af37;
+  --eh-gold-light: #f3d77a;
+  --eh-green: #00a86b;
+  --eh-green-light: #10c283;
+  --eh-height: 80px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--eh-navy);
+  color: #ffffff;
+  border-bottom: 2px solid var(--eh-gold);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.eh-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 24px;
+  height: var(--eh-height);
+  padding: 0 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* ---- Zone gauche : logo ---- */
+.eh-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.eh-logo {
+  display: block;
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  border-radius: 50%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.eh-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.eh-brand-text strong {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.eh-brand-text small {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--eh-gold);
+  text-transform: uppercase;
+}
+
+/* ---- Zones centre + droite ---- */
+.eh-panel {
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+  gap: 24px;
+}
+
+.eh-nav {
+  flex: 1 0 auto;
+}
+
+.eh-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.eh-nav li {
+  flex: 0 0 auto;
+}
+
+.erias-header .eh-link {
+  display: inline-block;
+  position: relative;
+  padding: 6px 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+
+.erias-header .eh-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--eh-gold);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.erias-header .eh-link:hover,
+.erias-header .eh-link:focus-visible {
+  color: var(--eh-gold-light);
+  background: none;
+}
+
+.erias-header .eh-link:hover::after,
+.erias-header .eh-link.active::after {
+  transform: scaleX(1);
+}
+
+.erias-header .eh-link.active {
+  color: var(--eh-gold);
+  font-weight: 700;
+  background: none;
+  box-shadow: none;
+}
+
+/* ---- Zone droite : actions ---- */
+.eh-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 0 0 auto;
+}
+
+.eh-btn-depot,
+.eh-btn-backoffice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+.eh-btn-depot {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--eh-green-light) 0%, var(--eh-green) 60%, #007a4d 100%);
+  box-shadow: 0 4px 14px rgba(0, 168, 107, 0.4);
+}
+
+.eh-btn-depot:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 168, 107, 0.55);
+}
+
+.eh-btn-backoffice {
+  padding: 9px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--eh-gold);
+  border: 1.5px solid var(--eh-gold);
+  background: transparent;
+}
+
+.eh-btn-backoffice:hover {
+  color: var(--eh-navy);
+  background: var(--eh-gold);
+}
+
+/* ---- Bouton burger ---- */
+.eh-burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-left: auto;
+  padding: 0;
+  flex: 0 0 auto;
+  border: 1.5px solid var(--eh-gold);
+  border-radius: 10px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.eh-burger:hover,
+.eh-burger[aria-expanded="true"] {
+  background: rgba(212, 175, 55, 0.15);
+}
+
+/* ==========================================================================
+   MODE COMPACT (mobile / écran trop étroit) : menu vertical caché
+   ========================================================================== */
+.erias-header.eh-compact {
+  --eh-height: 72px;
+}
+
+.erias-header.eh-compact .eh-inner {
+  padding: 0 16px;
+  gap: 12px;
+}
+
+.erias-header.eh-compact .eh-logo {
+  width: 52px;
+  height: 52px;
+  flex-basis: 52px;
+}
+
+.erias-header.eh-compact .eh-burger {
+  display: inline-flex;
+}
+
+.erias-header.eh-compact .eh-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  max-height: calc(100vh - var(--eh-height));
+  overflow-y: auto;
+  background: var(--eh-navy-deep);
+  border-top: 1px solid rgba(212, 175, 55, 0.35);
+  border-bottom: 2px solid var(--eh-gold);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
+}
+
+.erias-header.eh-compact .eh-panel.active {
+  display: flex;
+}
+
+.erias-header.eh-compact .eh-nav ul {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+}
+
+.erias-header.eh-compact .eh-nav li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.erias-header.eh-compact .eh-link {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.erias-header.eh-compact .eh-link::after {
+  display: none;
+}
+
+.erias-header.eh-compact .eh-link.active {
+  border-left: 3px solid var(--eh-gold);
+  padding-left: 17px;
+}
+
+.erias-header.eh-compact .eh-actions {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  padding: 18px 20px 22px;
+}
+
+.erias-header.eh-compact .eh-btn-depot,
+.erias-header.eh-compact .eh-btn-backoffice {
+  width: 100%;
+  padding: 13px 18px;
+}
