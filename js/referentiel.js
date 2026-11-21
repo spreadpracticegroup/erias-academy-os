@@ -34,7 +34,7 @@ const REFERENTIEL = {
       description: "Poser le socle non négociable de tout parcours PCE ICN : comprendre les menaces, adopter une hygiène numérique irréprochable et agir avec éthique.",
       obligatoire: true,
       debloque: true,
-      formationPhare: "PCE-000"
+      formationPhare: "PCEICN-0001"
     },
     {
       id: "C",
@@ -122,10 +122,10 @@ const REFERENTIEL = {
     }
   ],
 
-  // Formations phares Cybersécurité (dont le socle non négociable PCE-000)
+  // Formations phares Cybersécurité (dont le socle non négociable PCEICN-0001)
   formationsCyber: [
     {
-      code: "PCE-000",
+      code: "PCEICN-0001",
       filiereId: "S",
       titre: "Module Basique — Sensibilisation, Hygiène Numérique & Éthique",
       badge: "SOCLE OBLIGATOIRE",
@@ -139,36 +139,36 @@ const REFERENTIEL = {
       certificatDelivre: "Certificat international en initiation aux bases de la cybersécurité, cyber-résilience, éthique numérique et sécurité informatique (Niveaux 1 et 2)"
     },
     {
-      code: "PCE-F01",
+      code: "PCEICN-0002",
       filiereId: "C",
       titre: "Analyste Cyber-Résilience & Surveillance SOC",
       badge: "EXCELLENCE PRO",
       niveau: "Expert Opérationnel",
       duree: "18 mois (12 mois cours + 6 mois stage)",
       price: 2500000,
-      prerequis: "PCE-000 validé",
+      prerequis: "PCEICN-0001 validé",
       description: "Superviser les flux d'alerte de sécurité, détecter les anomalies critiques et piloter la résilience des systèmes d'information."
     },
     {
-      code: "PCE-S01",
+      code: "PCEICN-0003",
       filiereId: "A",
       titre: "Auditeur Sécurité & Tests d'Intrusion Éthiques",
       badge: "ACCRÉDITÉ PCE",
       niveau: "Spécialiste Certifié",
       duree: "18 mois (12 mois cours + 6 mois stage)",
       price: 2700000,
-      prerequis: "PCE-000 validé",
+      prerequis: "PCEICN-0001 validé",
       description: "Maîtriser les méthodologies d'audit sur site, les scans de vulnérabilités et la rédaction de plans de remédiation 90 jours."
     },
     {
-      code: "PCE-B02",
+      code: "PCEICN-0004",
       filiereId: "G",
       titre: "Manager de Crise Cyber & Continuité d'Activité",
       badge: "GOUVERNANCE",
       niveau: "Consultant Senior",
       duree: "18 mois (12 mois cours + 6 mois stage)",
       price: 2400000,
-      prerequis: "PCE-000 validé",
+      prerequis: "PCEICN-0001 validé",
       description: "Concevoir des plans de continuité d'activité (PCA/PRA), diriger une cellule de crise et dialoguer avec les comités de direction."
     }
   ],

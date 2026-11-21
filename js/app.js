@@ -133,7 +133,7 @@ function formatFCFA(amount) {
   return new Intl.NumberFormat('fr-FR').format(amount) + ' FCFA';
 }
 
-// 3. VÉRIFICATEUR DU PRÉREQUIS SOCLE PCE-000
+// 3. VÉRIFICATEUR DU PRÉREQUIS SOCLE PCEICN-0001
 function initPrerequisChecker() {
   const checkBtn = document.getElementById('btnVerifierPrerequis');
   const codeInput = document.getElementById('inputCertificatPce000');
@@ -144,18 +144,18 @@ function initPrerequisChecker() {
   checkBtn.addEventListener('click', () => {
     const val = codeInput.value.trim().toUpperCase();
     if (!val) {
-      alert('Veuillez saisir votre numéro d\'attestation ou certificat PCE-000.');
+      alert('Veuillez saisir votre numéro d\'attestation ou certificat PCEICN-0001.');
       return;
     }
 
     // Exemple de validation démo ou stockage local
-    const isValid = val.startsWith('PCE-000') || val.startsWith('CERT-') || val.length >= 8;
+    const isValid = val.startsWith('PCEICN-0001') || val.startsWith('PCE-000') || val.startsWith('CERT-') || val.length >= 8;
 
     if (isValid) {
       resultBox.innerHTML = `
         <div style="background: rgba(0, 168, 107, 0.15); border: 1.5px solid var(--primary); padding: 1.25rem; border-radius: var(--radius-md);">
           <div style="display: flex; align-items: center; gap: 0.5rem; color: #10b981; font-weight: 700; margin-bottom: 0.35rem;">
-            <span>✓</span> SOCLE PCE-000 VALIDÉ AVEC SUCCÈS
+            <span>✓</span> SOCLE PCEICN-0001 VALIDÉ AVEC SUCCÈS
           </div>
           <p style="font-size: 0.9rem; color: var(--text-secondary);">
             Certificat reconnu : <strong>${val}</strong>. Vos accès aux filières d'excellence (Cyber-Défense, GRC, Forensic, Pentest) sont débloqués.
@@ -172,10 +172,10 @@ function initPrerequisChecker() {
             <span>⚠️</span> CERTIFICAT NON RECONNU
           </div>
           <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-            Sans le socle obligatoire PCE-000 validé, aucune autre formation de cybersécurité ne peut être débutée.
+            Sans le socle obligatoire PCEICN-0001 validé, aucune autre formation de cybersécurité ne peut être débutée.
           </p>
-          <a href="candidature.html?type=pce-000" class="btn btn-primary btn-sm">
-            S'inscrire d'abord au Module Basique PCE-000 (25 000 FCFA) →
+          <a href="candidature.html?type=pceicn-0001" class="btn btn-primary btn-sm">
+            S'inscrire d'abord au Module Basique PCEICN-0001 (25 000 FCFA) →
           </a>
         </div>
       `;

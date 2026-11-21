@@ -8,7 +8,7 @@ const TOTAL_STEPS = 9;
 
 const formData = {
   univers: 'cyber', // 'cyber' ou 'metiers'
-  typeDemande: 'formation', // 'formation', 'pce-000', 'vae', 'masterclass', 'formateur'
+  typeDemande: 'formation', // 'formation', 'pceicn-0001', 'vae', 'masterclass', 'formateur'
   parcoursMetier: 'formation_pro', // 'formation_pro' ou 'vae'
   filiereCode: 'FIL-C',
   filiereNom: 'Cyber-Défense Opérationnelle & SOC',
@@ -292,9 +292,9 @@ function validateCurrentStep(step) {
   if (step === 2 && formData.univers === 'cyber') {
     const prereqInput = document.getElementById('inputCertifPrereqStep2');
     if (!formData.hasPrerequisPce000 && (!prereqInput || !prereqInput.value.trim())) {
-      const confirmPce000 = confirm("Vous n'avez pas validé le socle PCE-000. Souhaitez-vous vous inscrire d'abord au Module Basique PCE-000 pour débloquer votre accès ?");
+      const confirmPce000 = confirm("Vous n'avez pas validé le socle PCEICN-0001. Souhaitez-vous vous inscrire d'abord au Module Basique PCEICN-0001 pour débloquer votre accès ?");
       if (confirmPce000) {
-        window.location.href = 'candidature.html?type=pce-000';
+        window.location.href = 'candidature.html?type=pceicn-0001';
       }
       return false;
     }
