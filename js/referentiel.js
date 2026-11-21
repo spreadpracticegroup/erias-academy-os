@@ -384,7 +384,7 @@ const REFERENTIEL = {
 
   // 7. PARTENAIRES LOCAUX ET CENTRES ACCRÉDITÉS
   partenairesLocaux: [
-    { pays: "Gabon", ville: "Libreville", centre: "ERIAS SECURITY GABON (Siège National)", contact: "+241 77 00 11 22" },
+    { pays: "Gabon", ville: "Libreville", centre: "ERIAS SECURITY GABON (Siège National)", contact: "+241 77 42 06 17" },
     { pays: "Gabon", ville: "Port-Gentil", centre: "ERIAS Hub Maritime & Pétrole", contact: "+241 66 11 22 33" },
     { pays: "Côte d'Ivoire", ville: "Abidjan", centre: "PCE ICN Côte d'Ivoire (Plateau)", contact: "+225 07 12 34 56" },
     { pays: "Sénégal", ville: "Dakar", centre: "PCE ICN Sénégal (Almadies)", contact: "+221 77 890 12 34" },

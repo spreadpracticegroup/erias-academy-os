@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="cyber">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion IC LYCÉE | Administration ERIAS</title>
+  <meta name="description" content="Espace d'administration IC LYCÉE réservé à l'équipe ERIAS.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/theme-pce.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <link rel="stylesheet" href="/css/formulaires.css">
+  <link rel="stylesheet" href="/css/header-erias.css">
+  <link rel="stylesheet" href="/css/erias-pro.css">
+</head>
+<body class="ep-page">
+
+  <!-- En-tête ERIAS : 2 étages (identité + actions / barre de menu centrée) -->
+  <header class="erias-header" id="eriasHeader">
+
+    <!-- ÉTAGE 1 : logo à gauche, actions à droite -->
+    <div class="eh-top">
+      <div class="eh-row eh-row-top">
+        <a href="/" class="eh-brand" aria-label="PCE-ICN Central — Accueil">
+          <img src="/assets/logo-pce-icn-medaillon.svg" alt="Logo PCE-ICN" id="headerLogoImg" class="eh-logo" width="48" height="48">
+          <span class="eh-brand-text">
+            <strong id="headerBrandTitle">PCE-ICN CENTRAL</strong>
+            <small id="headerBrandSub">CYBERSÉCURITÉ &amp; CONFORMITÉ NUMÉRIQUE</small>
+          </span>
+        </a>
+
+        <div class="eh-actions eh-actions-top">
+          <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+          <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+        </div>
+
+        <!-- Bouton Burger (mobile) -->
+        <button type="button" class="eh-burger" id="mobileMenuBtn" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ÉTAGE 2 : barre de menu centrée (devient le menu vertical sur mobile) -->
+    <div class="eh-bottom" id="mainNavMenu">
+      <nav class="eh-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a class="eh-link" href="/?univers=cyber">Cybersécurité PCE-ICN</a></li>
+          <li><a class="eh-link" href="/?univers=metiers">Académie des Métiers</a></li>
+          <li><a class="eh-link" href="/#univers">Les 2 Univers</a></li>
+          <li><a class="eh-link" href="/#prerequis">Socle PCEICN-0001</a></li>
+          <li><a class="eh-link" href="/#simulateur">Facilité de Paiement</a></li>
+          <li><a class="eh-link" href="/masterclass">Masterclass</a></li>
+          <li><a class="eh-link" href="/espace-candidat">Espace Candidat</a></li>
+          <li class="eh-has-sub">
+            <button type="button" class="eh-link eh-sub-toggle eh-link-lycee active" aria-expanded="false" aria-controls="ehSubLycee">IC Lycée <span class="eh-caret" aria-hidden="true">▾</span></button>
+            <ul class="eh-sub" id="ehSubLycee">
+              <li><a class="eh-sublink" href="/ic-lycee">Cours de Soutien<small>Forfaits &amp; matières, 6ème → Terminale</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/devenir-professeur">Devenir Professeur<small>Rejoindre l'équipe IC LYCÉE</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/demande-cours">Demander un Cours<small>Réserver pour mon enfant</small></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Actions répétées dans le menu mobile (en bas) -->
+      <div class="eh-actions eh-actions-mobile">
+        <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+        <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="ep-section" style="padding-top:36px;">
+    <div class="ep-wrap">
+
+      <!-- Accès par code admin ERIAS -->
+      <section class="fx-card ep-login" id="gLogin">
+        <span class="ep-badge ep-badge-lycee">ESPACE ADMIN ERIAS</span>
+        <h1 style="margin:14px 0 8px;font-size:1.6rem;color:#fff;">Gestion IC LYCÉE</h1>
+        <p class="fx-hint" style="margin-bottom:18px;">Accès réservé à l'équipe ERIAS. Saisis le code admin.</p>
+        <form id="gLoginForm" autocomplete="off">
+          <label class="form-label" for="gCode" style="text-align:left;">Code admin ERIAS</label>
+          <input id="gCode" type="password" class="form-input" required autocomplete="current-password">
+          <div class="fx-error" id="gLoginError" hidden style="margin-top:12px;"></div>
+          <button type="submit" class="ep-btn ep-btn-orange ep-btn-block" style="margin-top:14px;">Accéder à la gestion →</button>
+        </form>
+      </section>
+
+      <!-- Tableau de bord -->
+      <section id="gApp" hidden>
+        <div class="ep-toolbar">
+          <div>
+            <span class="ep-badge ep-badge-lycee">GESTION IC LYCÉE</span>
+            <h1 style="margin:10px 0 0;font-size:clamp(1.5rem,3vw,2rem);color:#fff;">Professeurs, demandes &amp; planning</h1>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button type="button" class="ep-btn ep-btn-outline ep-btn-sm" id="gRefresh">↻ Actualiser</button>
+            <button type="button" class="ep-btn ep-btn-outline ep-btn-sm" id="gLogout">Se déconnecter</button>
+          </div>
+        </div>
+
+        <div class="ep-kpis" style="margin-top:20px;">
+          <div class="ep-kpi"><small>Professeurs certifiés / actifs</small><strong id="kProfs">0</strong></div>
+          <div class="ep-kpi"><small>Demandes sans professeur</small><strong id="kSansProf">0</strong></div>
+          <div class="ep-kpi"><small>Paiements en attente / retard</small><strong id="kAttente">0</strong></div>
+          <div class="ep-kpi"><small>Encaissé (estimé)</small><strong id="kEncaisse">0 F</strong></div>
+        </div>
+
+        <div class="ep-tabs" role="tablist">
+          <button type="button" class="ep-tab active" role="tab" aria-selected="true" data-tab="profs">1. Professeurs <span class="ep-tab-count" id="cProfs">0</span></button>
+          <button type="button" class="ep-tab" role="tab" aria-selected="false" data-tab="demandes">2. Demandes <span class="ep-tab-count" id="cDemandes">0</span></button>
+          <button type="button" class="ep-tab" role="tab" aria-selected="false" data-tab="planning">3. Planning <span class="ep-tab-count" id="cPlanning">0</span></button>
+        </div>
+
+        <div data-panel="profs">
+          <div class="ep-toolbar">
+            <input type="search" class="form-input" id="gSearchProfs" placeholder="Rechercher un prof, une matière, une ville…" style="max-width:360px;">
+            <select class="ep-mini-select" id="gFilterProfs">
+              <option value="">Tous les statuts</option>
+              <option>En attente</option><option>Certifié</option><option>Actif</option><option>Suspendu</option>
+            </select>
+          </div>
+          <div class="ep-table-wrap">
+            <table class="ep-table">
+              <thead><tr><th>Nom</th><th>Matière(s)</th><th>Niveau(x)</th><th>Ville</th><th>Mode</th><th>Statut</th><th>Actions</th></tr></thead>
+              <tbody id="tProfs"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div data-panel="demandes" hidden>
+          <div class="ep-toolbar">
+            <input type="search" class="form-input" id="gSearchDemandes" placeholder="Rechercher un élève, une classe, une matière…" style="max-width:360px;">
+            <select class="ep-mini-select" id="gFilterDemandes">
+              <option value="">Tous les paiements</option>
+              <option>En attente</option><option>1ère tranche</option><option>Payé</option><option>Retard</option>
+            </select>
+          </div>
+          <div class="ep-table-wrap">
+            <table class="ep-table">
+              <thead><tr><th>Élève</th><th>Classe</th><th>Matière(s)</th><th>Mode</th><th>Forfait</th><th>Montant</th><th>Statut paiement</th><th>Professeur</th><th>Actions</th></tr></thead>
+              <tbody id="tDemandes"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div data-panel="planning" hidden>
+          <form class="ep-inline-form" id="gPlanningForm">
+            <div><label for="pDemande">Demande (élève)</label><select id="pDemande" class="ep-mini-select" required></select></div>
+            <div><label for="pDate">Date</label><input id="pDate" type="date" class="ep-mini-select" required></div>
+            <div><label for="pHeure">Heure</label><input id="pHeure" type="time" class="ep-mini-select" value="16:00"></div>
+            <div><label for="pProf">Professeur</label><select id="pProf" class="ep-mini-select"></select></div>
+            <div><label for="pMatiere">Matière</label><input id="pMatiere" class="ep-mini-select" placeholder="Maths"></div>
+            <div><label for="pMode">Mode</label><select id="pMode" class="ep-mini-select"><option value="">Mode de la demande</option><option>En ligne (Visio)</option><option>Présentiel à domicile</option><option>Présentiel Centre ERIAS</option></select></div>
+            <button type="submit" class="ep-btn ep-btn-orange ep-btn-sm">+ Ajouter</button>
+          </form>
+          <div class="ep-table-wrap">
+            <table class="ep-table">
+              <thead><tr><th>Date</th><th>Heure</th><th>Professeur</th><th>Élève</th><th>Matière</th><th>Mode</th><th>Statut</th></tr></thead>
+              <tbody id="tPlanning"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="ep-footer">
+    <div class="ep-wrap ep-footer-inner">
+      <div>© 2026 ERIAS ACADEMY OS · PCE ICN Central &amp; ERIAS SECURITY GABON</div>
+      <nav aria-label="Liens du pied de page">
+        <a href="/">Accueil</a>
+        <a href="/masterclass/catalogue">Masterclass</a>
+        <a href="/ic-lycee">IC Lycée</a>
+        <a href="/espace-candidat">Espace Candidat</a>
+        <a href="https://wa.me/24177420617" target="_blank" rel="noopener">WhatsApp +241 77 42 06 17</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/js/header-erias.js"></script>
+  <script src="/js/ic-lycee-gestion.js"></script>
+</body>
+</html>

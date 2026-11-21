@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="cyber">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devenir Professeur IC LYCÉE | Cours de soutien Collège & Lycée</title>
+  <meta name="description" content="Professeur de collège ou de lycée, vacataire, étudiant en Master ou retraité : rejoins IC LYCÉE et donne des cours de soutien en ligne ou en présentiel.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/theme-pce.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <link rel="stylesheet" href="/css/formulaires.css">
+  <link rel="stylesheet" href="/css/header-erias.css">
+  <link rel="stylesheet" href="/css/erias-pro.css">
+</head>
+<body class="ep-page">
+
+  <!-- En-tête ERIAS : 2 étages (identité + actions / barre de menu centrée) -->
+  <header class="erias-header" id="eriasHeader">
+
+    <!-- ÉTAGE 1 : logo à gauche, actions à droite -->
+    <div class="eh-top">
+      <div class="eh-row eh-row-top">
+        <a href="/" class="eh-brand" aria-label="PCE-ICN Central — Accueil">
+          <img src="/assets/logo-pce-icn-medaillon.svg" alt="Logo PCE-ICN" id="headerLogoImg" class="eh-logo" width="48" height="48">
+          <span class="eh-brand-text">
+            <strong id="headerBrandTitle">PCE-ICN CENTRAL</strong>
+            <small id="headerBrandSub">CYBERSÉCURITÉ &amp; CONFORMITÉ NUMÉRIQUE</small>
+          </span>
+        </a>
+
+        <div class="eh-actions eh-actions-top">
+          <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+          <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+        </div>
+
+        <!-- Bouton Burger (mobile) -->
+        <button type="button" class="eh-burger" id="mobileMenuBtn" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ÉTAGE 2 : barre de menu centrée (devient le menu vertical sur mobile) -->
+    <div class="eh-bottom" id="mainNavMenu">
+      <nav class="eh-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a class="eh-link" href="/?univers=cyber">Cybersécurité PCE-ICN</a></li>
+          <li><a class="eh-link" href="/?univers=metiers">Académie des Métiers</a></li>
+          <li><a class="eh-link" href="/#univers">Les 2 Univers</a></li>
+          <li><a class="eh-link" href="/#prerequis">Socle PCEICN-0001</a></li>
+          <li><a class="eh-link" href="/#simulateur">Facilité de Paiement</a></li>
+          <li><a class="eh-link" href="/masterclass">Masterclass</a></li>
+          <li><a class="eh-link" href="/espace-candidat">Espace Candidat</a></li>
+          <li class="eh-has-sub">
+            <button type="button" class="eh-link eh-sub-toggle eh-link-lycee active" aria-expanded="false" aria-controls="ehSubLycee">IC Lycée <span class="eh-caret" aria-hidden="true">▾</span></button>
+            <ul class="eh-sub" id="ehSubLycee">
+              <li><a class="eh-sublink" href="/ic-lycee">Cours de Soutien<small>Forfaits &amp; matières, 6ème → Terminale</small></a></li>
+              <li><a class="eh-sublink active" aria-current="page" href="/ic-lycee/devenir-professeur">Devenir Professeur<small>Rejoindre l'équipe IC LYCÉE</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/demande-cours">Demander un Cours<small>Réserver pour mon enfant</small></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Actions répétées dans le menu mobile (en bas) -->
+      <div class="eh-actions eh-actions-mobile">
+        <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+        <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+      </div>
+    </div>
+
+  </header>
+
+  <section class="ep-hero">
+    <div class="ep-wrap">
+      <div class="ep-hero-inner">
+        <span class="ep-badge ep-badge-lycee">IC LYCÉE · RECRUTEMENT PROFESSEURS</span>
+        <h1>Deviens <span class="ep-orange">Professeur IC LYCÉE</span></h1>
+        <p>Tu enseignes au collège ou au lycée, tu es vacataire, étudiant en Master ou retraité ? Rejoins le réseau IC LYCÉE et accompagne des élèves de la 6ème à la Terminale.</p>
+        
+        <nav class="ep-subnav" aria-label="IC Lycée"><a href="/ic-lycee">Cours de Soutien</a><a href="/ic-lycee/demande-cours">Demander un Cours</a><a href="/ic-lycee/devenir-professeur" class="active" aria-current="page">Devenir Professeur</a></nav>
+      </div>
+    </div>
+  </section>
+
+  <main class="ep-section">
+    <div class="ep-wrap ep-form-wrap">
+    <div class="fx-card">
+      <form name="recrutement-prof-ic-lycee" id="formProfIcLycee" class="ep-form" method="POST" action="/merci" enctype="multipart/form-data"
+        data-netlify="true" netlify-honeypot="bot-field" data-ref-prefix="ICL-PROF" novalidate>
+        <input type="hidden" name="form-name" value="recrutement-prof-ic-lycee">
+        <input type="hidden" name="formulaire" value="recrutement-prof-ic-lycee">
+        <input type="hidden" name="reference_dossier" value="">
+        <p class="fx-hidden-field" aria-hidden="true">
+          <label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">1</span> Tes coordonnées</h2>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="ipNom">Nom &amp; Prénom <span class="req">*</span></label>
+              <input id="ipNom" name="nom_prenom" class="form-input" required autocomplete="name" placeholder="ex : Ondo Mba Sylvie">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ipWhatsapp">WhatsApp <span class="req">*</span></label>
+              <input id="ipWhatsapp" name="whatsapp" type="tel" class="form-input" required value="+241 " pattern="^\+?[0-9][0-9 ]{7,17}$" title="Numéro WhatsApp avec indicatif, ex : +241 77 00 00 00" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="ipEmail">Email <span class="req">*</span></label>
+              <input id="ipEmail" name="email" type="email" class="form-input" required autocomplete="email" placeholder="prof@exemple.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ipVille">Ville <span class="req">*</span></label>
+              <input id="ipVille" name="ville" class="form-input" required list="villesGabon" placeholder="ex : Libreville">
+              <datalist id="villesGabon"><option value="Libreville"><option value="Akanda"><option value="Owendo"><option value="Ntoum"><option value="Port-Gentil"><option value="Franceville"><option value="Moanda"><option value="Oyem"><option value="Lambaréné"><option value="Mouila"><option value="Koulamoutou"><option value="Tchibanga"><option value="Makokou"></datalist>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="ipStatut">Statut <span class="req">*</span></label>
+              <select id="ipStatut" name="statut" class="form-select" required>
+                <option value="">— Sélectionne —</option>
+                <option>Prof Collège en poste</option>
+                <option>Prof Lycée en poste</option>
+                <option>Vacataire</option>
+                <option>Étudiant Master</option>
+                <option>Retraité</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ipEtab">Établissement (actuel ou dernier)</label>
+              <input id="ipEtab" name="etablissement" class="form-input" placeholder="ex : Lycée National Léon Mba">
+            </div>
+          </div>
+        </section>
+
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">2</span> Ce que tu enseignes</h2>
+          <div class="form-group">
+            <span class="form-label">Matière(s) <span class="req">*</span></span>
+          <input type="hidden" name="matieres" value="">
+          <div class="ep-checks" data-check-group="matieres" data-required-group="Coche au moins une matière.">
+            <label><input type="checkbox" value="Maths"> Maths</label>
+            <label><input type="checkbox" value="Français"> Français</label>
+            <label><input type="checkbox" value="Physique-Chimie"> Physique-Chimie</label>
+            <label><input type="checkbox" value="SVT"> SVT</label>
+            <label><input type="checkbox" value="Histoire-Géo"> Histoire-Géo</label>
+            <label><input type="checkbox" value="Anglais"> Anglais</label>
+            <label><input type="checkbox" value="Espagnol"> Espagnol</label>
+            <label><input type="checkbox" value="Philo"> Philo</label>
+            <label><input type="checkbox" value="Éco/SES"> Éco/SES</label>
+            <label><input type="checkbox" value="Informatique"> Informatique</label>
+            <label><input type="checkbox" value="EPS"> EPS</label>
+            <label><input type="checkbox" value="Autre"> Autre</label>
+          </div>
+          </div>
+          <div class="form-group">
+            <span class="form-label">Niveau(x) enseigné(s) <span class="req">*</span></span>
+          <input type="hidden" name="niveaux" value="">
+          <div class="ep-checks" data-check-group="niveaux" data-required-group="Coche au moins un niveau.">
+            <label><input type="checkbox" value="6ème"> 6ème</label>
+            <label><input type="checkbox" value="5ème"> 5ème</label>
+            <label><input type="checkbox" value="4ème"> 4ème</label>
+            <label><input type="checkbox" value="3ème"> 3ème</label>
+            <label><input type="checkbox" value="2nde"> 2nde</label>
+            <label><input type="checkbox" value="1ère"> 1ère</label>
+            <label><input type="checkbox" value="Terminale A"> Terminale A</label>
+            <label><input type="checkbox" value="Terminale B"> Terminale B</label>
+            <label><input type="checkbox" value="Terminale C"> Terminale C</label>
+            <label><input type="checkbox" value="Terminale D"> Terminale D</label>
+            <label><input type="checkbox" value="Terminale Technique"> Terminale Technique</label>
+          </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="ipExp">Expérience d'enseignement <span class="req">*</span></label>
+              <select id="ipExp" name="experience" class="form-select" required>
+                <option value="">— Sélectionne —</option>
+                <option>Moins d'1 an</option>
+                <option>1 à 3 ans</option>
+                <option>3 à 5 ans</option>
+                <option>5 à 10 ans</option>
+                <option>Plus de 10 ans</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ipTarif">Tarif horaire souhaité <span class="req">*</span></label>
+              <select id="ipTarif" name="tarif_horaire" class="form-select" required>
+                <option value="">— Sélectionne —</option>
+                <option>3.000 – 5.000 F / heure</option>
+                <option>5.000 – 8.000 F / heure</option>
+                <option>8.000 – 12.000 F / heure</option>
+                <option>Plus de 12.000 F / heure</option>
+                <option>À discuter</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <span class="form-label">Certification PCE-ICN / IC Lycée ? <span class="req">*</span></span>
+          <div class="ep-radio-row">
+            <label><input type="radio" name="certification" value="Oui" required> Oui</label>
+            <label><input type="radio" name="certification" value="Non"> Non</label>
+            <label><input type="radio" name="certification" value="En cours"> En cours</label>
+            <label><input type="radio" name="certification" value="Je veux être certifié"> Je veux être certifié</label>
+          </div>
+          </div>
+        </section>
+
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">3</span> Organisation</h2>
+          <div class="form-group">
+            <span class="form-label">Mode de cours <span class="req">*</span></span>
+          <div class="ep-radio-row">
+            <label><input type="radio" name="mode" value="En ligne" required> En ligne</label>
+            <label><input type="radio" name="mode" value="Présentiel"> Présentiel</label>
+            <label><input type="radio" name="mode" value="Les deux"> Les deux</label>
+          </div>
+          </div>
+          <div class="form-group">
+            <span class="form-label">Disponibilités <span class="req">*</span></span>
+          <input type="hidden" name="disponibilites" value="">
+          <div class="ep-checks" data-check-group="disponibilites" data-required-group="Indique au moins une disponibilité.">
+            <label><input type="checkbox" value="Après 14h"> Après 14h</label>
+            <label><input type="checkbox" value="Soir 18h-20h"> Soir 18h-20h</label>
+            <label><input type="checkbox" value="Week-end"> Week-end</label>
+            <label><input type="checkbox" value="Vacances"> Vacances</label>
+            <label><input type="checkbox" value="À la demande"> À la demande</label>
+          </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ipCv">CV ou Diplôme (PDF / photo, 8 Mo max)</label>
+            <input id="ipCv" name="cv_diplome" type="file" class="form-input" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+            <p class="fx-hint">Pas de fichier sous la main ? Tu pourras l'envoyer ensuite sur WhatsApp.</p>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="ipPres">Présentation <span class="req">*</span></label>
+            <textarea id="ipPres" name="presentation" class="form-textarea" rows="5" required minlength="30" placeholder="Ton parcours, ta pédagogie, tes résultats avec les élèves…"></textarea>
+          </div>
+        </section>
+
+        <section class="fx-section">
+          <label class="fx-check">
+            <input type="checkbox" name="consentement" value="Oui" required>
+            <span>Je certifie l'exactitude des informations et j'accepte d'être contacté(e) par IC LYCÉE. <span class="req">*</span></span>
+          </label>
+          <div class="fx-error" data-form-error hidden></div>
+          <div class="fx-actions">
+            <span class="fx-hint">Les champs marqués * sont obligatoires.</span>
+            <button type="submit" class="ep-btn ep-btn-orange">Envoyer ma candidature →</button>
+          </div>
+        </section>
+      </form>
+
+      <div class="fx-success" data-form-success hidden>
+        <div class="fx-success-icon">✓</div>
+        <h2>Merci <span data-fill="nom_prenom"></span> !</h2>
+        <p>Ta candidature de Professeur IC LYCÉE est enregistrée. L'équipe IC LYCÉE vérifie ton profil et te contacte sur WhatsApp pour l'entretien et la certification.</p>
+        <div class="fx-ref" data-fill="reference_dossier"></div>
+        <div class="ep-success-actions">
+          <a class="ep-btn ep-btn-wa" data-wa="general" data-wa-text="Bonjour IC LYCÉE, je viens de postuler comme professeur ({matieres} — {niveaux}). Dossier {reference} — {nom_prenom}." href="https://wa.me/24177420617"><svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.9L3 29l6.7-2.2c2 1.1 4.1 1.6 6.3 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-2 0-3.9-.6-5.6-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.8 10.1 5.1 16 5.1s10.7 4.7 10.7 10.5S21.9 26.1 16 26.1zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg> Envoyer un message WhatsApp</a>
+          <a class="ep-btn ep-btn-outline" href="/ic-lycee">Retour IC LYCÉE</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <footer class="ep-footer">
+    <div class="ep-wrap ep-footer-inner">
+      <div>© 2026 ERIAS ACADEMY OS · PCE ICN Central &amp; ERIAS SECURITY GABON</div>
+      <nav aria-label="Liens du pied de page">
+        <a href="/">Accueil</a>
+        <a href="/masterclass/catalogue">Masterclass</a>
+        <a href="/ic-lycee">IC Lycée</a>
+        <a href="/espace-candidat">Espace Candidat</a>
+        <a href="https://wa.me/24177420617" target="_blank" rel="noopener">WhatsApp +241 77 42 06 17</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Bouton WhatsApp flottant IC LYCÉE -->
+  <a class="ep-wa-float" href="https://wa.me/24177420617?text=Bonjour%20IC%20LYC%C3%89E%2C%20je%20veux%20des%20infos%20sur%20les%20cours%20de%20soutien." target="_blank" rel="noopener" aria-label="Écrire à IC LYCÉE sur WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.9L3 29l6.7-2.2c2 1.1 4.1 1.6 6.3 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-2 0-3.9-.6-5.6-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.8 10.1 5.1 16 5.1s10.7 4.7 10.7 10.5S21.9 26.1 16 26.1zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span>Infos cours de soutien</span>
+  </a>
+
+  <script src="/js/header-erias.js"></script>
+  <script src="/js/erias-forms.js"></script>
+</body>
+</html>

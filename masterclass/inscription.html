@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="cyber">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription Masterclass Pro | ERIAS ACADEMY OS</title>
+  <meta name="description" content="Inscris-toi à une Masterclass Pro ERIAS : choisis ta thématique, ta session, ton mode et ton niveau. Réponse sur WhatsApp sous 24h.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/theme-pce.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <link rel="stylesheet" href="/css/formulaires.css">
+  <link rel="stylesheet" href="/css/header-erias.css">
+  <link rel="stylesheet" href="/css/erias-pro.css">
+</head>
+<body class="ep-page">
+
+  <!-- En-tête ERIAS : 2 étages (identité + actions / barre de menu centrée) -->
+  <header class="erias-header" id="eriasHeader">
+
+    <!-- ÉTAGE 1 : logo à gauche, actions à droite -->
+    <div class="eh-top">
+      <div class="eh-row eh-row-top">
+        <a href="/" class="eh-brand" aria-label="PCE-ICN Central — Accueil">
+          <img src="/assets/logo-pce-icn-medaillon.svg" alt="Logo PCE-ICN" id="headerLogoImg" class="eh-logo" width="48" height="48">
+          <span class="eh-brand-text">
+            <strong id="headerBrandTitle">PCE-ICN CENTRAL</strong>
+            <small id="headerBrandSub">CYBERSÉCURITÉ &amp; CONFORMITÉ NUMÉRIQUE</small>
+          </span>
+        </a>
+
+        <div class="eh-actions eh-actions-top">
+          <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+          <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+        </div>
+
+        <!-- Bouton Burger (mobile) -->
+        <button type="button" class="eh-burger" id="mobileMenuBtn" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ÉTAGE 2 : barre de menu centrée (devient le menu vertical sur mobile) -->
+    <div class="eh-bottom" id="mainNavMenu">
+      <nav class="eh-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a class="eh-link" href="/?univers=cyber">Cybersécurité PCE-ICN</a></li>
+          <li><a class="eh-link" href="/?univers=metiers">Académie des Métiers</a></li>
+          <li><a class="eh-link" href="/#univers">Les 2 Univers</a></li>
+          <li><a class="eh-link" href="/#prerequis">Socle PCEICN-0001</a></li>
+          <li><a class="eh-link" href="/#simulateur">Facilité de Paiement</a></li>
+          <li><a class="eh-link active" href="/masterclass" aria-current="page">Masterclass</a></li>
+          <li><a class="eh-link" href="/espace-candidat">Espace Candidat</a></li>
+          <li class="eh-has-sub">
+            <button type="button" class="eh-link eh-sub-toggle eh-link-lycee" aria-expanded="false" aria-controls="ehSubLycee">IC Lycée <span class="eh-caret" aria-hidden="true">▾</span></button>
+            <ul class="eh-sub" id="ehSubLycee">
+              <li><a class="eh-sublink" href="/ic-lycee">Cours de Soutien<small>Forfaits &amp; matières, 6ème → Terminale</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/devenir-professeur">Devenir Professeur<small>Rejoindre l'équipe IC LYCÉE</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/demande-cours">Demander un Cours<small>Réserver pour mon enfant</small></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Actions répétées dans le menu mobile (en bas) -->
+      <div class="eh-actions eh-actions-mobile">
+        <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+        <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+      </div>
+    </div>
+
+  </header>
+
+  <section class="ep-hero">
+    <div class="ep-wrap">
+      <div class="ep-hero-inner">
+        <span class="ep-badge ep-badge-metiers">INSCRIPTION MASTERCLASS PRO</span>
+        <h1>Réserve ta place en <span class="ep-gold">Masterclass</span></h1>
+        <p>Remplis le formulaire en 2 minutes. Un conseiller ERIAS te contacte sur WhatsApp sous 24h pour confirmer ta session et ton paiement.</p>
+        <nav class="ep-subnav" aria-label="Masterclass"><a href="/masterclass">Présentation</a><a href="/masterclass/catalogue">Catalogue</a><a href="/masterclass/inscription" class="active" aria-current="page">S'inscrire</a><a href="/masterclass/devenir-formateur">Devenir Formateur</a></nav>
+      </div>
+    </div>
+  </section>
+
+  <main class="ep-section">
+    <div class="ep-wrap ep-form-wrap">
+    <div class="fx-card">
+      <form name="inscription-masterclass" id="formInscriptionMasterclass" class="ep-form" method="POST" action="/merci"
+        data-netlify="true" netlify-honeypot="bot-field" data-ref-prefix="MC" data-prefill novalidate>
+        <input type="hidden" name="form-name" value="inscription-masterclass">
+        <input type="hidden" name="formulaire" value="inscription-masterclass">
+        <input type="hidden" name="reference_dossier" value="">
+        <p class="fx-hidden-field" aria-hidden="true">
+          <label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+        <input type="hidden" name="masterclass_id" value="">
+        <input type="hidden" name="montant_fcfa" value="">
+
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">1</span> Tes coordonnées</h2>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="mcNom">Nom <span class="req">*</span></label>
+              <input id="mcNom" name="nom" class="form-input" required autocomplete="family-name" placeholder="ex : Ndong">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mcPrenom">Prénom <span class="req">*</span></label>
+              <input id="mcPrenom" name="prenom" class="form-input" required autocomplete="given-name" placeholder="ex : Chantal">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="mcWhatsapp">WhatsApp <span class="req">*</span></label>
+              <input id="mcWhatsapp" name="whatsapp" type="tel" class="form-input" required value="+241 " pattern="^\+?[0-9][0-9 ]{7,17}$" title="Numéro WhatsApp avec indicatif, ex : +241 77 00 00 00" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mcEmail">Email <span class="req">*</span></label>
+              <input id="mcEmail" name="email" type="email" class="form-input" required autocomplete="email" placeholder="toi@exemple.com">
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="mcVille">Ville <span class="req">*</span></label>
+              <input id="mcVille" name="ville" class="form-input" required list="villesGabon" placeholder="ex : Libreville">
+              <datalist id="villesGabon"><option value="Libreville"><option value="Akanda"><option value="Owendo"><option value="Ntoum"><option value="Port-Gentil"><option value="Franceville"><option value="Moanda"><option value="Oyem"><option value="Lambaréné"><option value="Mouila"><option value="Koulamoutou"><option value="Tchibanga"><option value="Makokou"></datalist>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mcStatut">Statut <span class="req">*</span></label>
+              <select id="mcStatut" name="statut" class="form-select" required>
+                <option value="">— Sélectionne —</option>
+                <option>Étudiant</option>
+                <option>Professionnel</option>
+                <option>Entreprise</option>
+                <option>Demandeur d'emploi</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">2</span> Ta Masterclass</h2>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="mcThematique">Thématique <span class="req">*</span></label>
+              <select id="mcThematique" name="thematique" class="form-select" required>
+                <option value="">— Sélectionne une thématique —</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mcMasterclass">Masterclass précise <span class="req">*</span></label>
+              <select id="mcMasterclass" name="masterclass" class="form-select" required disabled>
+                <option value="">— Choisis d'abord une thématique —</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="mcSession">Session (créneau 14h – 20h) <span class="req">*</span></label>
+              <select id="mcSession" name="session" class="form-select" required>
+                <option value="">— Sélectionne —</option>
+                <option>14h – 16h</option>
+                <option>16h – 18h</option>
+                <option>18h – 20h</option>
+                <option>14h – 20h (journée intensive)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mcNiveau">Ton niveau <span class="req">*</span></label>
+              <select id="mcNiveau" name="niveau" class="form-select" required>
+                <option value="">— Sélectionne —</option>
+                <option>Débutant</option>
+                <option>Intermédiaire</option>
+                <option>Avancé</option>
+                <option>Expert</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <span class="form-label">Mode <span class="req">*</span></span>
+          <div class="ep-radio-row">
+            <label><input type="radio" name="mode" value="Présentiel" required> Présentiel</label>
+            <label><input type="radio" name="mode" value="En ligne"> En ligne</label>
+            <label><input type="radio" name="mode" value="Hybride"> Hybride</label>
+          </div>
+          </div>
+          <div class="ep-form-recap" id="mcRecap" hidden>
+            <div><small class="fx-hint" style="margin:0;">Tarif participant</small><div id="mcRecapTitre" style="color:#fff;font-weight:700;"></div></div>
+            <strong id="mcRecapPrix"></strong>
+          </div>
+        </section>
+
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">3</span> Paiement &amp; message</h2>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="mcConnu">Tu nous as connus via <span class="req">*</span></label>
+              <select id="mcConnu" name="connu_via" class="form-select" required>
+                <option value="">— Sélectionne —</option>
+                <option>Facebook</option>
+                <option>WhatsApp</option>
+                <option>TikTok</option>
+                <option>Instagram</option>
+                <option>LinkedIn</option>
+                <option>Bouche-à-oreille</option>
+                <option>Site web ERIAS</option>
+                <option>Radio / TV</option>
+                <option>Établissement / Entreprise</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <span class="form-label">Facilité de paiement (2 fois) ? <span class="req">*</span></span>
+          <div class="ep-radio-row">
+            <label><input type="radio" name="facilite_paiement" value="Oui" required> Oui</label>
+            <label><input type="radio" name="facilite_paiement" value="Non"> Non</label>
+          </div>
+            </div>
+          </div>
+          <div class="ep-split-note" id="mcSplitNote" hidden></div>
+          <div class="form-group" style="margin-top:1rem;">
+            <label class="form-label" for="mcMessage">Message (facultatif)</label>
+            <textarea id="mcMessage" name="message" class="form-textarea" rows="4" placeholder="Questions, attentes, besoins particuliers…"></textarea>
+          </div>
+        </section>
+
+        <section class="fx-section">
+          <label class="fx-check">
+            <input type="checkbox" name="consentement" value="Oui" required>
+            <span>J'accepte d'être recontacté(e) par ERIAS sur WhatsApp au sujet de mon inscription. <span class="req">*</span></span>
+          </label>
+          <div class="fx-error" data-form-error hidden></div>
+          <div class="fx-actions">
+            <span class="fx-hint">Les champs marqués * sont obligatoires.</span>
+            <button type="submit" class="ep-btn ep-btn-green">Valider mon inscription →</button>
+          </div>
+        </section>
+      </form>
+
+      <div class="fx-success" data-form-success hidden>
+        <div class="fx-success-icon">✓</div>
+        <h2>Merci <span data-fill="prenom"></span> !</h2>
+        <p>Ton inscription à <strong data-fill="masterclass"></strong> est enregistrée. On te contacte sur WhatsApp sous 24h.</p>
+        <div class="fx-ref" data-fill="reference_dossier"></div>
+        <div class="ep-success-actions">
+          <a class="ep-btn ep-btn-wa" data-wa="general" data-wa-text="Bonjour ERIAS, je confirme mon inscription à la Masterclass « {masterclass} » (session {session}, {mode}). Dossier {reference} — {prenom} {nom}." href="https://wa.me/24177420617"><svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.9L3 29l6.7-2.2c2 1.1 4.1 1.6 6.3 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-2 0-3.9-.6-5.6-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.8 10.1 5.1 16 5.1s10.7 4.7 10.7 10.5S21.9 26.1 16 26.1zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg> Confirmer sur WhatsApp</a>
+          <a class="ep-btn ep-btn-outline" href="/masterclass/catalogue">Voir d'autres Masterclass</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <footer class="ep-footer">
+    <div class="ep-wrap ep-footer-inner">
+      <div>© 2026 ERIAS ACADEMY OS · PCE ICN Central &amp; ERIAS SECURITY GABON</div>
+      <nav aria-label="Liens du pied de page">
+        <a href="/">Accueil</a>
+        <a href="/masterclass/catalogue">Masterclass</a>
+        <a href="/ic-lycee">IC Lycée</a>
+        <a href="/espace-candidat">Espace Candidat</a>
+        <a href="https://wa.me/24177420617" target="_blank" rel="noopener">WhatsApp +241 77 42 06 17</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/js/header-erias.js"></script>
+  <script src="/js/referentiel.js"></script>
+  <script src="/js/masterclass-catalogue.js"></script>
+  <script src="/js/erias-forms.js"></script>
+  <script src="/js/masterclass-pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="cyber">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue Masterclass Pro | ERIAS ACADEMY OS</title>
+  <meta name="description" content="Catalogue des Masterclass Pro ERIAS : Développement & IA, Data & Cloud, Réseaux, Finance digitale, Marketing, Métiers émergents, Santé & Éducation. Filtres par famille, mode et recherche.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/theme-pce.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <link rel="stylesheet" href="/css/formulaires.css">
+  <link rel="stylesheet" href="/css/header-erias.css">
+  <link rel="stylesheet" href="/css/erias-pro.css">
+</head>
+<body class="ep-page">
+
+  <!-- En-tête ERIAS : 2 étages (identité + actions / barre de menu centrée) -->
+  <header class="erias-header" id="eriasHeader">
+
+    <!-- ÉTAGE 1 : logo à gauche, actions à droite -->
+    <div class="eh-top">
+      <div class="eh-row eh-row-top">
+        <a href="/" class="eh-brand" aria-label="PCE-ICN Central — Accueil">
+          <img src="/assets/logo-pce-icn-medaillon.svg" alt="Logo PCE-ICN" id="headerLogoImg" class="eh-logo" width="48" height="48">
+          <span class="eh-brand-text">
+            <strong id="headerBrandTitle">PCE-ICN CENTRAL</strong>
+            <small id="headerBrandSub">CYBERSÉCURITÉ &amp; CONFORMITÉ NUMÉRIQUE</small>
+          </span>
+        </a>
+
+        <div class="eh-actions eh-actions-top">
+          <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+          <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+        </div>
+
+        <!-- Bouton Burger (mobile) -->
+        <button type="button" class="eh-burger" id="mobileMenuBtn" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ÉTAGE 2 : barre de menu centrée (devient le menu vertical sur mobile) -->
+    <div class="eh-bottom" id="mainNavMenu">
+      <nav class="eh-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a class="eh-link" href="/?univers=cyber">Cybersécurité PCE-ICN</a></li>
+          <li><a class="eh-link" href="/?univers=metiers">Académie des Métiers</a></li>
+          <li><a class="eh-link" href="/#univers">Les 2 Univers</a></li>
+          <li><a class="eh-link" href="/#prerequis">Socle PCEICN-0001</a></li>
+          <li><a class="eh-link" href="/#simulateur">Facilité de Paiement</a></li>
+          <li><a class="eh-link active" href="/masterclass" aria-current="page">Masterclass</a></li>
+          <li><a class="eh-link" href="/espace-candidat">Espace Candidat</a></li>
+          <li class="eh-has-sub">
+            <button type="button" class="eh-link eh-sub-toggle eh-link-lycee" aria-expanded="false" aria-controls="ehSubLycee">IC Lycée <span class="eh-caret" aria-hidden="true">▾</span></button>
+            <ul class="eh-sub" id="ehSubLycee">
+              <li><a class="eh-sublink" href="/ic-lycee">Cours de Soutien<small>Forfaits &amp; matières, 6ème → Terminale</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/devenir-professeur">Devenir Professeur<small>Rejoindre l'équipe IC LYCÉE</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/demande-cours">Demander un Cours<small>Réserver pour mon enfant</small></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Actions répétées dans le menu mobile (en bas) -->
+      <div class="eh-actions eh-actions-mobile">
+        <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+        <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+      </div>
+    </div>
+
+  </header>
+
+  <section class="ep-hero">
+    <div class="ep-wrap">
+      <div class="ep-hero-inner">
+        <span class="ep-badge ep-badge-metiers">MASTERCLASS PRO · FORMATEURS CERTIFIÉS</span>
+        <h1>Le catalogue complet des <span class="ep-gold">Masterclass Pro</span></h1>
+        <p>Des sessions courtes et intensives, en présentiel, en ligne ou en hybride, animées par des formateurs certifiés PCE-ICN et IC Métiers. Filtre par famille, par mode ou cherche directement un thème.</p>
+        <nav class="ep-subnav" aria-label="Masterclass"><a href="/masterclass">Présentation</a><a href="/masterclass/catalogue" class="active" aria-current="page">Catalogue</a><a href="/masterclass/inscription">S'inscrire</a><a href="/masterclass/devenir-formateur">Devenir Formateur</a></nav>
+      </div>
+    </div>
+  </section>
+
+  <main class="ep-section">
+    <div class="ep-wrap">
+      <div class="ep-filters" role="search">
+        <div class="form-group" style="margin:0;">
+          <label class="form-label" for="mcSearch">Rechercher</label>
+          <input type="search" id="mcSearch" class="form-input" placeholder="ex : Python, Excel, e-commerce, formateur…" autocomplete="off">
+        </div>
+        <div class="form-group" style="margin:0;">
+          <label class="form-label" for="mcFamille">Famille</label>
+          <select id="mcFamille" class="form-select"><option value="all">Toutes les familles</option></select>
+        </div>
+        <div class="form-group" style="margin:0;">
+          <label class="form-label" for="mcMode">Mode</label>
+          <select id="mcMode" class="form-select">
+            <option value="all">Tous les modes</option>
+            <option>Présentiel</option>
+            <option>En ligne</option>
+            <option>Hybride</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ep-chips" id="mcChips" aria-label="Filtrer par famille"></div>
+      <p class="ep-count" id="mcCount" aria-live="polite"></p>
+      <div id="mcResults"></div>
+    </div>
+  </main>
+
+  <footer class="ep-footer">
+    <div class="ep-wrap ep-footer-inner">
+      <div>© 2026 ERIAS ACADEMY OS · PCE ICN Central &amp; ERIAS SECURITY GABON</div>
+      <nav aria-label="Liens du pied de page">
+        <a href="/">Accueil</a>
+        <a href="/masterclass/catalogue">Masterclass</a>
+        <a href="/ic-lycee">IC Lycée</a>
+        <a href="/espace-candidat">Espace Candidat</a>
+        <a href="https://wa.me/24177420617" target="_blank" rel="noopener">WhatsApp +241 77 42 06 17</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/js/header-erias.js"></script>
+  <script src="/js/referentiel.js"></script>
+  <script src="/js/masterclass-catalogue.js"></script>
+  <script src="/js/masterclass-pages.js"></script>
+</body>
+</html>
