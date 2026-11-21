@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="cyber">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription PCE ICN — Module Basique PCEICN-0001 (Niveaux 1 & 2)</title>
+  <meta name="description" content="Formulaire officiel d'inscription PCE ICN au Module Basique PCEICN-0001 — Sensibilisation : Niveau 1 à 25 000 FCFA, Niveau 2 métiers de la cybersécurité à 60 000 FCFA.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/theme-pce.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/formulaires.css">
+</head>
+<body class="african-pattern-bg">
+
+  <!-- Header Simplifié -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/logo-pce-icn.jpg" alt="Logo PCE ICN" class="official-logo-img">
+        <div class="brand-text">
+          <h2>PCE-ICN CENTRAL</h2>
+          <span>FORMULAIRE D'INSCRIPTION PCE ICN</span>
+        </div>
+      </a>
+
+      <div>
+        <a href="index.html" class="btn btn-outline btn-sm">← Accueil</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="fx-container">
+
+    <div class="fx-intro">
+      <span class="badge badge-primary">PCE ICN · CYBERSÉCURITÉ</span>
+      <h1>PCEICN-0001 Module Basique — Sensibilisation</h1>
+      <p>Le socle obligatoire de tout parcours PCE ICN, en 2 niveaux : la sensibilisation pour tous, puis la préparation aux métiers de la cybersécurité avec les bases informatique et réseau.</p>
+    </div>
+
+    <div class="fx-card">
+      <form
+        name="inscription-pce-icn"
+        id="formPceIcn"
+        class="fx-form"
+        method="POST"
+        action="/merci"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        data-ref-prefix="PCEICN-0001">
+
+        <input type="hidden" name="form-name" value="inscription-pce-icn">
+        <input type="hidden" name="subject" value="Nouvelle inscription PCE ICN — Module PCEICN-0001 (%{submissionId})">
+        <input type="hidden" name="reference_dossier" value="">
+        <input type="hidden" name="montant_fcfa" value="25000">
+        <p class="fx-hidden-field" aria-hidden="true">
+          <label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+
+        <!-- 1. NIVEAU -->
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">1</span> Choisissez votre niveau</h2>
+
+          <div class="fx-choices">
+            <label class="fx-choice">
+              <input type="radio" name="niveau" value="Niveau 1 — Sensibilisation (25 000 FCFA)" data-amount="25000" data-show="" checked>
+              <span class="fx-choice-body">
+                <span class="fx-choice-tag">Niveau 1 · Pour tous</span>
+                <span class="fx-choice-title">Sensibilisation, Hygiène Numérique &amp; Éthique</span>
+                <span class="fx-choice-price">25 000 FCFA</span>
+                <span class="fx-choice-desc">
+                  Ouvert à tous : élèves, étudiants, salariés, parents, entrepreneurs.
+                  <ul>
+                    <li>Comprendre les menaces numériques</li>
+                    <li>Adopter les bons réflexes d'hygiène numérique</li>
+                    <li>Agir avec éthique en ligne</li>
+                  </ul>
+                </span>
+              </span>
+            </label>
+
+            <label class="fx-choice">
+              <input type="radio" name="niveau" value="Niveau 2 — Métiers de la cybersécurité + bases informatique & réseau (60 000 FCFA)" data-amount="60000" data-show="blocNiveau2">
+              <span class="fx-choice-body">
+                <span class="fx-choice-tag">Niveau 2 · Parcours métier</span>
+                <span class="fx-choice-title">Préparation aux Métiers de la Cybersécurité</span>
+                <span class="fx-choice-price">60 000 FCFA</span>
+                <span class="fx-choice-desc">
+                  Pour ceux qui visent une formation dans l'un des métiers de la cybersécurité.
+                  <ul>
+                    <li>Sensibilisation et hygiène numérique</li>
+                    <li>Bases informatiques (systèmes, poste de travail)</li>
+                    <li>Bases réseau (TCP/IP, Wi-Fi, équipements)</li>
+                  </ul>
+                </span>
+              </span>
+            </label>
+          </div>
+
+          <div class="fx-conditional" id="blocNiveau2" hidden>
+            <h3>Votre projet métier en cybersécurité</h3>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="pceMetierVise">Métier visé <span class="req">*</span></label>
+                <select id="pceMetierVise" name="metier_cyber_vise" class="form-select" data-required-when-shown>
+                  <option value="">— Sélectionnez —</option>
+                  <option>Analyste SOC &amp; Cyber-Défense Opérationnelle</option>
+                  <option>Auditeur Sécurité &amp; Tests d'Intrusion (Pentest)</option>
+                  <option>Gouvernance, Risques &amp; Conformité (GRC)</option>
+                  <option>Manager de Crise Cyber &amp; Continuité d'Activité</option>
+                  <option>Forensic, Investigation &amp; Cyber-Renseignement</option>
+                  <option>Sécurité des Systèmes Industriels &amp; IoT (SCADA)</option>
+                  <option>Éthique Numérique &amp; Protection des Données (DPO)</option>
+                  <option>Je ne sais pas encore — besoin d'orientation</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="pceNiveauInfo">Niveau actuel en informatique <span class="req">*</span></label>
+                <select id="pceNiveauInfo" name="niveau_informatique" class="form-select" data-required-when-shown>
+                  <option value="">— Sélectionnez —</option>
+                  <option>Débutant (usage courant du téléphone / ordinateur)</option>
+                  <option>Intermédiaire (bureautique, Internet, installation de logiciels)</option>
+                  <option>Avancé (réseaux, systèmes, programmation)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="fx-recap" aria-live="polite">
+            <div>
+              <div class="fx-recap-label">Formule choisie</div>
+              <div class="fx-recap-value" data-recap="formule">Niveau 1 — Sensibilisation</div>
+            </div>
+            <div style="text-align: right;">
+              <div class="fx-recap-label">Montant à régler</div>
+              <div class="fx-recap-amount" data-recap="montant">25 000 FCFA</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. IDENTITÉ -->
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">2</span> Vos coordonnées</h2>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="pceNom">Nom de famille <span class="req">*</span></label>
+              <input type="text" id="pceNom" name="nom" class="form-input" placeholder="ex: Ondo Mba" autocomplete="family-name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="pcePrenom">Prénom(s) <span class="req">*</span></label>
+              <input type="text" id="pcePrenom" name="prenom" class="form-input" placeholder="ex: Jean-Christophe" autocomplete="given-name" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="pceNaissance">Date de naissance <span class="req">*</span></label>
+              <input type="date" id="pceNaissance" name="date_naissance" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="pceStatut">Situation actuelle <span class="req">*</span></label>
+              <select id="pceStatut" name="situation" class="form-select" required>
+                <option value="">— Sélectionnez —</option>
+                <option>Élève</option>
+                <option>Étudiant(e)</option>
+                <option>Salarié(e) du privé</option>
+                <option>Agent de l'administration publique</option>
+                <option>Entrepreneur / Indépendant</option>
+                <option>En recherche d'emploi</option>
+                <option>Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="pceWhatsapp">Téléphone WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="pceWhatsapp" name="whatsapp" class="form-input" placeholder="+241 77 00 11 22" autocomplete="tel" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="pceEmail">Adresse email <span class="req">*</span></label>
+              <input type="email" id="pceEmail" name="email" class="form-input" placeholder="candidat@email.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="pceVille">Ville de résidence <span class="req">*</span></label>
+              <input type="text" id="pceVille" name="ville" class="form-input" placeholder="ex: Libreville, Port-Gentil, Abidjan…" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="pcePays">Pays <span class="req">*</span></label>
+              <select id="pcePays" name="pays" class="form-select" required>
+                <option value="Gabon" selected>Gabon</option>
+                <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                <option value="Sénégal">Sénégal</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Bénin">Bénin</option>
+                <option value="Madagascar">Madagascar</option>
+                <option value="France">France (Diaspora)</option>
+                <option value="Canada">Canada (Diaspora)</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. ORGANISATION -->
+        <section class="fx-section">
+          <h2 class="fx-section-title"><span class="fx-step">3</span> Centre, format &amp; paiement</h2>
+
+          <div class="form-group">
+            <label class="form-label" for="pceCentre">Centre / partenaire local <span class="req">*</span></label>
+            <select id="pceCentre" name="centre" class="form-select" required>
+              <option value="ERIAS SECURITY GABON (Siège Libreville)" selected>ERIAS SECURITY GABON (Siège Libreville - Gabon)</option>
+              <option value="ERIAS Hub Maritime & Pétrole (Port-Gentil)">ERIAS Hub Maritime &amp; Pétrole (Port-Gentil - Gabon)</option>
+              <option value="PCE ICN Côte d'Ivoire (Abidjan)">PCE ICN Côte d'Ivoire (Plateau - Abidjan)</option>
+              <option value="PCE ICN Sénégal (Dakar)">PCE ICN Sénégal (Almadies - Dakar)</option>
+              <option value="Spread Practice Technology Ltd (Kigali)">Spread Practice Technology Ltd (Kigali - Rwanda)</option>
+              <option value="PCE ICN Bénin SARL (Cotonou)">PCE ICN Bénin SARL (Cotonou)</option>
+              <option value="PCE ICN Madagascar (Antananarivo)">PCE ICN Madagascar (Antananarivo)</option>
+              <option value="PCE ICN Diaspora Europe (Paris)">PCE ICN Diaspora Europe (Paris - France)</option>
+              <option value="PCE ICN Diaspora Amériques (Montréal)">PCE ICN Diaspora Amériques (Montréal - Canada)</option>
+            </select>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="pceFormat">Format souhaité <span class="req">*</span></label>
+              <select id="pceFormat" name="format" class="form-select" required>
+                <option value="Présentiel" selected>Présentiel au centre</option>
+                <option value="En ligne">En ligne</option>
+                <option value="Hybride">Hybride (présentiel + en ligne)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="pcePaiement">Mode de paiement envisagé <span class="req">*</span></label>
+              <select id="pcePaiement" name="mode_paiement" class="form-select" required>
+                <option value="">— Sélectionnez —</option>
+                <option>Mobile Money (Airtel Money / Moov Money)</option>
+                <option>Virement bancaire</option>
+                <option>Espèces au centre</option>
+                <option>Pris en charge par un employeur / sponsor</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" for="pceMessage">Message ou question (facultatif)</label>
+            <textarea id="pceMessage" name="message" class="form-textarea" rows="4" placeholder="Disponibilités, besoins particuliers, questions…"></textarea>
+          </div>
+        </section>
+
+        <!-- 4. VALIDATION -->
+        <section class="fx-section">
+          <label class="fx-check">
+            <input type="checkbox" name="consentement" value="Oui" required>
+            <span>Je certifie l'exactitude des informations fournies et j'accepte d'être recontacté(e) par PCE ICN et ERIAS SECURITY GABON au sujet de mon inscription. <span class="req" style="color: var(--primary-light);">*</span></span>
+          </label>
+
+          <div class="fx-error" data-form-error hidden></div>
+
+          <div class="fx-actions">
+            <span class="fx-hint">Les champs marqués <span style="color: var(--primary-light);">*</span> sont obligatoires.</span>
+            <button type="submit" class="btn btn-primary">Envoyer mon inscription →</button>
+          </div>
+        </section>
+      </form>
+
+      <!-- Confirmation (affichée après envoi) -->
+      <div class="fx-success" data-form-success hidden>
+        <div class="fx-success-icon">✓</div>
+        <h2>Inscription bien reçue !</h2>
+        <p>Votre demande d'inscription au Module Basique PCEICN-0001 a été transmise. Conservez votre numéro de dossier :</p>
+        <div class="fx-ref" data-success-ref></div>
+        <p>Un conseiller PCE ICN vous contacte sur WhatsApp sous 48 h ouvrées pour confirmer votre groupe et les modalités de paiement.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+          <a href="index.html" class="btn btn-outline">← Retour à l'accueil</a>
+          <a href="espace-candidat.html" class="btn btn-primary">Espace Candidat →</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="fx-cross-link">
+      Vous visez une formation métier en alternance ou une VAE ?
+      <a href="formulaire-metiers-vae.html">Formulaire Académie des Métiers &amp; VAE →</a>
+    </p>
+  </main>
+
+  <script src="js/formulaires.js"></script>
+</body>
+</html>

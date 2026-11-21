@@ -294,7 +294,7 @@ function validateCurrentStep(step) {
     if (!formData.hasPrerequisPce000 && (!prereqInput || !prereqInput.value.trim())) {
       const confirmPce000 = confirm("Vous n'avez pas validé le socle PCEICN-0001. Souhaitez-vous vous inscrire d'abord au Module Basique PCEICN-0001 pour débloquer votre accès ?");
       if (confirmPce000) {
-        window.location.href = 'candidature.html?type=pceicn-0001';
+        window.location.href = 'formulaire-pce-icn.html';
       }
       return false;
     }

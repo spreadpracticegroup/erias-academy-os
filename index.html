@@ -13,58 +13,53 @@
 </head>
 <body class="african-pattern-bg">
 
-  <!-- En-tête ERIAS : logo à gauche, menu au centre, actions à droite -->
+  <!-- En-tête ERIAS : 2 étages (identité + actions / barre de menu centrée) -->
   <header class="erias-header" id="eriasHeader">
-    <div class="eh-inner">
 
-      <!-- Zone gauche : logo PCE-ICN -->
-      <a href="index.html" class="eh-brand" aria-label="PCE ICN Central — Accueil">
-        <img src="assets/logo-pce-icn-medaillon.svg" alt="Logo PCE-ICN" id="headerLogoImg" class="eh-logo" width="60" height="60">
-        <span class="eh-brand-text">
-          <strong id="headerBrandTitle">PCE ICN</strong>
-          <small id="headerBrandSub">CENTRAL</small>
-        </span>
-      </a>
+    <!-- ÉTAGE 1 : logo à gauche, actions à droite -->
+    <div class="eh-top">
+      <div class="eh-row eh-row-top">
+        <a href="index.html" class="eh-brand" aria-label="PCE-ICN Central — Accueil">
+          <img src="assets/logo-pce-icn-medaillon.svg" alt="Logo PCE-ICN" id="headerLogoImg" class="eh-logo" width="48" height="48">
+          <span class="eh-brand-text">
+            <strong id="headerBrandTitle">PCE-ICN CENTRAL</strong>
+            <small id="headerBrandSub">CYBERSÉCURITÉ &amp; CONFORMITÉ NUMÉRIQUE</small>
+          </span>
+        </a>
 
-      <!-- Bouton Burger (mobile) -->
-      <button type="button" class="eh-burger" id="mobileMenuBtn" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span aria-hidden="true">☰</span>
-      </button>
+        <div class="eh-actions eh-actions-top">
+          <a href="backoffice.html" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+          <a href="candidature.html" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+        </div>
 
-      <!-- Zones centre + droite -->
-      <div class="eh-panel" id="mainNavMenu">
-        <nav class="eh-nav" aria-label="Navigation principale">
-          <ul>
-            <li><button type="button" class="eh-link universe-btn active" data-universe="cyber">Cybersécurité PCE-ICN</button></li>
-            <li><button type="button" class="eh-link universe-btn" data-universe="metiers">Académie des Métiers</button></li>
-            <li><a class="eh-link" href="#univers">Les 2 Univers</a></li>
-            <li><a class="eh-link" href="#prerequis">Socle PCE-000</a></li>
-            <li><a class="eh-link" href="#simulateur">Facilité de Paiement</a></li>
-            <li><a class="eh-link" href="masterclass.html">Masterclass</a></li>
-            <li><a class="eh-link" href="espace-candidat.html">Espace Candidat</a></li>
-          </ul>
-        </nav>
+        <!-- Bouton Burger (mobile) -->
+        <button type="button" class="eh-burger" id="mobileMenuBtn" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
 
-      <!-- Navigation Links -->
-      <nav>
-        <ul class="nav-menu" id="mainNavMenu">
-          <li class="nav-item"><a href="#univers">Les 2 Univers</a></li>
-          <li class="nav-item"><a href="#prerequis">Socle PCEICN-0001</a></li>
-          <li class="nav-item"><a href="#simulateur">Facilité de Paiement</a></li>
-          <li class="nav-item"><a href="masterclass.html">Masterclass</a></li>
-          <li class="nav-item"><a href="espace-candidat.html">Espace Candidat</a></li>
-          <li class="nav-item"><a href="backoffice.html" class="badge badge-silver">Back-Office</a></li>
+    <!-- ÉTAGE 2 : barre de menu centrée (devient le menu vertical sur mobile) -->
+    <div class="eh-bottom" id="mainNavMenu">
+      <nav class="eh-nav" aria-label="Navigation principale">
+        <ul>
+          <li><button type="button" class="eh-link universe-btn active" data-universe="cyber">Cybersécurité PCE-ICN</button></li>
+          <li><button type="button" class="eh-link universe-btn" data-universe="metiers">Académie des Métiers</button></li>
+          <li><a class="eh-link" href="#univers">Les 2 Univers</a></li>
+          <li><a class="eh-link" href="#prerequis">Socle PCEICN-0001</a></li>
+          <li><a class="eh-link" href="#simulateur">Facilité de Paiement</a></li>
+          <li><a class="eh-link" href="masterclass.html">Masterclass</a></li>
+          <li><a class="eh-link" href="espace-candidat.html">Espace Candidat</a></li>
         </ul>
       </nav>
 
-      <!-- Action Button -->
-      <div>
-        <a href="candidature.html" class="btn btn-primary btn-sm">
-          Déposer ma Demande →
-        </a>
+      <!-- Actions répétées dans le menu mobile (en bas) -->
+      <div class="eh-actions eh-actions-mobile">
+        <a href="backoffice.html" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+        <a href="candidature.html" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
       </div>
-
     </div>
+
   </header>
 
   <!-- Hero Section d'Accueil -->
@@ -107,7 +102,7 @@
             <span><strong>PCEICN-0001</strong> Module Basique — Sensibilisation</span>
             <span style="color: var(--primary-light); font-weight: 800;">25 000 FCFA</span>
             <span style="text-decoration: line-through; color: var(--text-muted); font-size: 0.8rem;">50 000 FCFA</span>
-            <a href="candidature.html?type=pceicn-0001" style="color: var(--text-white); font-weight: 700; text-decoration: underline; margin-left: 0.5rem;">S'inscrire d'abord →</a>
+            <a href="formulaire-pce-icn.html" style="color: var(--text-white); font-weight: 700; text-decoration: underline; margin-left: 0.5rem;">S'inscrire d'abord →</a>
           </div>
         </div>
 
@@ -258,7 +253,7 @@
             Titre officiel : <strong>Certification des Compétences Professionnelles</strong>
           </div>
           <div style="display: flex; gap: 1rem;">
-            <a href="candidature.html?univers=metiers" class="btn btn-primary" style="flex: 1; background: linear-gradient(135deg, #f7e08d 0%, #d4af37 100%); color: #070e1c;">
+            <a href="formulaire-metiers-vae.html" class="btn btn-primary" style="flex: 1; background: linear-gradient(135deg, #f7e08d 0%, #d4af37 100%); color: #070e1c;">
               Candidater aux Métiers / VAE →
             </a>
             <button class="btn btn-outline universe-btn" data-universe="metiers">
@@ -300,7 +295,7 @@
             </div>
           </div>
 
-          <a href="candidature.html?type=pceicn-0001" class="btn btn-primary">
+          <a href="formulaire-pce-icn.html" class="btn btn-primary">
             S'inscrire directement au Socle PCEICN-0001 (25 000 FCFA) →
           </a>
         </div>
@@ -556,8 +551,8 @@
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem;">
             <li><a href="candidature.html?univers=cyber" style="color: var(--text-secondary);">Cybersécurité PCE ICN</a></li>
             <li><a href="candidature.html?univers=metiers" style="color: var(--text-secondary);">Académie des Métiers</a></li>
-            <li><a href="candidature.html?type=pceicn-0001" style="color: var(--text-secondary);">Module Socle PCEICN-0001</a></li>
-            <li><a href="candidature.html?parcours=vae" style="color: var(--text-secondary);">Programme VAE</a></li>
+            <li><a href="formulaire-pce-icn.html" style="color: var(--text-secondary);">Module Socle PCEICN-0001</a></li>
+            <li><a href="formulaire-metiers-vae.html" style="color: var(--text-secondary);">Programme VAE</a></li>
           </ul>
         </div>
 

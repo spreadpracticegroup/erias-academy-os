@@ -48,8 +48,8 @@ function setUniverse(universe, save = true) {
 
   if (universe === 'cyber') {
     if (headerLogo) headerLogo.src = 'assets/logo-pce-icn-medaillon.svg';
-    if (headerBrandTitle) headerBrandTitle.textContent = 'PCE ICN';
-    if (headerBrandSub) headerBrandSub.textContent = 'CENTRAL';
+    if (headerBrandTitle) headerBrandTitle.textContent = 'PCE-ICN CENTRAL';
+    if (headerBrandSub) headerBrandSub.textContent = 'CYBERSÉCURITÉ & CONFORMITÉ NUMÉRIQUE';
   } else {
     if (headerLogo) headerLogo.src = 'assets/logo-pce-ic-metiers.jpg';
     if (headerBrandTitle) headerBrandTitle.textContent = 'PCE IC-ACADÉMIE DES MÉTIERS';
@@ -174,7 +174,7 @@ function initPrerequisChecker() {
           <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
             Sans le socle obligatoire PCEICN-0001 validé, aucune autre formation de cybersécurité ne peut être débutée.
           </p>
-          <a href="candidature.html?type=pceicn-0001" class="btn btn-primary btn-sm">
+          <a href="formulaire-pce-icn.html" class="btn btn-primary btn-sm">
             S'inscrire d'abord au Module Basique PCEICN-0001 (25 000 FCFA) →
           </a>
         </div>
@@ -183,12 +183,13 @@ function initPrerequisChecker() {
   });
 }
 
-// 4. MENU MOBILE (en-tête ERIAS : burger quand le menu ne tient pas sur une ligne)
+// 4. MENU MOBILE (en-tête ERIAS 2 étages : burger sous 900px, géré en CSS)
 function initMobileMenu() {
-  const header = document.getElementById('eriasHeader');
   const toggle = document.getElementById('mobileMenuBtn');
   const menu = document.getElementById('mainNavMenu');
   if (!toggle || !menu) return;
+
+  const mobileQuery = window.matchMedia('(max-width: 899.98px)');
 
   const setOpen = (open) => {
     menu.classList.toggle('active', open);
@@ -199,35 +200,16 @@ function initMobileMenu() {
 
   toggle.addEventListener('click', () => setOpen(!menu.classList.contains('active')));
 
-  // Fermeture après clic sur un lien ou sur Échap
+  // Fermeture après clic sur un lien (mobile) ou sur Échap
   menu.addEventListener('click', (e) => {
-    if (e.target.closest('a, button') && header && header.classList.contains('eh-compact')) setOpen(false);
+    if (e.target.closest('a, button') && mobileQuery.matches) setOpen(false);
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menu.classList.contains('active')) setOpen(false);
   });
 
-  if (!header) return;
-  const inner = header.querySelector('.eh-inner');
-
-  // Passe en mode burger sur mobile ou dès que le contenu ne tient plus sur une ligne
-  const updateLayout = () => {
-    const wasCompact = header.classList.contains('eh-compact');
-    header.classList.remove('eh-compact');
-    const overflowing = inner.scrollWidth > inner.clientWidth + 1;
-    const compact = window.innerWidth <= 768 || overflowing;
-    header.classList.toggle('eh-compact', compact);
-    if (wasCompact && !compact) setOpen(false);
-  };
-
-  let frame = null;
-  const scheduleUpdate = () => {
-    if (frame) cancelAnimationFrame(frame);
-    frame = requestAnimationFrame(updateLayout);
-  };
-
-  updateLayout();
-  window.addEventListener('resize', scheduleUpdate);
-  window.addEventListener('universe_changed', scheduleUpdate);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleUpdate);
+  // Retour sur grand écran : le menu mobile est refermé
+  const onChange = (e) => { if (!e.matches) setOpen(false); };
+  if (mobileQuery.addEventListener) mobileQuery.addEventListener('change', onChange);
+  else if (mobileQuery.addListener) mobileQuery.addListener(onChange);
 }

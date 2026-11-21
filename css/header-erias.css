@@ -1,122 +1,232 @@
 /* ==========================================================================
-   EN-TÊTE ERIAS ACADEMY OS
-   3 zones : logo (gauche) · menu (centre) · actions (droite)
-   Le mode compact (burger) est activé par js/app.js dès que le contenu ne
-   tient plus sur une seule ligne, ou sur petit écran.
+   EN-TÊTE ERIAS ACADEMY OS — 2 ÉTAGES
+   Étage 1 (70px) : logo à gauche · BACK-OFFICE + Déposer mon dossier à droite
+   Étage 2 (50px) : barre de menu centrée, une seule ligne (2 lignes centrées
+                    si la largeur ne suffit pas — jamais de chevauchement)
+   Mobile (< 900px) : logo + burger ; le menu s'ouvre en vertical
    ========================================================================== */
 
 /* Les ancres (#univers, #simulateur…) ne passent pas sous l'en-tête fixe */
 html {
-  scroll-padding-top: 96px;
+  scroll-padding-top: 136px;
 }
 
 .erias-header {
-  --eh-navy: #0a1a33;
-  --eh-navy-deep: #06112a;
+  --eh-navy: #0a1931;
+  --eh-navy-light: #11264a;
+  --eh-navy-deep: #07132a;
   --eh-gold: #d4af37;
   --eh-gold-light: #f3d77a;
   --eh-green: #00a86b;
-  --eh-green-light: #10c283;
-  --eh-height: 80px;
+  --eh-green-dark: #008f5b;
+  --eh-top-height: 70px;
+  --eh-bottom-height: 50px;
+  --eh-side: 24px;
+  --eh-max: 1440px;
+  --eh-gap: 28px;
 
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--eh-navy);
+  width: 100%;
   color: #ffffff;
-  border-bottom: 2px solid var(--eh-gold);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 
-.eh-inner {
-  position: relative;
+.erias-header *,
+.erias-header *::before,
+.erias-header *::after {
+  box-sizing: border-box;
+}
+
+/* Grille commune aux 2 étages : mêmes marges latérales, même largeur max */
+.eh-row {
+  width: 100%;
+  max-width: var(--eh-max);
+  margin: 0 auto;
+  padding: 0 var(--eh-side);
+}
+
+/* ==========================================================================
+   ÉTAGE 1 — Identité + actions
+   ========================================================================== */
+.eh-top {
+  background: var(--eh-navy);
+  border-bottom: 1px solid var(--eh-gold); /* fine ligne dorée de séparation */
+}
+
+.eh-row-top {
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
+  justify-content: space-between;
   gap: 24px;
-  height: var(--eh-height);
-  padding: 0 24px;
-  max-width: 1600px;
-  margin: 0 auto;
+  height: var(--eh-top-height);
 }
 
-/* ---- Zone gauche : logo ---- */
 .eh-brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex: 0 0 auto;
+  min-width: 0;
   color: #ffffff;
   text-decoration: none;
 }
 
 .eh-logo {
   display: block;
-  width: 60px;
-  height: 60px;
-  flex: 0 0 60px;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
   border-radius: 50%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
 }
 
 .eh-brand-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
-  white-space: nowrap;
+  gap: 3px;
+  min-width: 0;
+  line-height: 1.15;
 }
 
 .eh-brand-text strong {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   letter-spacing: 0.04em;
   color: #ffffff;
+  white-space: nowrap;
 }
 
 .eh-brand-text small {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   color: var(--eh-gold);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-/* ---- Zones centre + droite ---- */
-.eh-panel {
+/* ---- Boutons d'action ---- */
+.eh-actions {
   display: flex;
   align-items: center;
-  flex: 1 0 auto;
-  gap: 24px;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.erias-header .eh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.erias-header .eh-btn-backoffice {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  background: transparent;
+  border: 1.5px solid #ffffff;
+}
+
+.erias-header .eh-btn-backoffice:hover,
+.erias-header .eh-btn-backoffice:focus-visible {
+  color: var(--eh-navy);
+  background: #ffffff;
+}
+
+.erias-header .eh-btn-depot {
+  color: #ffffff;
+  background: var(--eh-green);
+  border: 1.5px solid var(--eh-green);
+  box-shadow: 0 4px 14px rgba(0, 168, 107, 0.35);
+}
+
+.erias-header .eh-btn-depot:hover,
+.erias-header .eh-btn-depot:focus-visible {
+  color: #ffffff;
+  background: var(--eh-green-dark);
+  border-color: var(--eh-green-dark);
+  box-shadow: 0 6px 18px rgba(0, 168, 107, 0.5);
+}
+
+/* ---- Burger (mobile uniquement) ---- */
+.eh-burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  padding: 0;
+  border: 1.5px solid var(--eh-gold);
+  border-radius: 10px;
+  background: transparent;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.eh-burger:hover,
+.eh-burger[aria-expanded="true"] {
+  background: rgba(212, 175, 55, 0.15);
+}
+
+/* ==========================================================================
+   ÉTAGE 2 — Barre de menu centrée
+   ========================================================================== */
+.eh-bottom {
+  background: var(--eh-navy-light);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
 }
 
 .eh-nav {
-  flex: 1 0 auto;
+  width: 100%;
+  max-width: var(--eh-max);
+  margin: 0 auto;
+  padding: 0 var(--eh-side);
 }
 
 .eh-nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
-  gap: 22px;
+  flex-wrap: wrap;            /* passe en 2 lignes centrées plutôt que de chevaucher */
+  gap: 4px 0;
+  min-height: var(--eh-bottom-height);
   margin: 0;
-  padding: 0;
+  padding: 5px 0;
   list-style: none;
 }
 
 .eh-nav li {
   flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
 }
 
+/* L'écart visuel entre deux libellés = 2 × padding horizontal = --eh-gap */
 .erias-header .eh-link {
   display: inline-block;
   position: relative;
-  padding: 6px 0;
   margin: 0;
+  padding: 7px calc(var(--eh-gap) / 2);
   border: none;
-  border-radius: 0;
+  border-radius: 9999px;
   background: none;
   box-shadow: none;
   color: #ffffff;
@@ -127,15 +237,15 @@ html {
   white-space: nowrap;
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.18s ease;
+  transition: color 0.18s ease, background-color 0.18s ease;
 }
 
 .erias-header .eh-link::after {
   content: '';
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: calc(var(--eh-gap) / 2);
+  right: calc(var(--eh-gap) / 2);
+  bottom: 3px;
   height: 2px;
   border-radius: 2px;
   background: var(--eh-gold);
@@ -147,172 +257,173 @@ html {
 .erias-header .eh-link:focus-visible {
   color: var(--eh-gold-light);
   background: none;
+  outline: none;
 }
 
 .erias-header .eh-link:hover::after,
-.erias-header .eh-link.active::after {
+.erias-header .eh-link:focus-visible::after {
   transform: scaleX(1);
 }
 
+/* Lien actif : pastille arrondie verte (dorée dans l'univers Métiers) */
 .erias-header .eh-link.active {
-  color: var(--eh-gold);
-  font-weight: 700;
-  background: none;
-  box-shadow: none;
-}
-
-/* ---- Zone droite : actions ---- */
-.eh-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex: 0 0 auto;
-}
-
-.eh-btn-depot,
-.eh-btn-backoffice {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  text-decoration: none;
-  border-radius: 9999px;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
-}
-
-.eh-btn-depot {
-  padding: 10px 18px;
-  font-size: 14px;
-  font-weight: 700;
   color: #ffffff;
-  background: linear-gradient(135deg, var(--eh-green-light) 0%, var(--eh-green) 60%, #007a4d 100%);
-  box-shadow: 0 4px 14px rgba(0, 168, 107, 0.4);
+  background: var(--eh-green);
 }
 
-.eh-btn-depot:hover {
-  color: #ffffff;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0, 168, 107, 0.55);
+.erias-header .eh-link.active::after {
+  display: none;
 }
 
-.eh-btn-backoffice {
-  padding: 9px 16px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--eh-gold);
-  border: 1.5px solid var(--eh-gold);
-  background: transparent;
-}
-
-.eh-btn-backoffice:hover {
+[data-theme="metiers"] .erias-header .eh-link.active {
   color: var(--eh-navy);
   background: var(--eh-gold);
 }
 
-/* ---- Bouton burger ---- */
-.eh-burger {
+/* Actions dans le menu mobile : cachées sur grand écran */
+.eh-actions-mobile {
   display: none;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  margin-left: auto;
-  padding: 0;
-  flex: 0 0 auto;
-  border: 1.5px solid var(--eh-gold);
-  border-radius: 10px;
-  background: transparent;
-  color: #ffffff;
-  font-size: 24px;
-  line-height: 1;
-  cursor: pointer;
 }
 
-.eh-burger:hover,
-.eh-burger[aria-expanded="true"] {
-  background: rgba(212, 175, 55, 0.15);
+/* Écran moyen : écart réduit à 18px */
+@media (max-width: 1180px) {
+  .erias-header {
+    --eh-gap: 18px;
+  }
+}
+
+/* Tablette paysage (900–1000px) : 2 lignes centrées et équilibrées (4 + 3) */
+@media (min-width: 900px) and (max-width: 1000px) {
+  .eh-nav ul::before {
+    content: '';
+    order: 1;
+    flex: 0 0 100%;
+    height: 0;
+  }
+
+  .eh-nav li:nth-child(n + 5) {
+    order: 2;
+  }
 }
 
 /* ==========================================================================
-   MODE COMPACT (mobile / écran trop étroit) : menu vertical caché
+   MOBILE (< 900px) : logo + burger, menu vertical à l'ouverture
    ========================================================================== */
-.erias-header.eh-compact {
-  --eh-height: 72px;
+@media (max-width: 899.98px) {
+  html {
+    scroll-padding-top: 86px;
+  }
+
+  .eh-actions-top {
+    display: none;
+  }
+
+  .eh-burger {
+    display: inline-flex;
+  }
+
+  .eh-row-top {
+    gap: 12px;
+  }
+
+  .eh-bottom {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - var(--eh-top-height));
+    max-height: calc(100dvh - var(--eh-top-height));
+    overflow-y: auto;
+    background: var(--eh-navy);
+    border-bottom: 2px solid var(--eh-gold);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
+  }
+
+  .eh-bottom.active {
+    display: block;
+  }
+
+  .eh-nav {
+    padding: 8px 0 0;
+  }
+
+  .eh-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 0;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .eh-nav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .erias-header .eh-link {
+    display: block;
+    width: 100%;
+    padding: 15px var(--eh-side);
+    border-radius: 0;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .erias-header .eh-link::after {
+    display: none;
+  }
+
+  .erias-header .eh-link.active {
+    color: #ffffff;
+    background: rgba(0, 168, 107, 0.18);
+    box-shadow: inset 3px 0 0 var(--eh-green);
+  }
+
+  [data-theme="metiers"] .erias-header .eh-link.active {
+    color: var(--eh-gold-light);
+    background: rgba(212, 175, 55, 0.14);
+    box-shadow: inset 3px 0 0 var(--eh-gold);
+  }
+
+  .eh-actions-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 20px var(--eh-side) 24px;
+  }
+
+  .eh-actions-mobile .eh-btn {
+    width: 100%;
+    height: 46px;
+  }
 }
 
-.erias-header.eh-compact .eh-inner {
-  padding: 0 16px;
-  gap: 12px;
-}
+/* Petits smartphones : le texte de marque peut passer sur 2 lignes */
+@media (max-width: 480px) {
+  .erias-header {
+    --eh-side: 16px;
+  }
 
-.erias-header.eh-compact .eh-logo {
-  width: 52px;
-  height: 52px;
-  flex-basis: 52px;
-}
+  .eh-logo {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
 
-.erias-header.eh-compact .eh-burger {
-  display: inline-flex;
-}
+  .eh-brand {
+    gap: 10px;
+  }
 
-.erias-header.eh-compact .eh-panel {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0;
-  max-height: calc(100vh - var(--eh-height));
-  overflow-y: auto;
-  background: var(--eh-navy-deep);
-  border-top: 1px solid rgba(212, 175, 55, 0.35);
-  border-bottom: 2px solid var(--eh-gold);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
-}
+  .eh-brand-text strong {
+    font-size: 15px;
+    white-space: normal;
+  }
 
-.erias-header.eh-compact .eh-panel.active {
-  display: flex;
-}
-
-.erias-header.eh-compact .eh-nav ul {
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0;
-}
-
-.erias-header.eh-compact .eh-nav li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.erias-header.eh-compact .eh-link {
-  display: block;
-  width: 100%;
-  padding: 15px 20px;
-  font-size: 15px;
-  text-align: left;
-}
-
-.erias-header.eh-compact .eh-link::after {
-  display: none;
-}
-
-.erias-header.eh-compact .eh-link.active {
-  border-left: 3px solid var(--eh-gold);
-  padding-left: 17px;
-}
-
-.erias-header.eh-compact .eh-actions {
-  flex-direction: column;
-  align-items: stretch;
-  gap: 12px;
-  padding: 18px 20px 22px;
-}
-
-.erias-header.eh-compact .eh-btn-depot,
-.erias-header.eh-compact .eh-btn-backoffice {
-  width: 100%;
-  padding: 13px 18px;
+  .eh-brand-text small {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    white-space: normal;
+  }
 }
