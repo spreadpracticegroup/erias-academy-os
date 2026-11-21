@@ -201,7 +201,7 @@ html {
   padding: 0 var(--eh-side);
 }
 
-.eh-nav ul {
+.eh-nav > ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,7 +213,7 @@ html {
   list-style: none;
 }
 
-.eh-nav li {
+.eh-nav > ul > li {
   flex: 0 0 auto;
   margin: 0;
   padding: 0;
@@ -292,16 +292,16 @@ html {
   }
 }
 
-/* Tablette paysage (900–1000px) : 2 lignes centrées et équilibrées (4 + 3) */
-@media (min-width: 900px) and (max-width: 1000px) {
-  .eh-nav ul::before {
+/* Écran moyen (900–1060px) : 2 lignes centrées et équilibrées (4 + 4) */
+@media (min-width: 900px) and (max-width: 1060px) {
+  .eh-nav > ul::before {
     content: '';
     order: 1;
     flex: 0 0 100%;
     height: 0;
   }
 
-  .eh-nav li:nth-child(n + 5) {
+  .eh-nav > ul > li:nth-child(n + 5) {
     order: 2;
   }
 }
@@ -348,7 +348,7 @@ html {
     padding: 8px 0 0;
   }
 
-  .eh-nav ul {
+  .eh-nav > ul {
     flex-direction: column;
     align-items: stretch;
     flex-wrap: nowrap;
@@ -357,7 +357,7 @@ html {
     padding: 0;
   }
 
-  .eh-nav li {
+  .eh-nav > ul > li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
@@ -425,5 +425,161 @@ html {
     font-size: 9px;
     letter-spacing: 0.08em;
     white-space: normal;
+  }
+}
+
+/* ==========================================================================
+   SOUS-MENU « IC Lycée » (Cours de Soutien / Devenir Professeur / Demander un Cours)
+   ========================================================================== */
+.eh-has-sub {
+  position: relative;
+}
+
+.erias-header .eh-sub-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.eh-caret {
+  display: inline-block;
+  font-size: 10px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.eh-has-sub.open .eh-caret {
+  transform: rotate(180deg);
+}
+
+.eh-nav .eh-sub {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 20;
+  display: block;
+  min-width: 230px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: var(--eh-navy);
+  border: 1px solid rgba(245, 179, 1, 0.45);
+  border-top: 2px solid #f5a300;
+  border-radius: 12px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+
+/* Zone tampon pour ne pas perdre le survol entre le lien et le sous-menu */
+.eh-nav .eh-sub::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  height: 10px;
+}
+
+.eh-has-sub.open > .eh-sub {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (hover: hover) and (min-width: 900px) {
+  .eh-has-sub:hover > .eh-sub {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .eh-has-sub:hover .eh-caret {
+    transform: rotate(180deg);
+  }
+}
+
+.eh-nav .eh-sub li {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.erias-header .eh-sublink {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.erias-header .eh-sublink:hover,
+.erias-header .eh-sublink:focus-visible,
+.erias-header .eh-sublink.active {
+  color: #ffd27a;
+  background: rgba(245, 163, 0, 0.14);
+  outline: none;
+}
+
+.erias-header .eh-sublink small {
+  display: block;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11.5px;
+  font-weight: 400;
+}
+
+/* Lien actif « IC Lycée » : pastille orange/dorée */
+.erias-header .eh-link.eh-link-lycee.active {
+  color: #0a1931;
+  background: linear-gradient(135deg, #ff9f1c 0%, #f5c242 100%);
+}
+
+
+@media (max-width: 899.98px) {
+  .erias-header .eh-sub-toggle {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .eh-nav .eh-sub {
+    position: static;
+    display: none;
+    min-width: 0;
+    padding: 0 0 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .eh-nav .eh-sub::before {
+    display: none;
+  }
+
+  .eh-has-sub.open > .eh-sub {
+    display: block;
+    transform: none;
+  }
+
+  .erias-header .eh-sublink {
+    padding: 12px var(--eh-side) 12px calc(var(--eh-side) + 18px);
+    border-radius: 0;
+    white-space: normal;
+  }
+
+  .erias-header .eh-link.eh-link-lycee.active {
+    color: #ffc04d;
+    background: rgba(245, 163, 0, 0.14);
+    box-shadow: inset 3px 0 0 #f5a300;
   }
 }

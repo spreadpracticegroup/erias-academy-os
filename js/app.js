@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 1. GESTION DU BASCULEMENT D'UNIVERS (CYBER / METIERS)
 function initUniverseTheme() {
+  // Lien depuis une autre page : /?univers=cyber ou /?univers=metiers
+  const fromUrl = new URLSearchParams(window.location.search).get('univers');
+  if (fromUrl === 'cyber' || fromUrl === 'metiers') localStorage.setItem('pce_active_universe', fromUrl);
   const currentUniverse = localStorage.getItem('pce_active_universe') || 'cyber';
   setUniverse(currentUniverse, false);
 
@@ -187,7 +190,9 @@ function initPrerequisChecker() {
 function initMobileMenu() {
   const toggle = document.getElementById('mobileMenuBtn');
   const menu = document.getElementById('mainNavMenu');
-  if (!toggle || !menu) return;
+  // Déjà pris en charge par js/header-erias.js (burger + sous-menu IC Lycée)
+  if (!toggle || !menu || menu.dataset.ehReady) return;
+  menu.dataset.ehReady = '1';
 
   const mobileQuery = window.matchMedia('(max-width: 899.98px)');
 

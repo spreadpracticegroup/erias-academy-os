@@ -213,7 +213,7 @@
           card.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       } catch (err) {
-        showError("L'envoi a échoué. Vérifiez votre connexion Internet puis réessayez. Si le problème persiste, contactez-nous sur WhatsApp au +241 77 00 11 22.");
+        showError("L'envoi a échoué. Vérifiez votre connexion Internet puis réessayez. Si le problème persiste, contactez-nous sur WhatsApp au +241 77 42 06 17.");
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;

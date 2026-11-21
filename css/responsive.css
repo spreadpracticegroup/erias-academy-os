@@ -1,0 +1,56 @@
+/* ==========================================================================
+   RESPONSIVE GLOBAL — pages existantes à styles en ligne
+   3 colonnes sur PC · 2 sur tablette · 1 colonne sur mobile · aucun débordement
+   ========================================================================== */
+html,
+body {
+  overflow-x: clip;
+}
+
+[style*="grid-template-columns"] > * {
+  min-width: 0;
+}
+
+@media (max-width: 1080px) {
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns: repeat(5"],
+  [style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  [style*="grid-template-columns"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  [style*="display: flex"] {
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    white-space: normal;
+    max-width: 100%;
+  }
+
+  [style*="padding: 3.5rem 3rem"],
+  [style*="padding: 2.5rem"],
+  [style*="padding: 2rem"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns: repeat(5"],
+  [style*="grid-template-columns: repeat(6"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}

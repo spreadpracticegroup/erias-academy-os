@@ -7,35 +7,69 @@
   <meta name="description" content="Sessions intensives d'acquisition de compétences et annuaire des formateurs certifiés PCE ICN et PCE IC Métiers.">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/theme-pce.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/theme-pce.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header-erias.css">
+  <link rel="stylesheet" href="/css/erias-pro.css">
+  <link rel="stylesheet" href="/css/responsive.css">
 </head>
 <body class="african-pattern-bg">
 
-  <!-- Header -->
-  <header class="main-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand-wrapper">
-        <img src="assets/logo-pce-icn.jpg" alt="Logo PCE ICN" class="official-logo-img">
-        <div class="brand-text">
-          <h2>MASTERCLASS & EXPERTS</h2>
-          <span>PCE ICN & PCE IC-ACADÉMIE DES MÉTIERS</span>
-        </div>
-      </a>
+  <!-- En-tête ERIAS : 2 étages (identité + actions / barre de menu centrée) -->
+  <header class="erias-header" id="eriasHeader">
 
-      <nav>
-        <ul class="nav-menu">
-          <li class="nav-item"><a href="index.html">← Accueil</a></li>
-          <li class="nav-item"><a href="#catalogue">Catalogue Masterclass</a></li>
-          <li class="nav-item"><a href="#formateurs">Formateurs Certifiés</a></li>
-          <li class="nav-item"><a href="#candidature-formateur">Devenir Formateur</a></li>
+    <!-- ÉTAGE 1 : logo à gauche, actions à droite -->
+    <div class="eh-top">
+      <div class="eh-row eh-row-top">
+        <a href="/" class="eh-brand" aria-label="PCE-ICN Central — Accueil">
+          <img src="/assets/logo-pce-icn-medaillon.svg" alt="Logo PCE-ICN" id="headerLogoImg" class="eh-logo" width="48" height="48">
+          <span class="eh-brand-text">
+            <strong id="headerBrandTitle">PCE-ICN CENTRAL</strong>
+            <small id="headerBrandSub">CYBERSÉCURITÉ &amp; CONFORMITÉ NUMÉRIQUE</small>
+          </span>
+        </a>
+
+        <div class="eh-actions eh-actions-top">
+          <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+          <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+        </div>
+
+        <!-- Bouton Burger (mobile) -->
+        <button type="button" class="eh-burger" id="mobileMenuBtn" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ÉTAGE 2 : barre de menu centrée (devient le menu vertical sur mobile) -->
+    <div class="eh-bottom" id="mainNavMenu">
+      <nav class="eh-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a class="eh-link" href="/?univers=cyber">Cybersécurité PCE-ICN</a></li>
+          <li><a class="eh-link" href="/?univers=metiers">Académie des Métiers</a></li>
+          <li><a class="eh-link" href="/#univers">Les 2 Univers</a></li>
+          <li><a class="eh-link" href="/#prerequis">Socle PCEICN-0001</a></li>
+          <li><a class="eh-link" href="/#simulateur">Facilité de Paiement</a></li>
+          <li><a class="eh-link active" href="/masterclass" aria-current="page">Masterclass</a></li>
+          <li><a class="eh-link" href="/espace-candidat">Espace Candidat</a></li>
+          <li class="eh-has-sub">
+            <button type="button" class="eh-link eh-sub-toggle eh-link-lycee" aria-expanded="false" aria-controls="ehSubLycee">IC Lycée <span class="eh-caret" aria-hidden="true">▾</span></button>
+            <ul class="eh-sub" id="ehSubLycee">
+              <li><a class="eh-sublink" href="/ic-lycee">Cours de Soutien<small>Forfaits &amp; matières, 6ème → Terminale</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/devenir-professeur">Devenir Professeur<small>Rejoindre l'équipe IC LYCÉE</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/demande-cours">Demander un Cours<small>Réserver pour mon enfant</small></a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
 
-      <div>
-        <a href="#candidature-formateur" class="btn btn-primary btn-sm">Postuler Formateur →</a>
+      <!-- Actions répétées dans le menu mobile (en bas) -->
+      <div class="eh-actions eh-actions-mobile">
+        <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+        <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
       </div>
     </div>
+
   </header>
 
   <!-- Hero Masterclass -->
@@ -52,9 +86,12 @@
         </p>
 
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="#catalogue" class="btn btn-primary">Explorer les Sessions Ouvertes</a>
+          <a href="/masterclass/catalogue" class="btn btn-primary">Catalogue complet (7 familles) →</a>
+          <a href="/masterclass/inscription" class="btn btn-outline">S'inscrire à une Masterclass</a>
+          <a href="#catalogue" class="btn btn-outline">Sessions phares</a>
           <a href="#formateurs" class="btn btn-outline">Annuaire des Formateurs Certifiés</a>
         </div>
+        <nav class="ep-subnav" aria-label="Masterclass"><a href="/masterclass" class="active" aria-current="page">Présentation</a><a href="/masterclass/catalogue">Catalogue</a><a href="/masterclass/inscription">S'inscrire</a><a href="/masterclass/devenir-formateur">Devenir Formateur</a></nav>
       </div>
     </div>
   </section>
@@ -132,22 +169,22 @@
         </div>
 
         <!-- Formulaire de Candidature Formateur -->
-        <form id="formCandidatureFormateur" style="background: rgba(4, 9, 20, 0.7); border: 1px solid var(--border-subtle); padding: 2rem; border-radius: var(--radius-lg);">
+        <form id="formCandidatureFormateur" action="/masterclass/devenir-formateur" method="GET" style="background: rgba(4, 9, 20, 0.7); border: 1px solid var(--border-subtle); padding: 2rem; border-radius: var(--radius-lg);">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
             <div>
               <label class="form-label">Nom & Prénoms *</label>
-              <input type="text" class="form-input" required placeholder="ex: Marc Kouassi">
+              <input type="text" name="nom" class="form-input" required placeholder="ex: Marc Kouassi">
             </div>
             <div>
               <label class="form-label">Téléphone WhatsApp *</label>
-              <input type="tel" class="form-input" required placeholder="+225 ... ou +241 ...">
+              <input type="tel" name="whatsapp" class="form-input" required placeholder="+225 ... ou +241 ...">
             </div>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
             <div>
               <label class="form-label">Email Professionnel *</label>
-              <input type="email" class="form-input" required placeholder="expert@domaine.com">
+              <input type="email" name="email" class="form-input" required placeholder="expert@domaine.com">
             </div>
             <div>
               <label class="form-label">Domaine d'Expertise Principal *</label>
@@ -168,7 +205,7 @@
           </div>
 
           <button type="submit" class="btn btn-primary" style="width: 100%;">
-            Soumettre ma Candidature de Formateur PCE ICN →
+            Continuer ma Candidature de Formateur PCE ICN →
           </button>
         </form>
 
@@ -184,17 +221,15 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/referentiel.js"></script>
+  <script src="/js/header-erias.js"></script>
+  <script src="/js/referentiel.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       renderMasterclasses('all');
       renderFormateurs();
 
-      document.getElementById('formCandidatureFormateur')?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Votre candidature a été transmise avec succès au comité pédagogique PCE ICN International !');
-        e.target.reset();
-      });
+      // La candidature se poursuit sur le formulaire complet (Netlify Forms « devenir-formateur »)
+      // qui reprend automatiquement le nom, le WhatsApp et l'email saisis ici.
     });
 
     function renderMasterclasses(filter) {
@@ -227,7 +262,7 @@
               <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Tarif Participant</div>
               <strong style="font-size: 1.3rem; color: #f7e08d; font-family: var(--font-mono);">${new Intl.NumberFormat('fr-FR').format(m.tarifPublic)} FCFA</strong>
             </div>
-            <a href="candidature.html?type=masterclass&id=${m.id}" class="btn btn-primary btn-sm">S'inscrire →</a>
+            <a href="/masterclass/inscription?mc=${encodeURIComponent(m.id)}" class="btn btn-primary btn-sm">S'inscrire →</a>
           </div>
         </div>
       `).join('');

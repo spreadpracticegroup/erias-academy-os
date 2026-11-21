@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="cyber">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valider mon Forfait | IC LYCÉE</title>
+  <meta name="description" content="Instructions de paiement Airtel Money / Moov Money pour valider un forfait de cours de soutien IC LYCÉE.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/theme-pce.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <link rel="stylesheet" href="/css/formulaires.css">
+  <link rel="stylesheet" href="/css/header-erias.css">
+  <link rel="stylesheet" href="/css/erias-pro.css">
+</head>
+<body class="ep-page">
+
+  <!-- En-tête ERIAS : 2 étages (identité + actions / barre de menu centrée) -->
+  <header class="erias-header" id="eriasHeader">
+
+    <!-- ÉTAGE 1 : logo à gauche, actions à droite -->
+    <div class="eh-top">
+      <div class="eh-row eh-row-top">
+        <a href="/" class="eh-brand" aria-label="PCE-ICN Central — Accueil">
+          <img src="/assets/logo-pce-icn-medaillon.svg" alt="Logo PCE-ICN" id="headerLogoImg" class="eh-logo" width="48" height="48">
+          <span class="eh-brand-text">
+            <strong id="headerBrandTitle">PCE-ICN CENTRAL</strong>
+            <small id="headerBrandSub">CYBERSÉCURITÉ &amp; CONFORMITÉ NUMÉRIQUE</small>
+          </span>
+        </a>
+
+        <div class="eh-actions eh-actions-top">
+          <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+          <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+        </div>
+
+        <!-- Bouton Burger (mobile) -->
+        <button type="button" class="eh-burger" id="mobileMenuBtn" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ÉTAGE 2 : barre de menu centrée (devient le menu vertical sur mobile) -->
+    <div class="eh-bottom" id="mainNavMenu">
+      <nav class="eh-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a class="eh-link" href="/?univers=cyber">Cybersécurité PCE-ICN</a></li>
+          <li><a class="eh-link" href="/?univers=metiers">Académie des Métiers</a></li>
+          <li><a class="eh-link" href="/#univers">Les 2 Univers</a></li>
+          <li><a class="eh-link" href="/#prerequis">Socle PCEICN-0001</a></li>
+          <li><a class="eh-link" href="/#simulateur">Facilité de Paiement</a></li>
+          <li><a class="eh-link" href="/masterclass">Masterclass</a></li>
+          <li><a class="eh-link" href="/espace-candidat">Espace Candidat</a></li>
+          <li class="eh-has-sub">
+            <button type="button" class="eh-link eh-sub-toggle eh-link-lycee active" aria-expanded="false" aria-controls="ehSubLycee">IC Lycée <span class="eh-caret" aria-hidden="true">▾</span></button>
+            <ul class="eh-sub" id="ehSubLycee">
+              <li><a class="eh-sublink" href="/ic-lycee">Cours de Soutien<small>Forfaits &amp; matières, 6ème → Terminale</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/devenir-professeur">Devenir Professeur<small>Rejoindre l'équipe IC LYCÉE</small></a></li>
+              <li><a class="eh-sublink" href="/ic-lycee/demande-cours">Demander un Cours<small>Réserver pour mon enfant</small></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Actions répétées dans le menu mobile (en bas) -->
+      <div class="eh-actions eh-actions-mobile">
+        <a href="/backoffice" class="eh-btn eh-btn-backoffice">BACK-OFFICE</a>
+        <a href="/candidature" class="eh-btn eh-btn-depot">Déposer mon dossier</a>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="ep-section">
+    <div class="ep-wrap">
+      <div class="fx-card ep-pay" id="payCard">
+        <div class="fx-success-icon">✓</div>
+        <span class="ep-badge ep-badge-lycee">DEMANDE ENREGISTRÉE</span>
+        <h1 style="margin:14px 0 6px;font-size:clamp(1.5rem,3.6vw,2.1rem);color:#fff;">Dernière étape : valide ton forfait</h1>
+        <p id="payRef" class="fx-hint" hidden></p>
+
+        <div class="form-group" id="payChoose" hidden style="text-align:left;max-width:360px;margin:18px auto 0;">
+          <label class="form-label" for="payForfait">Ton forfait</label>
+          <select id="payForfait" class="form-select">
+            <option value="Essentiel">Essentiel — 25.000 F / mois</option>
+            <option value="Performance">Performance — 45.000 F / mois</option>
+            <option value="Excellence BAC/BEPC">Excellence BAC/BEPC — 75.000 F / mois</option>
+            <option value="Stage Vacances">Stage Vacances — 60.000 F</option>
+          </select>
+        </div>
+
+        <div class="ep-pay-amount" id="payAmount">— FCFA</div>
+        <p id="paySplitInfo" class="ep-split-note" hidden></p>
+
+        <div class="ep-pay-box">
+          Pour valider ton <strong>Forfait <span id="payNom">—</span></strong>, envoie
+          <strong id="payMontant">—</strong> par <strong>Airtel Money / Moov Money</strong> au
+          <strong class="ep-pay-number">077 10 96 42</strong>
+          avec le motif : <strong class="ep-motif" id="payMotif">IC LYCÉE + Nom Élève</strong>.<br>
+          Envoie ensuite la capture d'écran du paiement sur WhatsApp.
+        </div>
+
+        <div class="ep-success-actions">
+          <a class="ep-btn ep-btn-wa" id="payProof" href="https://wa.me/24177109642" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.9L3 29l6.7-2.2c2 1.1 4.1 1.6 6.3 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-2 0-3.9-.6-5.6-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.8 10.1 5.1 16 5.1s10.7 4.7 10.7 10.5S21.9 26.1 16 26.1zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg> J'ai payé, envoyer la preuve</a>
+          <button type="button" class="ep-btn ep-btn-outline" id="paySplitBtn">Payer en 2 fois</button>
+        </div>
+        <p class="fx-hint" style="margin-top:18px;">Une question ? Écris-nous au +241 77 42 06 17 ou via le bouton WhatsApp.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="ep-footer">
+    <div class="ep-wrap ep-footer-inner">
+      <div>© 2026 ERIAS ACADEMY OS · PCE ICN Central &amp; ERIAS SECURITY GABON</div>
+      <nav aria-label="Liens du pied de page">
+        <a href="/">Accueil</a>
+        <a href="/masterclass/catalogue">Masterclass</a>
+        <a href="/ic-lycee">IC Lycée</a>
+        <a href="/espace-candidat">Espace Candidat</a>
+        <a href="https://wa.me/24177420617" target="_blank" rel="noopener">WhatsApp +241 77 42 06 17</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Bouton WhatsApp flottant IC LYCÉE -->
+  <a class="ep-wa-float" href="https://wa.me/24177420617?text=Bonjour%20IC%20LYC%C3%89E%2C%20je%20veux%20des%20infos%20sur%20les%20cours%20de%20soutien." target="_blank" rel="noopener" aria-label="Écrire à IC LYCÉE sur WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.9L3 29l6.7-2.2c2 1.1 4.1 1.6 6.3 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-2 0-3.9-.6-5.6-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.8 10.1 5.1 16 5.1s10.7 4.7 10.7 10.5S21.9 26.1 16 26.1zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span>Infos cours de soutien</span>
+  </a>
+
+  <script src="/js/header-erias.js"></script>
+  <script src="/js/erias-forms.js"></script>
+  <script src="/js/ic-lycee.js"></script>
+</body>
+</html>
