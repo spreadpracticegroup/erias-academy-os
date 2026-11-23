@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERA NETWORK V4 - Dynamique</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#f5f7fa;color:#1a1a2e}
+header{background:#0f172a;color:#fff;padding:22px;text-align:center}
+header img{width:90px;height:90px;object-fit:contain;background:#fff;border-radius:50%;padding:8px}
+header h1{font-size:30px;margin:8px 0 4px}
+header p{color:#cbd5e1}
+.nav{display:flex;justify-content:center;gap:8px;background:#fff;padding:12px;flex-wrap:wrap;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.nav button{border:none;padding:10px 18px;border-radius:20px;background:#eef2ff;font-weight:700;cursor:pointer}
+.nav button.active{background:#0f172a;color:#fff}
+.hero{text-align:center;padding:35px 20px;background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff}
+.hero h2{font-size:30px;margin-bottom:8px}
+.hero p{color:#e2e8f0;max-width:650px;margin:0 auto;line-height:1.6}
+.badge{display:inline-block;background:#22c55e;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-top:12px}
+.container{max-width:1000px;margin:0 auto;padding:25px 18px}
+.page{display:none}
+.page.active{display:block}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.07);text-align:center}
+.card img{width:105px;height:105px;object-fit:contain}
+.card h3{margin:10px 0 8px;font-size:22px}
+.card p{color:#475569;line-height:1.6;font-size:15px;margin-bottom:15px}
+.btn{display:inline-block;padding:12px 22px;border-radius:25px;text-decoration:none;font-weight:700;color:#fff;border:none;cursor:pointer;font-size:15px}
+.btn-blue{background:#2563eb}.btn-green{background:#16a34a}.btn-purple{background:#7c3aed}.btn-dark{background:#0f172a}
+.box{background:#fff;border-radius:16px;padding:26px;margin-top:18px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.box h3{margin-bottom:12px;font-size:21px}
+input,select,textarea{width:100%;padding:13px;border:1.5px solid #e2e8f0;border-radius:12px;margin-bottom:12px;font-size:15px}
+label{font-weight:700;font-size:14px;display:block;margin-bottom:5px}
+.quiz-q{margin-bottom:18px}
+.quiz-q b{display:block;margin-bottom:8px}
+.quiz-q label{font-weight:400;background:#f8fafc;padding:10px;border-radius:10px;margin-bottom:6px;cursor:pointer}
+.quiz-q input{width:auto;margin-right:8px}
+#quizResult{background:#dcfce7;padding:16px;border-radius:12px;font-weight:700;text-align:center;display:none;margin-top:15px}
+.success{background:#dcfce7;padding:14px;border-radius:12px;text-align:center;display:none;margin-top:12px;font-weight:700}
+footer{background:#0f172a;color:#94a3b8;text-align:center;padding:20px;margin-top:30px;font-size:14px}
+</style>
+</head>
+<body>
+
+<header>
+<img src="era-logo.jpeg" alt="ERA">
+<h1>ERA NETWORK <span style="color:#22c55e">V4</span></h1>
+<p>ERIAS Academy • Apprendre • Pratiquer • Impacter</p>
+</header>
+
+<div class="nav">
+<button onclick="showPage('accueil',this)" class="active">Accueil</button>
+<button onclick="showPage('eerlszone',this)">EERLSZONE</button>
+<button onclick="showPage('elds',this)">ELDS</button>
+<button onclick="showPage('inscription',this)">S'inscrire 🚀</button>
+<button onclick="showPage('quiz',this)">Test de Niveau 📝</button>
+</div>
+
+<div class="hero">
+<h2>Bienvenue sur ERA NETWORK</h2>
+<p>La plateforme qui connecte les apprenants et les leaders de demain.</p>
+<div class="badge">● <span id="membres">247</span> membres actifs • Libreville & En Ligne</div>
+</div>
+
+<div class="container">
+
+<!-- ACCUEIL -->
+<div id="accueil" class="page active">
+<div class="grid">
+<div class="card">
+<img src="eerlszone-logo.jpeg">
+<h3>EERLSZONE</h3>
+<p>English Excellence & Real Life Skills Zone. Anglais utile, confiance, compétences pour la vraie vie.</p>
+<button class="btn btn-green" onclick="showPage('eerlszone',document.querySelectorAll('.nav button')[1])">Découvrir EERLSZONE →</button>
+</div>
+<div class="card">
+<img src="elds-logo.jpeg">
+<h3>ELDS</h3>
+<p>English Leadership & Development Skills. Leadership, prise de parole, développement personnel.</p>
+<button class="btn btn-purple" onclick="showPage('elds',document.querySelectorAll('.nav button')[2])">Découvrir ELDS →</button>
+</div>
+</div>
+<div class="box">
+<h3>🎯 Ce que tu trouves ici</h3>
+<p style="line-height:1.9;color:#334155">✅ Cours d'anglais pratiques<br>✅ Pratique orale en groupe<br>✅ Leadership & Prise de parole<br>✅ Communauté ERIAS Academy<br>✅ Certificats & Suivi</p>
+<br><button class="btn btn-blue" onclick="showPage('inscription',document.querySelectorAll('.nav button')[3])">Je m'inscris maintenant 🚀</button>
+</div>
+</div>
+
+<!-- EERLSZONE -->
+<div id="eerlszone" class="page">
+<div class="box" style="text-align:center">
+<img src="eerlszone-logo.jpeg" style="width:120px;height:120px;object-fit:contain">
+<h3>EERLSZONE - English Excellence</h3>
+<p style="color:#475569;line-height:1.7">Tu veux parler anglais sans peur ? C'est ici.<br>Cours, pratique orale, vocabulaire de la vraie vie, mises en situation.</p>
+<p><b>Niveaux :</b> Débutant → Intermédiaire → Avancé</p><br>
+<button class="btn btn-green" onclick="showPage('inscription',document.querySelectorAll('.nav button')[3])">Rejoindre EERLSZONE</button>
+<button class="btn btn-dark" onclick="showPage('quiz',document.querySelectorAll('.nav button')[4])">Faire mon test de niveau</button>
+</div>
+</div>
+
+<!-- ELDS -->
+<div id="elds" class="page">
+<div class="box" style="text-align:center">
+<img src="elds-logo.jpeg" style="width:120px;height:120px;object-fit:contain">
+<h3>ELDS - Leadership & Development</h3>
+<p style="color:#475569;line-height:1.7">Tu veux devenir un leader qui parle avec impact ?<br>Leadership, prise de parole en public, confiance, discipline.</p>
+<p><b>Pour :</b> Étudiants, Entrepreneurs, Professionnels</p><br>
+<button class="btn btn-purple" onclick="showPage('inscription',document.querySelectorAll('.nav button')[3])">Rejoindre ELDS</button>
+</div>
+</div>
+
+<!-- INSCRIPTION -->
+<div id="inscription" class="page">
+<div class="box">
+<h3>🚀 Inscription ERA NETWORK</h3>
+<p style="color:#64748b;margin-bottom:15px">Remplis, clique sur Envoyer, ça ouvre WhatsApp avec ton message déjà prêt.</p>
+<label>Ton nom complet</label>
+<input id="nom" placeholder="Ex: Steve Obiang">
+<label>Ton WhatsApp</label>
+<input id="tel" placeholder="Ex: 077 00 00 00">
+<label>Tu veux rejoindre quoi ?</label>
+<select id="programme">
+<option>EERLSZONE - Anglais</option>
+<option>ELDS - Leadership</option>
+<option>Les deux - ERA NETWORK complet</option>
+</select>
+<label>Ton niveau d'anglais</label>
+<select id="niveau">
+<option>Débutant - Je commence</option>
+<option>Intermédiaire - Je me débrouille</option>
+<option>Avancé - Je parle bien</option>
+</select>
+<label>Ton objectif</label>
+<textarea id="objectif" rows="3" placeholder="Ex: Je veux parler anglais pour mon travail..."></textarea>
+<button class="btn btn-green" style="width:100%" onclick="envoyerWhatsApp()">Envoyer sur WhatsApp 📲</button>
+<div id="okMsg" class="success">✅ C'est prêt ! Vérifie ton WhatsApp et appuie sur Envoyer.</div>
+<p style="font-size:13px;color:#94a3b8;margin-top:10px;text-align:center">En cliquant, tu seras redirigé vers WhatsApp ERIAS Academy.</p>
+</div>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="page">
+<div class="box">
+<h3>📝 Test de Niveau - 5 Questions</h3>
+<p style="color:#64748b;margin-bottom:15px">Réponds honnêtement, tu auras ton niveau à la fin.</p>
+
+<div class="quiz-q"><b>1. How are you today ?</b>
+<label><input type="radio" name="q1" value="1"> I am fine, thank you</label>
+<label><input type="radio" name="q1" value="0"> I am fine, thank you yesterday</label>
+<label><input type="radio" name="q1" value="0"> I fine</label></div>
+
+<div class="quiz-q"><b>2. Choose the correct sentence :</b>
+<label><input type="radio" name="q2" value="0"> She go to school</label>
+<label><input type="radio" name="q2" value="1"> She goes to school</label>
+<label><input type="radio" name="q2" value="0"> She going to school</label></div>
+
+<div class="quiz-q"><b>3. I ___ English every day.</b>
+<label><input type="radio" name="q3" value="1"> learn</label>
+<label><input type="radio" name="q3" value="0"> learns</label>
+<label><input type="radio" name="q3" value="0"> learning</label></div>
+
+<div class="quiz-q"><b>4. What is the past of "go" ?</b>
+<label><input type="radio" name="q4" value="0"> Goed</label>
+<label><input type="radio" name="q4" value="1"> Went</label>
+<label><input type="radio" name="q4" value="0"> Gone to</label></div>
+
+<div class="quiz-q"><b>5. Translate : "Je veux progresser"</b>
+<label><input type="radio" name="q5" value="1"> I want to improve</label>
+<label><input type="radio" name="q5" value="0"> I want improve</label>
+<label><input type="radio" name="q5" value="0"> I wanting to improve</label></div>
+
+<button class="btn btn-blue" style="width:100%" onclick="corrigerQuiz()">Voir mon résultat 🎯</button>
+<div id="quizResult"></div>
+</div>
+</div>
+
+</div>
+
+<footer>© 2027 ERA NETWORK V4 - ERIAS Academy • Libreville • Gabon<br>Apprendre • Pratiquer • Impacter</footer>
+
+<script>
+function showPage(id,btn){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+if(btn) btn.classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+// Compteur dynamique
+let count=247;
+setInterval(()=>{count++; document.getElementById('membres').textContent=count;},5000);
+
+function envoyerWhatsApp(){
+let nom=document.getElementById('nom').value;
+let tel=document.getElementById('tel').value;
+let prog=document.getElementById('programme').value;
+let niv=document.getElementById('niveau').value;
+let obj=document.getElementById('objectif').value;
+if(!nom||!tel){alert('Stp mets ton nom et ton WhatsApp 🙏');return;}
+let msg="Bonjour ERIAS Academy! Je veux rejoindre ERA NETWORK%0A%0A👤 Nom: "+encodeURIComponent(nom)+"%0A📱 WhatsApp: "+encodeURIComponent(tel)+"%0A🎯 Programme: "+encodeURIComponent(prog)+"%0A📊 Niveau: "+encodeURIComponent(niv)+"%0A💬 Objectif: "+encodeURIComponent(obj);
+window.open("https://wa.me/24177420617?text="+msg,"_blank");
+document.getElementById('okMsg').style.display='block';
+}
+
+function corrigerQuiz(){
+let score=0; let total=5;
+for(let i=1;i<=5;i++){
+let r=document.querySelector('input[name="q'+i+'"]:checked');
+if(r) score+=parseInt(r.value);
+}
+let res=document.getElementById('quizResult');
+res.style.display='block';
+if(score<=2) res.innerHTML="🎯 Ton niveau : DÉBUTANT ("+score+"/5)<br>Parfait pour commencer EERLSZONE ! Clique sur S'inscrire.";
+else if(score<=4) res.innerHTML="🔥 Ton niveau : INTERMÉDIAIRE ("+score+"/5)<br>Tu as de bonnes bases ! EERLSZONE + ELDS pour toi.";
+else res.innerHTML="🏆 Ton niveau : AVANCÉ ("+score+"/5)<br>Excellent ! ELDS Leadership est fait pour toi.";
+}
+</script>
+</body>
+</html>
