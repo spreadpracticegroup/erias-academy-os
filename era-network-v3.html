@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERA NETWORK PARTNERS - Vendre, Livrer, Sécuriser</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#070B14;color:#fff}
+header{position:sticky;top:0;z-index:99;background:#070B14E6;backdrop-filter:blur(10px);border-bottom:1px solid #222;padding:10px 18px;display:flex;justify-content:space-between;align-items:center}
+.logo-img{height:52px;border-radius:8px;object-fit:contain}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav button{background:#141B2E;color:#fff;border:1px solid #2A3550;padding:9px 13px;border-radius:999px;cursor:pointer;font-weight:700;font-size:13px}
+nav button.active{background:#FFC400;color:#111;border-color:#FFC400}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 18px 80px}
+.badge{display:inline-block;background:#FFC400;color:#111;padding:6px 12px;border-radius:999px;font-weight:800;font-size:12px;margin-bottom:14px}
+h1{font-size:38px;line-height:1.05;margin-bottom:12px}h1 span{color:#FFC400}
+p.lead{color:#CBD5E1;font-size:17px;line-height:1.6;max-width:750px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:26px}
+.card{background:#111827;border:1px solid #26314A;border-radius:18px;padding:20px;text-align:center}
+.card h3{margin-bottom:8px}.card p{color:#CBD5E1;line-height:1.5;font-size:14px}
+.card button{margin-top:14px;width:100%;padding:12px;border:0;border-radius:12px;font-weight:800;cursor:pointer}
+.btn-yellow{background:#FFC400}.btn-blue{background:#2563EB;color:#fff}.btn-green{background:#16A34A;color:#fff}.btn-purple{background:#9333EA;color:#fff}
+.section{display:none}.section.active{display:block}
+.kpi{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.kpi div{background:#0F172A;border:1px solid #26314A;padding:12px 16px;border-radius:12px}.kpi b{font-size:20px;color:#FFC400}
+input,select,textarea{width:100%;padding:13px;margin-top:8px;border-radius:12px;border:1px solid #334155;background:#0F172A;color:#fff;text-align:left}
+.wa{position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;padding:14px 18px;border-radius:999px;font-weight:900;text-decoration:none;box-shadow:0 10px 30px #000}
+footer{border-top:1px solid #222;padding:22px;text-align:center;color:#94A3B8;font-size:13px}
+.success{background:#052e16;border:1px solid #16A34A;padding:18px;border-radius:16px;margin-top:16px;display:none;text-align:left}
+.success b{color:#4ade80}
+.step{display:flex;gap:10px;align-items:center;margin:10px 0;text-align:left}.step span{background:#FFC400;color:#111;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0}
+.brand-logo{width:100%;max-width:280px;height:110px;object-fit:contain;border-radius:14px;margin:0 auto 12px;display:block}
+.brand-logo-dark{background:#070B14;padding:6px}
+.hero-logo{width:100%;max-width:520px;border-radius:16px;display:block;margin:0 0 18px}
+@media(max-width:600px){h1{font-size:30px}header{flex-direction:column;gap:10px}.logo-img{height:44px}}
+</style>
+</head>
+<body>
+<header>
+<img src="era-logo.jpg" alt="ERA NETWORK PARTNERS" class="logo-img">
+<nav>
+<button class="active" onclick="show('accueil',this)">Accueil</button>
+<button onclick="show('eerls',this)">EerlsZone Market</button>
+<button onclick="show('elds',this)">ELDS Livraison</button>
+<button onclick="show('academy',this)">ERIAS Academy</button>
+<button onclick="show('rejoindre',this)">Rejoindre ERA</button>
+</nav>
+</header>
+<div class="wrap">
+
+<!-- ACCUEIL -->
+<div id="accueil" class="section active">
+<img src="era-logo.jpg" alt="ERA NETWORK PARTNERS" class="hero-logo">
+<div class="badge">ERA ECOSYSTEM V3 • BOUTIQUE + LIVRAISON AUTOMATIQUE</div>
+<h1>UNE SEULE ALLIANCE POUR <span>VENDRE, LIVRER & SÉCURISER</span> EN AFRIQUE.</h1>
+<p class="lead">Tu ouvres ta boutique sur EerlsZone, on te crée automatiquement ton adresse de livraison ELDS Relay Africa. 1 compte = Boutique + Livraison.</p>
+<div class="kpi"><div><b>1</b><br>Inscription = Boutique + ELDS</div><div><b>3</b><br>Univers connectés</div><div><b>24/7</b><br>Suivi & Support</div></div>
+<div class="grid">
+<div class="card"><img src="eerlszone-logo.png" class="brand-logo" alt="EerlsZone Market"><h3>EerlsZone Market</h3><p>Ouvre ta boutique, publie tes produits, reçois tes commandes. ELDS s'occupe de la livraison.</p><button class="btn-yellow" onclick="go('eerls')">Ouvrir ma Boutique →</button></div>
+<div class="card"><img src="elds-logo.png" class="brand-logo brand-logo-dark" alt="ELDS Relay Africa"><h3>ELDS - Relay Africa</h3><p>Chaque boutique a son adresse Relay. Suivi en temps réel, points relais.</p><button class="btn-blue" onclick="go('elds')">Suivre un Colis ELDS →</button></div>
+<div class="card"><img src="era-logo.jpg" class="brand-logo" alt="ERA NETWORK PARTNERS"><h3>ERIAS Academy / PCE ICN</h3><p>Apprends à vendre, à livrer, à sécuriser ton business.</p><button class="btn-purple" onclick="go('academy')">Entrer dans l'Académie →</button></div>
+</div>
+</div>
+
+<!-- EERLSZONE -->
+<div id="eerls" class="section">
+<img src="eerlszone-logo.png" class="brand-logo" style="max-width:340px;height:130px" alt="EerlsZone Market">
+<div class="badge">EERLSZONE MARKET • OUVRIR MA BOUTIQUE + ADRESSE ELDS AUTO</div>
+<h1>Ouvre ta boutique. <span>Reçois ton adresse ELDS.</span></h1>
+<p class="lead">Remplis ce formulaire. On crée ta boutique EerlsZone ET ton adresse ELDS Relay Africa en même temps.</p>
+<div class="step"><span>1</span><b>Crée ta boutique</b></div>
+<div class="card" style="text-align:left">
+<label>Nom de ta Boutique *</label><input id="shopName" placeholder="Ex: Steve Shop">
+<label>Ton Nom Complet *</label><input id="ownerName" placeholder="Ex: Steve Obets">
+<label>Téléphone WhatsApp *</label><input id="shopPhone" placeholder="Ex: +241 77 42 06 17">
+<label>Ville / Quartier *</label>
+<select id="shopCity"><option>Libreville - Batterie 4</option><option>Libreville - Akanda</option><option>Libreville - Owendo</option><option>Libreville - Nzeng-Ayong</option><option>Port-Gentil</option><option>Franceville</option><option>Oyem</option></select>
+<label>Catégorie *</label>
+<select id="shopCat"><option>Mode & Beauté</option><option>Électronique</option><option>Alimentation</option><option>Maison & Déco</option><option>Santé & Bien-être</option></select>
+<button class="btn-yellow" onclick="createShop()">Créer ma Boutique + Mon Adresse ELDS →</button>
+</div>
+<div id="shopResult" class="success">
+<h3>✅ Ta Boutique est créée !</h3>
+<p id="shopDetails" style="margin-top:10px;line-height:1.7"></p>
+<button class="btn-blue" onclick="go('elds')">Voir mon Adresse ELDS & Suivre mes Colis →</button>
+<button class="btn-green" onclick="sendWhatsApp()">Envoyer ma Boutique sur WhatsApp ERA →</button>
+</div>
+</div>
+
+<!-- ELDS -->
+<div id="elds" class="section">
+<img src="elds-logo.png" class="brand-logo brand-logo-dark" style="max-width:340px;height:130px" alt="ELDS Relay Africa">
+<div class="badge">ELDS • RELAY AFRICA • LIVRER</div>
+<h1>Suis ton colis <span>en temps réel.</span></h1>
+<p class="lead">Chaque boutique EerlsZone a une adresse ELDS. Le client commande, ELDS récupère au point Relay et livre.</p>
+<div class="card" style="text-align:left"><h3>🔍 Suivi de Colis ELDS</h3><input id="track" placeholder="Ex: ELDS-GA-2026-1234"><button class="btn-blue" onclick="track()">Suivre mon colis</button><p id="trackResult" style="margin-top:10px"></p></div>
+<div class="card" style="text-align:left;margin-top:16px"><h3>📍 Mes Adresses ELDS Relay Africa</h3><p>Libreville Hub : ERA Hub - Batterie 4, Libreville<br>Akanda : ELDS Relay - Akanda Centre<br>Owendo : ELDS Relay - Owendo Port<br>Nzeng-Ayong : ELDS Relay - Nzeng-Ayong Marché<br><b>Port-Gentil & Franceville : Sur demande</b></p></div>
+<div class="grid">
+<div class="card"><h3>📦 Envoi Standard</h3><p>2-4 jours • Libreville - Gabon<br><b>2.500 FCFA</b></p><button class="btn-blue" onclick="go('rejoindre')">Envoyer un colis</button></div>
+<div class="card"><h3>⚡ Envoi Express</h3><p>Même jour • Libreville<br><b>5.000 FCFA</b></p><button class="btn-blue" onclick="go('rejoindre')">Envoyer Express</button></div>
+<div class="card"><h3>🌍 Inter-Afrique</h3><p>Gabon → Cameroun, Congo, Sénégal<br><b>Sur devis</b></p><button class="btn-blue" onclick="go('rejoindre')">Demander un devis</button></div>
+</div>
+</div>
+
+<!-- ACADEMY -->
+<div id="academy" class="section">
+<img src="era-logo.jpg" class="brand-logo" style="max-width:340px;height:130px" alt="ERA NETWORK PARTNERS">
+<div class="badge">ERIAS ACADEMY • PCE ICN • APPRENDRE</div>
+<h1>Apprends un métier. <span>Sécurise ton avenir.</span></h1>
+<p class="lead">Formations pratiques en cybersécurité, digital et entrepreneuriat.</p>
+<div class="grid">
+<div class="card"><h3>🛡️ Cybersécurité V2</h3><p>Les bases, la protection, les métiers de la sécurité.</p><button class="btn-purple" onclick="go('rejoindre')">S'inscrire - Cybersécurité</button></div>
+<div class="card"><h3>💻 PCE ICN - Digital</h3><p>Informatique, création de site, marketing digital, IA.</p><button class="btn-purple" onclick="go('rejoindre')">S'inscrire - PCE ICN</button></div>
+<div class="card"><h3>🚀 Entrepreneuriat ERA</h3><p>Lancer son business, vendre sur EerlsZone, livrer avec ELDS.</p><button class="btn-purple" onclick="go('rejoindre')">S'inscrire - Entrepreneuriat</button></div>
+</div>
+</div>
+
+<!-- REJOINDRE -->
+<div id="rejoindre" class="section">
+<img src="era-logo.jpg" class="brand-logo" style="max-width:340px;height:130px" alt="ERA NETWORK PARTNERS">
+<div class="badge">REJOINDRE ERA NETWORK PARTNERS</div>
+<h1>Rejoins <span>l'Alliance ERA.</span></h1>
+<p class="lead">Un seul formulaire pour tout : vendeur, livreur, apprenant, partenaire.</p>
+<div class="card" style="text-align:left">
+<label>Nom complet</label><input placeholder="Ex: Steve Obets">
+<label>Téléphone WhatsApp</label><input placeholder="Ex: +241 77 42 06 17">
+<label>Je veux rejoindre ERA pour :</label>
+<select><option>Vendre sur EerlsZone</option><option>Envoyer / Livrer avec ELDS</option><option>Apprendre à ERIAS Academy</option><option>Devenir Partenaire ERA</option></select>
+<label>Ton message</label><textarea rows="3" placeholder="Dis-moi ton projet..."></textarea>
+<button class="btn-green" onclick="alert('Merci ! Ta demande a été envoyée à ERA. On te recontacte sur WhatsApp.')">Envoyer ma demande à ERA →</button>
+</div>
+</div>
+</div>
+
+<a class="wa" href="https://wa.me/24177420617?text=Bonjour%20ERA%20!%20Je%20veux%20rejoindre%20l'écosystème" target="_blank">💬 WhatsApp ERA</a>
+<footer>© 2026 ERA NETWORK PARTNERS & ECOSYSTEM • EerlsZone • ELDS Relay Africa • ERIAS Academy / PCE ICN<br>Libreville - Gabon • WhatsApp : +241 77 42 06 17</footer>
+
+<script>
+let lastShop = null;
+function show(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');window.scrollTo(0,0);}
+function go(id){let map={eerls:1,elds:2,academy:3,rejoindre:4};let btns=document.querySelectorAll('nav button');show(id,btns[map[id]]);}
+function track(){let v=document.getElementById('track').value;let r=document.getElementById('trackResult');if(!v){r.innerHTML='Entre ton numéro de suivi ELDS.';return;}r.innerHTML='📦 Colis <b>'+v+'</b> : En transit - Libreville → Destination. Prochaine mise à jour dans 2h. (Démo V3 - suivi réel dans la V4)';}
+function createShop(){
+let name=document.getElementById('shopName').value.trim();
+let owner=document.getElementById('ownerName').value.trim();
+let phone=document.getElementById('shopPhone').value.trim();
+let city=document.getElementById('shopCity').value;
+let cat=document.getElementById('shopCat').value;
+if(!name||!owner||!phone){alert('Remplis Nom Boutique, Nom et WhatsApp pour continuer');return;}
+let code='LBV-'+String(Math.floor(100+Math.random()*900));
+let tracking='ELDS-GA-2026-'+String(Math.floor(1000+Math.random()*9000));
+let eldsAddr='ERA Hub - Batterie 4, Libreville | Point Relais : '+city;
+lastShop={name,owner,phone,city,cat,code,tracking,eldsAddr};
+document.getElementById('shopResult').style.display='block';
+document.getElementById('shopDetails').innerHTML='<b>🛒 Boutique :</b> '+name+' - Code <b>'+code+'</b><br><b>👤 Vendeur :</b> '+owner+' - '+phone+'<br><b>📦 Catégorie :</b> '+cat+'<br><b>📍 Adresse ELDS Relay Auto :</b><br>'+eldsAddr+'<br><b>🔢 Code Suivi ELDS :</b> '+tracking+'<br><br><span style="color:#4ade80">✅ Tes clients peuvent maintenant commander et ELDS va livrer depuis ton adresse Relay.</span>';
+document.getElementById('track').value=tracking;
+window.scrollTo(0,document.getElementById('shopResult').offsetTop-80);
+}
+function sendWhatsApp(){
+if(!lastShop){alert('Crée d’abord ta boutique');return;}
+let msg='Bonjour ERA ! Je viens de créer ma boutique : '+lastShop.name+' ('+lastShop.code+') - '+lastShop.cat+' - '+lastShop.city+' - Adresse ELDS : '+lastShop.eldsAddr+' - Suivi : '+lastShop.tracking;
+window.open('https://wa.me/24177420617?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>
